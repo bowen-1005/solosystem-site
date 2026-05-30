@@ -5,9 +5,9 @@ import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import PostCard from '../../components/PostCard.astro';
 import { PILLARS, SITE_TITLE } from '../../consts';
-import { sortBySeries } from '../../series';
+import { filterPublished, sortBySeries } from '../../series';
 
-const posts = await getCollection('blog');
+const posts = filterPublished(await getCollection('blog'));
 
 // 依 PILLARS 順序分區；只列有文章的主軸
 const sections = PILLARS.map((pillar) => ({

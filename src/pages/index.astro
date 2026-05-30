@@ -5,9 +5,9 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import PostCard from '../components/PostCard.astro';
 import { PILLARS, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
-import { sortByDateDesc } from '../series';
+import { filterPublished, sortByDateDesc } from '../series';
 
-const latest = sortByDateDesc(await getCollection('blog')).slice(0, 3);
+const latest = sortByDateDesc(filterPublished(await getCollection('blog'))).slice(0, 3);
 ---
 
 <!doctype html>

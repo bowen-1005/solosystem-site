@@ -2,6 +2,13 @@ import type { CollectionEntry } from 'astro:content';
 
 type Post = CollectionEntry<'blog'>;
 
+// 排程發佈：build 當下，pubDate 還沒到的文章一律隱藏（不建頁、不進列表/RSS/sitemap）。
+// 到期後，由排程重建（GitHub Actions → Cloudflare Deploy Hook）觸發 build，文章自動現身。
+export function filterPublished(posts: Post[]): Post[] {
+	const now = Date.now();
+	return posts.filter((p) => p.data.pubDate.valueOf() <= now);
+}
+
 // 系列閱讀順序：章節序 → EP 序 → 日期
 export function sortBySeries(posts: Post[]): Post[] {
 	return [...posts].sort((a, b) => {

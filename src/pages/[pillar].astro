@@ -5,10 +5,10 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import PostCard from '../components/PostCard.astro';
 import { PILLARS, SITE_TITLE } from '../consts';
-import { groupByChapter } from '../series';
+import { filterPublished, groupByChapter } from '../series';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	const posts = filterPublished(await getCollection('blog'));
 	return PILLARS.map((pillar) => ({
 		params: { pillar: pillar.slug },
 		props: {

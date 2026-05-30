@@ -1,0 +1,29 @@
+name: Scheduled rebuild
+
+# 排程發佈：每天定時觸發 Cloudflare Pages 重建，
+# 讓 pubDate 已到期的文章自動上線（搭配 src/series.ts 的 filterPublished）。
+# 也可在 Actions 分頁手動 Run workflow 立即觸發（測試用）。
+
+on:
+  schedule:
+    # 00:00 UTC = 08:00 Asia/Taipei，每天一次
+    - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  trigger-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Cloudflare Pages Deploy Hook
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}" ]; then
+            echo "::error::缺少 secret CLOUDFLARE_DEPLOY_HOOK，請先在 repo Settings → Secrets 設定。"
+            exit 1
+          fi
+          code=$(curl -X POST -s -o /dev/null -w "%{http_code}" "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}")
+          echo "Cloudflare Deploy Hook 回應碼：$code"
+          if [ "$code" != "200" ] && [ "$code" != "201" ]; then
+            echo "::error::Deploy Hook 觸發失敗（HTTP $code）"
+            exit 1
+          fi
+          echo "✅ 已觸發 Cloudflare 重建。"
