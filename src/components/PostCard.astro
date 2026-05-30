@@ -1,0 +1,85 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { getPillar } from '../consts';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+	post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const d = post.data;
+const pillar = getPillar(d.pillar);
+
+const epLabel = d.episode !== undefined ? `EP${String(d.episode).padStart(2, '0')}` : null;
+const chapterLabel = d.chapter
+	? d.chapterNum && d.chapterNum > 0
+		? `Ch.${d.chapterNum} ${d.chapter}`
+		: d.chapter
+	: null;
+
+const metaParts = [pillar?.name, chapterLabel, epLabel].filter(Boolean);
+---
+
+<article class="card">
+	<a href={`/blog/${post.id}/`}>
+		{metaParts.length > 0 && <p class="meta">{metaParts.join(' · ')}</p>}
+		<h3 class="title">{d.title}</h3>
+		<p class="date"><FormattedDate date={d.pubDate} /></p>
+		{
+			d.tags && d.tags.length > 0 && (
+				<p class="tags">
+					{d.tags.map((t) => (
+						<span class="tag">#{t}</span>
+					))}
+				</p>
+			)
+		}
+	</a>
+</article>
+
+<style>
+	.card {
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.card a {
+		display: block;
+		padding: 1.25em 0;
+		text-decoration: none;
+		transition: 0.2s ease;
+	}
+	.meta {
+		margin: 0 0 0.3em 0;
+		font-size: 0.75em;
+		letter-spacing: 0.02em;
+		color: rgb(var(--accent));
+	}
+	.title {
+		margin: 0 0 0.3em 0;
+		font-size: 1.2em;
+		font-weight: 700;
+		line-height: 1.4;
+		color: rgb(var(--black));
+	}
+	.date {
+		margin: 0;
+		font-size: 0.85em;
+		color: rgb(var(--gray));
+	}
+	.tags {
+		margin: 0.5em 0 0 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4em;
+	}
+	.tag {
+		font-size: 0.72em;
+		color: rgb(var(--gray));
+		background: rgb(var(--gray-light));
+		padding: 0.1em 0.6em;
+		border-radius: 999px;
+	}
+	.card a:hover .title {
+		color: rgb(var(--accent));
+	}
+</style>

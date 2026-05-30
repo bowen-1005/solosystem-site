@@ -1,14 +1,68 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import PostCard from '../components/PostCard.astro';
+import { PILLARS, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { sortByDateDesc } from '../series';
+
+const latest = sortByDateDesc(await getCollection('blog')).slice(0, 3);
 ---
 
 <!doctype html>
 <html lang="zh-Hant">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			.pillars {
+				list-style: none;
+				margin: 0 0 1em 0;
+				padding: 0;
+				display: grid;
+				gap: 0.75em;
+			}
+			.pillars li {
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 10px;
+			}
+			.pillars a {
+				display: flex;
+				align-items: baseline;
+				gap: 0.5em;
+				padding: 0.9em 1em;
+				text-decoration: none;
+				color: rgb(var(--black));
+				transition: 0.2s ease;
+			}
+			.pillars a:hover {
+				border-color: rgb(var(--accent));
+				background: rgba(var(--gray-light), 35%);
+			}
+			.pillars .num {
+				font-weight: 700;
+				color: rgb(var(--accent));
+			}
+			.pillars .name {
+				font-weight: 700;
+			}
+			.pillars .hook {
+				font-size: 0.85em;
+				color: rgb(var(--gray));
+			}
+			.pillars .status {
+				margin-left: auto;
+				font-size: 0.72em;
+				color: rgb(var(--gray));
+				flex-shrink: 0;
+			}
+			.pillars .status.live {
+				color: rgb(var(--accent));
+			}
+			.latest {
+				margin-top: 2.5em;
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
@@ -32,17 +86,27 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 			</p>
 
 			<h2>內容主軸</h2>
-			<ul>
-				<li><strong>① AI 工作流</strong>——把 AI 從聊天工具變成工作基礎設施（<a href="/blog/">現正連載</a>）</li>
-				<li><strong>② 工作術／系統</strong>——個人工作流、決策與思考習慣（即將推出）</li>
-				<li><strong>③ 經營心法</strong>——跨產業的經營與管理智慧，一通百通（即將推出）</li>
-				<li><strong>④ 生活術／心法</strong>——一個人在這時代怎麼安排生活與心態（即將推出）</li>
+			<ul class="pillars">
+				{
+					PILLARS.map((pillar) => (
+						<li>
+							<a href={`/${pillar.slug}/`}>
+								<span class="num">{['①', '②', '③', '④'][pillar.order - 1]}</span>
+								<span class="name">{pillar.name}</span>
+								<span class="hook">{pillar.hook}</span>
+								<span class={`status${pillar.active ? ' live' : ''}`}>
+									{pillar.active ? '連載中' : '籌備中'}
+								</span>
+							</a>
+						</li>
+					))
+				}
 			</ul>
 
-			<p>
-				四條主軸會陸續展開。現在，先從正在連載的
-				<a href="/blog/">「AI 工作流」系列開始讀 →</a>
-			</p>
+			<section class="latest">
+				<h2>最新文章</h2>
+				{latest.map((post) => <PostCard post={post} />)}
+			</section>
 		</main>
 		<Footer />
 	</body>

@@ -1,54 +1,63 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import PostCard from '../../components/PostCard.astro';
+import { PILLARS, SITE_TITLE } from '../../consts';
+import { sortBySeries } from '../../series';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = await getCollection('blog');
+
+// 依 PILLARS 順序分區；只列有文章的主軸
+const sections = PILLARS.map((pillar) => ({
+	pillar,
+	posts: sortBySeries(posts.filter((p) => p.data.pillar === pillar.key)),
+})).filter((s) => s.posts.length > 0);
 ---
 
 <!doctype html>
 <html lang="zh-Hant">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={`文章 | ${SITE_TITLE}`} description="一人系統的全部文章，依四大主軸分門別類。" />
 		<style>
-			ul {
-				display: flex;
-				flex-direction: column;
-				gap: 0;
-				list-style-type: none;
+			.intro {
+				margin-bottom: 2.5em;
+			}
+			.intro h1 {
+				margin-bottom: 0.2em;
+			}
+			.intro p {
 				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				border-bottom: 1px solid rgb(var(--gray-light));
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li a {
-				display: block;
-				padding: 1.25em 0;
-			}
-			.title {
-				margin: 0 0 0.2em 0;
-				font-size: 1.2em;
-				font-weight: 700;
-				color: rgb(var(--black));
-				line-height: 1.4;
-			}
-			.date {
-				margin: 0;
-				font-size: 0.85em;
 				color: rgb(var(--gray));
 			}
-			ul li a:hover .title {
+			.pillar-section {
+				margin-bottom: 3em;
+			}
+			.pillar-head {
+				display: flex;
+				align-items: baseline;
+				justify-content: space-between;
+				gap: 1em;
+				border-bottom: 2px solid rgb(var(--black));
+				padding-bottom: 0.4em;
+				margin-bottom: 0.3em;
+			}
+			.pillar-head h2 {
+				margin: 0;
+				font-size: 1.3em;
+			}
+			.pillar-head .hook {
+				font-size: 0.85em;
+				color: rgb(var(--gray));
+				font-weight: 400;
+				flex-shrink: 0;
+			}
+			.pillar-head a {
+				text-decoration: none;
+				color: rgb(var(--black));
+			}
+			.pillar-head a:hover h2 {
 				color: rgb(var(--accent));
 			}
 		</style>
@@ -56,25 +65,26 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
+			<div class="intro">
+				<h1>文章</h1>
+				<p>依四大主軸分門別類。想單看一個主軸，點主軸標題進入專頁。</p>
+			</div>
+
+			{
+				sections.map(({ pillar, posts }) => (
+					<section class="pillar-section">
+						<a href={`/${pillar.slug}/`}>
+							<div class="pillar-head">
+								<h2>{pillar.name}</h2>
+								<span class="hook">{pillar.hook}</span>
+							</div>
+						</a>
+						{posts.map((post) => (
+							<PostCard post={post} />
+						))}
+					</section>
+				))
+			}
 		</main>
 		<Footer />
 	</body>

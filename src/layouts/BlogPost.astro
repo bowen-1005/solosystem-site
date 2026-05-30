@@ -5,10 +5,17 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import { getPillar } from '../consts';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, pillar, chapter, chapterNum, episode, tags } =
+	Astro.props;
+
+const pillarInfo = getPillar(pillar);
+const epLabel = episode !== undefined ? `EP${String(episode).padStart(2, '0')}` : null;
+const chapterLabel = chapter ? (chapterNum && chapterNum > 0 ? `Ch.${chapterNum} ${chapter}` : chapter) : null;
+const metaParts = [chapterLabel, epLabel].filter(Boolean);
 ---
 
 <html lang="zh-Hant">
@@ -53,6 +60,32 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.last-updated-on {
 				font-style: italic;
 			}
+			.series-meta {
+				margin: 0 0 0.4em 0;
+				font-size: 0.8em;
+				letter-spacing: 0.02em;
+			}
+			.series-meta a {
+				color: rgb(var(--accent));
+				text-decoration: none;
+				font-weight: 700;
+			}
+			.series-meta a:hover {
+				text-decoration: underline;
+			}
+			.post-tags {
+				margin: 0.8em 0 0 0;
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.4em;
+			}
+			.post-tags .tag {
+				font-size: 0.75em;
+				color: rgb(var(--gray));
+				background: rgb(var(--gray-light));
+				padding: 0.12em 0.7em;
+				border-radius: 999px;
+			}
 		</style>
 	</head>
 
@@ -65,6 +98,15 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 				</div>
 				<div class="prose">
 					<div class="title">
+						{
+							(pillarInfo || metaParts.length > 0) && (
+								<p class="series-meta">
+									{pillarInfo && <a href={`/${pillarInfo.slug}/`}>{pillarInfo.name}</a>}
+									{pillarInfo && metaParts.length > 0 && ' · '}
+									{metaParts.join(' · ')}
+								</p>
+							)
+						}
 						<div class="date">
 							<FormattedDate date={pubDate} />
 							{
@@ -76,6 +118,15 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 							}
 						</div>
 						<h1>{title}</h1>
+						{
+							tags && tags.length > 0 && (
+								<p class="post-tags">
+									{tags.map((t) => (
+										<span class="tag">#{t}</span>
+									))}
+								</p>
+							)
+						}
 						<hr />
 					</div>
 					<slot />
