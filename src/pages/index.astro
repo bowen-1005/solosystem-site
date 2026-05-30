@@ -1,0 +1,42 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="zh-Hant">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>一人系統</h1>
+			<p><em>不是更努力，是把工作和生活當系統來設計。</em></p>
+			<p>
+				大多數人靠「更努力」撐住工作與生活。極少數人開始把它們當成「系統」來設計——
+				讓事情會自己運轉，而不是每次都從你身上重新長出來。
+			</p>
+			<p>
+				這裡是一個真實經營者的系統實作紀錄。我同時經營診所、公司與內容，
+				這個網站記錄我怎麼用系統思維、以及 AI 這個時代最強的槓桿，設計自己的工作與生活。
+				有觀點，有失敗，有演化——不是教學，是第一手實作。
+			</p>
+
+			<h2>內容主軸</h2>
+			<ul>
+				<li><strong>① AI 工作流</strong>——把 AI 從聊天工具變成工作基礎設施（<a href="/blog/">現正連載</a>）</li>
+				<li><strong>② 工作術／系統</strong>——個人工作流、決策與思考習慣（即將推出）</li>
+				<li><strong>③ 經營心法</strong>——跨產業的經營與管理智慧，一通百通（即將推出）</li>
+				<li><strong>④ 生活術／心法</strong>——一個人在這時代怎麼安排生活與心態（即將推出）</li>
+			</ul>
+
+			<p>
+				<a href="/blog/">→ 先從「AI 工作流」系列開始讀</a>
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
