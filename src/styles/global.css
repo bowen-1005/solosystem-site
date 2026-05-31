@@ -86,6 +86,25 @@ input {
 }
 table {
 	width: 100%;
+	border-collapse: collapse;
+	margin: 1.5em 0;
+	font-size: 0.95em;
+}
+th,
+td {
+	border: 1px solid rgba(var(--gray), 45%);
+	padding: 0.5em 0.8em;
+	text-align: left;
+	vertical-align: top;
+	line-height: 1.6;
+}
+th {
+	background: rgba(var(--gray-light), 60%);
+	font-weight: 700;
+	color: rgb(var(--black));
+}
+tbody tr:nth-child(even) {
+	background: rgba(var(--gray-light), 25%);
 }
 img {
 	max-width: 100%;
