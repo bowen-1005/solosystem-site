@@ -4,6 +4,9 @@ const today = new Date();
 
 <footer>
 	&copy; {today.getFullYear()} 一人系統 Solosystem. 版權所有.
+	<div class="contact-link">
+		<a href="/contact">與我聯絡</a> · <a href="mailto:contact@solosystem.cc">contact@solosystem.cc</a>
+	</div>
 	<div class="social-links">
 		<a href="/rss.xml" target="_blank">
 			<span class="sr-only">訂閱 RSS</span>
@@ -35,5 +38,17 @@ const today = new Date();
 	}
 	.social-links a:hover {
 		color: rgb(var(--gray-dark));
+	}
+	.contact-link {
+		margin-top: 0.6em;
+		font-size: 0.85em;
+	}
+	.contact-link a {
+		color: rgb(var(--gray));
+		text-decoration: none;
+	}
+	.contact-link a:hover {
+		color: rgb(var(--gray-dark));
+		text-decoration: underline;
 	}
 </style>

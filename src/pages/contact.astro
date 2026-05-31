@@ -1,0 +1,81 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<html lang="zh-Hant">
+	<head>
+		<BaseHead
+			title={`聯絡 | ${SITE_TITLE}`}
+			description="任何鼓勵、建議或合作提案，歡迎聯繫一人系統 Solosystem。"
+		/>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>與我聯絡 <span class="en">Contact</span></h1>
+
+			<p>
+				如果這裡的文章對你有幫助，或者你有想法想交流——
+				不管是讀後感、建議，還是合作提案，都歡迎寫信給我。
+			</p>
+
+			<ul>
+				<li>✉️ 讀者回饋與鼓勵</li>
+				<li>💡 主題建議或想看的內容</li>
+				<li>🤝 商業合作與聯名提案</li>
+			</ul>
+
+			<p>我會親自閱讀每一封信，盡力回覆。</p>
+
+			<div class="cta">
+				<a href="mailto:contact@solosystem.cc" class="mail-btn">
+					contact@solosystem.cc
+				</a>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: 600px;
+	}
+	h1 {
+		margin-top: 0.6em;
+	}
+	.en {
+		font-size: 0.65em;
+		font-weight: 400;
+		color: rgb(var(--gray));
+		letter-spacing: 0.05em;
+		vertical-align: middle;
+	}
+	ul {
+		padding-left: 0;
+		list-style: none;
+		line-height: 2.2;
+		margin-bottom: 1.5em;
+	}
+	.cta {
+		margin-top: 2em;
+	}
+	.mail-btn {
+		display: inline-block;
+		padding: 0.65em 1.4em;
+		background: var(--accent);
+		color: #fff;
+		border-radius: 6px;
+		text-decoration: none;
+		font-size: 1em;
+		letter-spacing: 0.01em;
+		transition: background 0.15s;
+	}
+	.mail-btn:hover {
+		background: var(--accent-dark);
+		color: #fff;
+	}
+</style>
