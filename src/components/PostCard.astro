@@ -25,6 +25,7 @@ const metaParts = [pillar?.name, chapterLabel, epLabel].filter(Boolean);
 	<a href={`/blog/${post.id}/`}>
 		{metaParts.length > 0 && <p class="meta">{metaParts.join(' · ')}</p>}
 		<h3 class="title">{d.title}</h3>
+		{d.description && <p class="excerpt">{d.description}</p>}
 		<p class="date"><FormattedDate date={d.pubDate} /></p>
 		{
 			d.tags && d.tags.length > 0 && (
@@ -60,6 +61,16 @@ const metaParts = [pillar?.name, chapterLabel, epLabel].filter(Boolean);
 		font-weight: 700;
 		line-height: 1.4;
 		color: rgb(var(--black));
+	}
+	.excerpt {
+		margin: 0 0 0.4em 0;
+		font-size: 0.9em;
+		line-height: 1.6;
+		color: rgb(var(--gray-dark));
+		display: -webkit-box;
+		-webkit-line-clamp: 2;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 	.date {
 		margin: 0;

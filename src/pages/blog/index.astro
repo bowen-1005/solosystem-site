@@ -4,8 +4,8 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import PostCard from '../../components/PostCard.astro';
-import { PILLARS, SITE_TITLE } from '../../consts';
-import { filterPublished, sortBySeries } from '../../series';
+import { PILLARS, SERIES, SITE_TITLE } from '../../consts';
+import { filterPublished, postsInSeries, sortBySeries } from '../../series';
 
 const posts = filterPublished(await getCollection('blog'));
 
@@ -14,6 +14,12 @@ const sections = PILLARS.map((pillar) => ({
 	pillar,
 	posts: sortBySeries(posts.filter((p) => p.data.pillar === pillar.key)),
 })).filter((s) => s.posts.length > 0);
+
+// 系列入口（只列有文章的系列）
+const seriesCards = SERIES.map((s) => ({
+	series: s,
+	count: postsInSeries(posts, s.key).length,
+})).filter((s) => s.count > 0);
 ---
 
 <!doctype html>
@@ -60,6 +66,48 @@ const sections = PILLARS.map((pillar) => ({
 			.pillar-head a:hover h2 {
 				color: rgb(var(--accent));
 			}
+			.series-nav {
+				margin-bottom: 3em;
+			}
+			.series-nav-head {
+				font-size: 1.3em;
+				margin: 0 0 0.6em 0;
+				border-bottom: 2px solid rgb(var(--black));
+				padding-bottom: 0.4em;
+			}
+			.series-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 0.8em;
+			}
+			.series-card {
+				display: flex;
+				flex-direction: column;
+				gap: 0.3em;
+				padding: 1em 1.1em;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 12px;
+				text-decoration: none;
+				transition: 0.2s ease;
+			}
+			.series-card:hover {
+				border-color: rgb(var(--accent));
+				box-shadow: var(--box-shadow);
+			}
+			.series-card .s-name {
+				font-weight: 700;
+				font-size: 1.1em;
+				color: rgb(var(--black));
+			}
+			.series-card .s-hook {
+				font-size: 0.85em;
+				color: rgb(var(--gray));
+				line-height: 1.5;
+			}
+			.series-card .s-count {
+				font-size: 0.78em;
+				color: rgb(var(--accent));
+			}
 		</style>
 	</head>
 	<body>
@@ -67,8 +115,25 @@ const sections = PILLARS.map((pillar) => ({
 		<main>
 			<div class="intro">
 				<h1>文章</h1>
-				<p>依四大主軸分門別類。想單看一個主軸，點主軸標題進入專頁。</p>
+				<p>先挑一個系列開始讀，或往下看全部文章（依主軸分類）。</p>
 			</div>
+
+			{
+				seriesCards.length > 0 && (
+					<section class="series-nav">
+						<h2 class="series-nav-head">系列</h2>
+						<div class="series-grid">
+							{seriesCards.map(({ series, count }) => (
+								<a class="series-card" href={`/series/${series.slug}/`}>
+									<span class="s-name">{series.name}</span>
+									<span class="s-hook">{series.hook}</span>
+									<span class="s-count">{count} 篇</span>
+								</a>
+							))}
+						</div>
+					</section>
+				)
+			}
 
 			{
 				sections.map(({ pillar, posts }) => (

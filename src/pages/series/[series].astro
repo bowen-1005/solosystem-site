@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import PostCard from '../../components/PostCard.astro';
+import { SERIES, SITE_TITLE } from '../../consts';
+import { filterPublished, postsInSeries } from '../../series';
+
+export async function getStaticPaths() {
+	const posts = filterPublished(await getCollection('blog'));
+	return SERIES.map((series) => ({
+		params: { series: series.slug },
+		props: {
+			series,
+			posts: postsInSeries(posts, series.key),
+		},
+	}));
+}
+
+const { series, posts } = Astro.props;
+const hasPosts = posts.length > 0;
+---
+
+<!doctype html>
+<html lang="zh-Hant">
+	<head>
+		<BaseHead title={`${series.name} | ${SITE_TITLE}`} description={series.hook} />
+		<style>
+			.series-intro {
+				margin-bottom: 2.5em;
+			}
+			.series-intro h1 {
+				margin-bottom: 0.2em;
+			}
+			.series-intro p {
+				margin: 0;
+				color: rgb(var(--gray));
+				font-size: 1.05em;
+			}
+			.count {
+				margin-top: 0.6em;
+				font-size: 0.85em;
+				color: rgb(var(--gray));
+			}
+			.soon {
+				padding: 2em 0;
+				color: rgb(var(--gray));
+			}
+			.back {
+				margin-top: 2em;
+				font-size: 0.9em;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="series-intro">
+				<h1>{series.name}</h1>
+				<p>{series.hook}</p>
+				{hasPosts && <p class="count">共 {posts.length} 篇</p>}
+			</div>
+
+			{
+				hasPosts ? (
+					posts.map((post) => <PostCard post={post} />)
+				) : (
+					<p class="soon">這個系列正在籌備中——內容會陸續上線。可以先訂閱 RSS 或從其他系列開始讀。</p>
+				)
+			}
+
+			<p class="back"><a href="/blog/">← 回全部文章</a></p>
+		</main>
+		<Footer />
+	</body>
+</html>

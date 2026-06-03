@@ -1,5 +1,5 @@
 ---
-import { SITE_TITLE } from '../consts';
+import { SERIES, SITE_TITLE } from '../consts';
 import HeaderLink from './HeaderLink.astro';
 ---
 
@@ -9,6 +9,12 @@ import HeaderLink from './HeaderLink.astro';
 		<div class="internal-links">
 			<HeaderLink href="/">首頁</HeaderLink>
 			<HeaderLink href="/blog">文章</HeaderLink>
+			<div class="dropdown">
+				<a href="/blog" class="dropdown-toggle">系列 ▾</a>
+				<div class="dropdown-menu">
+					{SERIES.map((s) => <a href={`/series/${s.slug}/`}>{s.name}</a>)}
+				</div>
+			</div>
 			<HeaderLink href="/about">關於</HeaderLink>
 			<HeaderLink href="/contact">聯絡</HeaderLink>
 		</div>
@@ -59,6 +65,47 @@ import HeaderLink from './HeaderLink.astro';
 	.social-links,
 	.social-links a {
 		display: flex;
+	}
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+	.dropdown-toggle {
+		display: inline-block;
+		padding: 1em 0.5em;
+		color: var(--black);
+		border-bottom: 4px solid transparent;
+		text-decoration: none;
+	}
+	.dropdown-menu {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		min-width: 10em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 12%);
+		border-radius: 0 0 8px 8px;
+		opacity: 0;
+		visibility: hidden;
+		transform: translateY(-4px);
+		transition: 0.15s ease;
+		z-index: 10;
+	}
+	.dropdown:hover .dropdown-menu,
+	.dropdown:focus-within .dropdown-menu {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+	.dropdown-menu a {
+		display: block;
+		padding: 0.6em 1em;
+		border-bottom: none;
+		white-space: nowrap;
+	}
+	.dropdown-menu a:hover {
+		background: rgb(var(--gray-light));
+		color: rgb(var(--accent));
 	}
 	@media (max-width: 720px) {
 		.social-links {

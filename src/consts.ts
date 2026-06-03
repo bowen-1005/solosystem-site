@@ -26,3 +26,22 @@ export const PILLARS: Pillar[] = [
 
 export const getPillar = (key?: string): Pillar | undefined =>
 	PILLARS.find((p) => p.key === key);
+
+// 系列（單一資料源：系列專頁、/blog 分類入口、Header 下拉都讀這裡）
+// key 必須與文章 frontmatter 的 `chapter` 值，或 `series[]` 陣列元素一致。
+export interface Series {
+	key: string; // 對應 frontmatter chapter 值 ＋ series[] 元素
+	slug: string; // 網址：/series/<slug>/
+	name: string; // 顯示名稱
+	hook: string; // 副標
+	order: number; // 排序
+}
+
+export const SERIES: Series[] = [
+	{ key: '記憶篇', slug: 'memory', name: '記憶篇', hook: 'AI 的記憶，是要設計與維護的系統', order: 1 },
+	{ key: '建站實戰', slug: 'build', name: '建站實戰', hook: '不會寫程式，也能跟 AI 從零架一個自己的站', order: 2 },
+	{ key: '多分身工作法', slug: 'multi-agent', name: '多分身工作法', hook: '把一個人活成一支團隊，又不互相覆蓋', order: 3 },
+];
+
+export const getSeries = (key?: string): Series | undefined =>
+	SERIES.find((s) => s.key === key);

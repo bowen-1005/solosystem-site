@@ -45,3 +45,31 @@ export function groupByChapter(posts: Post[]): ChapterGroup[] {
 	}
 	return [...groups.values()].sort((a, b) => a.chapterNum - b.chapterNum);
 }
+
+// 一篇文章所屬的全部系列 key（主系列 chapter ＋ 附加 series[]，去重）
+export function seriesKeysOf(post: Post): string[] {
+	const keys = new Set<string>();
+	if (post.data.chapter) keys.add(post.data.chapter);
+	for (const s of post.data.series ?? []) keys.add(s);
+	return [...keys];
+}
+
+// 取得屬於某系列 key 的文章（主系列 chapter 或附加 series[] 皆算），已照系列順序排好
+export function postsInSeries(posts: Post[], key: string): Post[] {
+	return sortBySeries(posts.filter((p) => seriesKeysOf(p).includes(key)));
+}
+
+// 同主系列（chapter）內的上一篇／下一篇（依系列順序）。跨系列邊界回 null。
+export function prevNextInChapter(
+	posts: Post[],
+	current: Post
+): { prev: Post | null; next: Post | null } {
+	if (!current.data.chapter) return { prev: null, next: null };
+	const siblings = sortBySeries(posts.filter((p) => p.data.chapter === current.data.chapter));
+	const i = siblings.findIndex((p) => p.id === current.id);
+	if (i === -1) return { prev: null, next: null };
+	return {
+		prev: i > 0 ? siblings[i - 1] : null,
+		next: i < siblings.length - 1 ? siblings[i + 1] : null,
+	};
+}

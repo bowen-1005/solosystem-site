@@ -7,9 +7,10 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { getPillar } from '../consts';
 
-type Props = CollectionEntry<'blog'>['data'];
+type NavLink = { slug: string; title: string } | null;
+type Props = CollectionEntry<'blog'>['data'] & { prev?: NavLink; next?: NavLink };
 
-const { title, description, pubDate, updatedDate, heroImage, pillar, chapter, chapterNum, episode, tags } =
+const { title, description, pubDate, updatedDate, heroImage, pillar, chapter, chapterNum, episode, tags, prev, next } =
 	Astro.props;
 
 const pillarInfo = getPillar(pillar);
@@ -86,6 +87,37 @@ const metaParts = [chapterLabel, epLabel].filter(Boolean);
 				padding: 0.12em 0.7em;
 				border-radius: 999px;
 			}
+			.post-nav {
+				display: flex;
+				justify-content: space-between;
+				gap: 1em;
+				margin-top: 3em;
+				padding-top: 1.5em;
+				border-top: 1px solid rgb(var(--gray-light));
+			}
+			.post-nav-link {
+				display: flex;
+				flex-direction: column;
+				gap: 0.3em;
+				max-width: 48%;
+				text-decoration: none;
+				color: rgb(var(--gray-dark));
+			}
+			.post-nav-link.next {
+				text-align: right;
+				margin-left: auto;
+			}
+			.post-nav-link .dir {
+				font-size: 0.8em;
+				color: rgb(var(--gray));
+			}
+			.post-nav-link .t {
+				font-weight: 700;
+				line-height: 1.4;
+			}
+			.post-nav-link:hover .t {
+				color: rgb(var(--accent));
+			}
 		</style>
 	</head>
 
@@ -130,6 +162,28 @@ const metaParts = [chapterLabel, epLabel].filter(Boolean);
 						<hr />
 					</div>
 					<slot />
+					{
+						(prev || next) && (
+							<nav class="post-nav">
+								{prev ? (
+									<a class="post-nav-link prev" href={`/blog/${prev.slug}/`}>
+										<span class="dir">← 上一篇</span>
+										<span class="t">{prev.title}</span>
+									</a>
+								) : (
+									<span />
+								)}
+								{next ? (
+									<a class="post-nav-link next" href={`/blog/${next.slug}/`}>
+										<span class="dir">下一篇 →</span>
+										<span class="t">{next.title}</span>
+									</a>
+								) : (
+									<span />
+								)}
+							</nav>
+						)
+					}
 				</div>
 			</article>
 		</main>

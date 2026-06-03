@@ -6,6 +6,7 @@ pillar: 'AI 工作流'
 chapter: '多分身工作法'
 chapterNum: 7
 episode: 24
+series: ['記憶篇']
 tags: ['AI工作流', 'ClaudeCode', '多分身', 'AI記憶', '工作系統']
 ---
 
