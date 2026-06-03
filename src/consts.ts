@@ -40,7 +40,7 @@ export interface Series {
 export const SERIES: Series[] = [
 	{ key: '記憶篇', slug: 'memory', name: '記憶篇', hook: 'AI 的記憶，是要設計與維護的系統', order: 1 },
 	{ key: '建站實戰', slug: 'build', name: '建站實戰', hook: '不會寫程式，也能跟 AI 從零架一個自己的站', order: 2 },
-	{ key: '多分身工作法', slug: 'multi-agent', name: '多分身工作法', hook: '把一個人活成一支團隊，又不互相覆蓋', order: 3 },
+	{ key: '多 session 工作法', slug: 'multi-session', name: '多 session 工作法', hook: '多開 Claude Code 並行，又不互相覆蓋', order: 3 },
 ];
 
 export const getSeries = (key?: string): Series | undefined =>
