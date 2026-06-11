@@ -1,12 +1,12 @@
 ---
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
-import { filterPublished, prevNextInChapter } from '../../series';
+import { filterPublished, prevNextGlobal } from '../../series';
 
 export async function getStaticPaths() {
 	const posts = filterPublished(await getCollection('blog'));
 	return posts.map((post) => {
-		const { prev, next } = prevNextInChapter(posts, post);
+		const { prev, next } = prevNextGlobal(posts, post);
 		const lite = (p: CollectionEntry<'blog'> | null) =>
 			p ? { slug: p.id, title: p.data.title } : null;
 		return {

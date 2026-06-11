@@ -39,8 +39,12 @@ export interface Series {
 
 export const SERIES: Series[] = [
 	{ key: '記憶篇', slug: 'memory', name: '記憶篇', hook: 'AI 的記憶，是要設計與維護的系統', order: 1 },
-	{ key: '建站實戰', slug: 'build', name: '建站實戰', hook: '不會寫程式，也能跟 AI 從零架一個自己的站', order: 2 },
-	{ key: '多 session 工作法', slug: 'multi-session', name: '多 session 工作法', hook: '多開 Claude Code 並行，又不互相覆蓋', order: 3 },
+	{ key: '角色篇', slug: 'advisors', name: '角色篇', hook: '不是問 AI 問題，是啟動對的顧問', order: 2 },
+	{ key: '思考習慣篇', slug: 'thinking', name: '思考習慣篇', hook: 'AI 攤開正反與盲點，裁決永遠在你', order: 3 },
+	{ key: '自動化篇', slug: 'automation', name: '自動化篇', hook: '讓 AI 管理 AI——感知與維護外包，決策不外包', order: 4 },
+	{ key: '進化篇', slug: 'evolution', name: '進化篇', hook: '矛盾、反省、進化——系統活著的證據', order: 5 },
+	{ key: '建站實戰', slug: 'build', name: '建站實戰', hook: '不會寫程式，也能跟 AI 從零架一個自己的站', order: 6 },
+	{ key: '多 session 工作法', slug: 'multi-session', name: '多 session 工作法', hook: '多開 Claude Code 並行，又不互相覆蓋', order: 7 },
 ];
 
 export const getSeries = (key?: string): Series | undefined =>

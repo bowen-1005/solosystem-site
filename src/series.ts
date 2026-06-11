@@ -59,6 +59,21 @@ export function postsInSeries(posts: Post[], key: string): Post[] {
 	return sortBySeries(posts.filter((p) => seriesKeysOf(p).includes(key)));
 }
 
+// 全站閱讀動線的上一篇／下一篇：依系列順序（章節序→EP 序）跨章接續，
+// 章末篇自動接到下一章第一篇（EP04 記憶篇末 → EP05 角色篇首）。無 chapter 的文章不參與動線。
+export function prevNextGlobal(
+	posts: Post[],
+	current: Post
+): { prev: Post | null; next: Post | null } {
+	const line = sortBySeries(posts.filter((p) => p.data.chapter));
+	const i = line.findIndex((p) => p.id === current.id);
+	if (i === -1) return { prev: null, next: null };
+	return {
+		prev: i > 0 ? line[i - 1] : null,
+		next: i < line.length - 1 ? line[i + 1] : null,
+	};
+}
+
 // 同主系列（chapter）內的上一篇／下一篇（依系列順序）。跨系列邊界回 null。
 export function prevNextInChapter(
 	posts: Post[],

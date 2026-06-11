@@ -112,7 +112,7 @@ SWOT 是單一固定模板，心智圖是發散記錄工具。這裡講的框架
 
 ---
 
-**這個系列的上下篇**：上一篇〈[AI 幫我破掉的四個決策盲點](/blog/four-decision-blindspots/)〉；下一章自動化篇開篇 EP11：〈駕駛艙思維〉——我打開工作環境的第一件事，是看一張三秒鐘的狀態表。
+**這個系列的上下篇**：上一篇〈[AI 幫我破掉的四個決策盲點](/blog/four-decision-blindspots/)〉；下一章自動化篇開篇 EP11：[駕駛艙思維](/blog/cockpit-self-check/)——我打開工作環境的第一件事，是看一張三秒鐘的狀態表。
 
 **延伸閱讀**
 - Minerva University 的 Habits of Mind（HC）思維教育體系——本篇框架的源頭
