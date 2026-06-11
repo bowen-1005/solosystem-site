@@ -139,7 +139,4 @@ tags: ['AI記憶矛盾', 'AI系統演化', 'AI工作流心得', '決策考古', 
 
 **這個系列的上下篇**：上一篇〈[最好的系統，自己維護自己](/blog/self-maintaining-system/)〉；主線最終章 EP15（回顧篇）還在路上——等這套系統再長一陣子，回頭看才有東西。想看更多實戰，[建站實戰九篇](/series/build/)與[多 session 工作法四篇](/series/multi-session/)都已完整上線。
 
-**延伸閱讀**
-- 黑格爾辯證法（Hegelian dialectic）——正、反、合：矛盾作為發展的引擎
-- Leon Festinger, *A Theory of Cognitive Dissonance*（1957）——人為什麼急著消滅矛盾
-- 樹輪年代學（dendrochronology）——科學家如何從年輪重建千年氣候史
+*延伸閱讀：[辯證法——正、反、合：矛盾作為發展的引擎 (Wikipedia)](https://zh.wikipedia.org/wiki/辯證法)　｜　[認知失調（Festinger, 1957）——人為什麼急著消滅矛盾 (Wikipedia)](https://zh.wikipedia.org/wiki/認知失調)　｜　[樹輪年代學（dendrochronology）——從年輪重建千年歷史 (Wikipedia)](https://zh.wikipedia.org/wiki/樹輪年代學)*

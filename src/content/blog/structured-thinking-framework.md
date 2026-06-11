@@ -114,7 +114,4 @@ SWOT 是單一固定模板，心智圖是發散記錄工具。這裡講的框架
 
 **這個系列的上下篇**：上一篇〈[AI 幫我破掉的四個決策盲點](/blog/four-decision-blindspots/)〉；下一章自動化篇開篇 EP11：[駕駛艙思維](/blog/cockpit-self-check/)——我打開工作環境的第一件事，是看一張三秒鐘的狀態表。
 
-**延伸閱讀**
-- Minerva University 的 Habits of Mind（HC）思維教育體系——本篇框架的源頭
-- Gary Klein 的 pre-mortem 技法：*Performing a Project Premortem*, Harvard Business Review (2007)
-- Atul Gawande,《清單革命》（*The Checklist Manifesto*）——結構如何撐住專業表現的下限
+*延伸閱讀：[Minerva University——Habits of Mind 思維教育體系的源頭（官網）](https://www.minerva.edu/)　｜　[Performing a Project Premortem——Gary Klein 的 pre-mortem 技法 (Harvard Business Review, 2007)](https://hbr.org/2007/09/performing-a-project-premortem)　｜　[Atul Gawande《清單革命》（The Checklist Manifesto）(Wikipedia)](https://en.wikipedia.org/wiki/The_Checklist_Manifesto)*

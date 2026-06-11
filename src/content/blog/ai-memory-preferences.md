@@ -117,6 +117,4 @@ tags: ['AI記憶偏好', '客製AI', 'AI記住工作方式', 'Claude記憶', 'AI
 
 **這個系列的上下篇**：上一篇〈[記憶要分層：AI 該記住的不是更多，是分清楚哪些會變](/blog/ai-memory-layers/)〉鋪了四層架構；下一篇 EP04：[存得精、存得巧——記憶也有資源限制](/blog/ai-memory-budget/)——記憶不是越多越好，該記什麼、該丟什麼、context 快滿的時候怎麼辦。
 
-**延伸閱讀**
-- Michael Polanyi, *The Tacit Dimension*（1966）——「我們知道的比能說出來的多」的出處
-- 程序記憶（procedural memory）：認知心理學的記憶分類——「怎麼做」與「是什麼」是不同的記憶系統
+*延伸閱讀：[內隱知識（tacit knowledge）——Polanyi「我們知道的比能說出來的多」(Wikipedia)](https://en.wikipedia.org/wiki/Tacit_knowledge)　｜　[長期記憶的分類：語意、情節、程序記憶 (Simply Psychology)](https://www.simplypsychology.org/long-term-memory.html)*
