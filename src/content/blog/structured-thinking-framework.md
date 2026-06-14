@@ -2,6 +2,7 @@
 title: '結構化思考框架：讓 AI 的思考，跟你的思緒對齊'
 description: '複雜決策不能靠靈感——靈感不可重複、會漏、會被情緒帶著走。這篇講我實際在用的可呼叫思考框架：一句話喚起一整套思考紀律，它先診斷該用哪幾種思考、推薦給你、然後全程標註。最重要的價值不是變聰明，是讓 AI 的思考跟你的思緒重新校準。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep10-mise-en-place.webp'
 pillar: 'AI 工作流'
 chapter: '思考習慣篇'
 chapterNum: 3

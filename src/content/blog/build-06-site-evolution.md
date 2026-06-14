@@ -2,6 +2,7 @@
 title: '從「能讀」到「好逛」：讓站自己長大（建站篇 6/9）'
 description: '能讀只是及格。這篇講怎麼把站升級成一個好逛的系統——文章自動分類瀏覽、設好日期自動排程上線、版型從「只有心得」進化成「心法＋招式」。也包含一段誠實檢討：哪些功能我其實做過頭了。'
 pubDate: '2026-06-03T00:00:00+08:00'
+heroImage: '../../assets/heroes/ep21-library-upgrade.webp'
 pillar: 'AI 工作流'
 chapter: '建站實戰'
 chapterNum: 6

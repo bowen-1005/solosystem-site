@@ -2,6 +2,7 @@
 title: '架好不等於被找到：讓 Google 收錄你（建站篇 7/9）'
 description: '你蓋了一間漂亮的店，但門口沒有路標，沒人走得進來。這篇講上線後的臨門一腳——用 Google Search Console 主動報到、送 sitemap、要求收錄，以及我自己實跑時卡在哪。附「網域 vs 網址前置字元」property 的真實差異，和為什麼「你真的做過」才是最強的排名護城河。'
 pubDate: '2026-06-03T00:00:00+08:00'
+heroImage: '../../assets/heroes/ep22-road-sign.webp'
 pillar: 'AI 工作流'
 chapter: '建站實戰'
 chapterNum: 6

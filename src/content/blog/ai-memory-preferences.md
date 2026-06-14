@@ -2,6 +2,7 @@
 title: '讓 AI 記住「你怎麼工作」——最值錢的記憶，不是你打出來的'
 description: 'AI 記事實沒什麼了不起，Google 也有。真正複製不走的，是它記住你怎麼思考、怎麼做決定。這篇講偏好層：為什麼它本質上「打不出來」、只能從互動裡萃取，附上實際對話操作——你怎麼說、它怎麼回、你怎麼檢視、怎麼修剪。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep03-old-waiter.webp'
 pillar: 'AI 工作流'
 chapter: '記憶篇'
 chapterNum: 1

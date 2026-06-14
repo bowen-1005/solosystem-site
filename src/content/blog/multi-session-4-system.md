@@ -2,6 +2,7 @@
 title: '最終的系統、七條可搬走的原則，和一個誠實的尾聲（多 session 工作法 4/4）'
 description: '把八步重建收攏成四個部件：隔離、匯流、備份、記憶校正。再給你七條脫離 AI 也成立的設計原則，和一個老實的結尾——這套系統沒那麼神，也還沒完工。多 session 工作法事故全紀錄完結篇。'
 pubDate: '2026-06-03T00:00:00+08:00'
+heroImage: '../../assets/heroes/ep27-four-parts.webp'
 pillar: 'AI 工作流'
 chapter: '多 session 工作法'
 chapterNum: 7

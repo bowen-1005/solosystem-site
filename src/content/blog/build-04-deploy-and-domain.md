@@ -2,6 +2,7 @@
 title: '把站推上網路、綁上你自己的網域（建站篇 4/9）'
 description: '你的站在電腦裡活起來了，這篇讓全世界看得到：把成品放上 GitHub、接上 Cloudflare 自動部署、綁上你的網域。還有一個一開始就該做對的決定——把公開的站，跟你私密的東西分乾淨。你一樣只是下指令、點幾下、回報結果。'
 pubDate: '2026-06-03T00:00:00+08:00'
+heroImage: '../../assets/heroes/ep19-go-live.webp'
 pillar: 'AI 工作流'
 chapter: '建站實戰'
 chapterNum: 6

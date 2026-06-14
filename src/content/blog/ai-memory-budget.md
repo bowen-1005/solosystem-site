@@ -2,6 +2,7 @@
 title: '存得精、存得巧：AI 記憶也有資源限制'
 description: 'AI 的記憶不是越多越好——context 有上限，塞滿雜訊它反而變鈍。這篇是教戰手冊：我實際在用的「換場交接」三件套（什麼時候換、交接指令怎麼下、新場怎麼接），附可以直接抄的 prompt，以及一頁記憶整理 checklist。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep04-moving-rooms.webp'
 pillar: 'AI 工作流'
 chapter: '記憶篇'
 chapterNum: 1

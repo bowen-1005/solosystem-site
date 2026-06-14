@@ -2,6 +2,7 @@
 title: '現在它自己跑，我只管寫（建站篇 9/9・完結）'
 description: '建站篇最後一篇：你的站全套就緒，日後怎麼輕鬆維運？發一篇文只剩「寫、推、自動上線」三步；靜態站幾乎零維護；連巡檢都能交給自動化。好系統的標準，是「我只管寫，其他它來」——這也是這整段旅程真正的目的。'
 pubDate: '2026-06-03T00:00:00+08:00'
+heroImage: '../../assets/heroes/ep23-jarvis-home.webp'
 pillar: 'AI 工作流'
 chapter: '建站實戰'
 chapterNum: 6

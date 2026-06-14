@@ -2,6 +2,7 @@
 title: 'AI 幫我破掉的四個決策盲點——你以為你知道，但決策當下你不知道'
 description: '二元框架、確認偏誤、過度集中、沒有單一真相源——四個真實發生在我身上的決策盲點，和 AI 在當下怎麼把它們戳破。不是理論清單，每一個都附當時的情境、被戳破的瞬間，和你可以照抄的防呆做法。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep09-blind-spot.webp'
 pillar: 'AI 工作流'
 chapter: '思考習慣篇'
 chapterNum: 3

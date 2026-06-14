@@ -2,6 +2,7 @@
 title: '為什麼一個不會寫程式的人，更該自己架一個部落格（建站篇 1/9）'
 description: '你正在讀的這個站，是我用 AI 從零架的，我不會寫一行程式。無名小站關了、Xuite 也關了、Google+ 直接刪內容——你在平台上累積的個人品牌，命不在你手上。這篇講為什麼該把品牌蓋在自己的網域上，以及為什麼「我不會寫程式」在 2026 年已經攔不住你。'
 pubDate: '2026-05-31T12:00:00+08:00'
+heroImage: '../../assets/heroes/ep16-evicted-twice.webp'
 pillar: 'AI 工作流'
 chapter: '建站實戰'
 chapterNum: 6

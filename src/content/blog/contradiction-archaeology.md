@@ -2,6 +2,7 @@
 title: '矛盾不是錯誤，是進化的考古層——樹不記得自己的年輪'
 description: '當 AI 的記憶前後矛盾，大多數人的反應是修正它。我的反應是：先問為什麼。這篇旗艦長文用我系統裡真實考古出的七層矛盾，講矛盾的三種來源、各自的處理方式、以及一個更深的領悟——你根本沒空記得自己怎麼變的，所以系統替你記。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep14-tree-rings.webp'
 pillar: 'AI 工作流'
 chapter: '進化篇'
 chapterNum: 5

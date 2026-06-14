@@ -2,6 +2,7 @@
 title: '我設計了四個 AI 顧問，一句話切換——觸角延伸、跨專業會議，最後你拍板'
 description: '說「啟用財務」它變財務顧問，說「啟用人事」視角完全不同。這篇拆我實際在用的四顧問系統：兩種顧問類型、為什麼專業高度是餵資料餵出來的不是標籤貼出來的、疊加使用的跨專業會議玩法，以及我還沒解掉的真實副作用。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep06-advisor-table.webp'
 pillar: 'AI 工作流'
 chapter: '角色篇'
 chapterNum: 2

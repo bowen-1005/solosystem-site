@@ -2,6 +2,7 @@
 title: '我為什麼開始認真建一套 AI 工作系統——從「用 AI」到「建 AI 工作流」'
 description: '大多數人在「使用」AI，極少數人在「建構」以 AI 為核心的工作系統。這篇是系列起點：一個橫跨多個事業的經營者兼知識工作者，從一次性對話走向 AI 工作流的真實轉折，以及一個非工程師可以怎麼開始。'
 pubDate: '2026-05-30'
+heroImage: '../../assets/heroes/ep00-mars-system.webp'
 pillar: 'AI 工作流'
 chapter: '起點'
 chapterNum: 0

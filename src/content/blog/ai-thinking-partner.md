@@ -2,6 +2,7 @@
 title: '讓 AI 當思考對手，不是啦啦隊——危險的不是它愛附和，是你愛被附和'
 description: 'AI 天生傾向先同意你，這是訓練造成的。但更難堪的真相是：人也天生喜歡被同意。這篇講怎麼打破這場共謀——什麼時候該逼它唱反調、怎麼逼、質疑語氣的反效果陷阱，以及收到正反意見之後，誰來裁決。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep08-one-dissenter.webp'
 pillar: 'AI 工作流'
 chapter: '思考習慣篇'
 chapterNum: 3

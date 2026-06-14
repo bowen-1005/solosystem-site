@@ -2,6 +2,7 @@
 title: '我的 AI 工作基礎設施長什麼樣——一間辦公室、一群助理、幾家外包商'
 description: '不是在用 AI，是建了一個以 AI 為核心的工作環境。這篇打開全景：為什麼我的心智圖是一張公司組織圖、記憶與思考框架為什麼是每個角色的底座、整套系統哪一塊壞了會垮（答案：都不會）、以及網站從一段對話到當天上線的真實時間軸。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep12-one-person-office.webp'
 pillar: 'AI 工作流'
 chapter: '自動化篇'
 chapterNum: 4

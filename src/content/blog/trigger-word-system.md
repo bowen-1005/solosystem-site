@@ -2,6 +2,7 @@
 title: '觸發詞系統：不用記名字，只記一句話'
 description: '最好用的系統，是不需要你記住它的系統。這篇講我的觸發詞設計：一句「啟用財務」背後發生什麼、為什麼我最常喊的是「顧問＋思考框架」的疊加、以及設計一組不會互撞的觸發詞的三個原則。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep07-wake-word.webp'
 pillar: 'AI 工作流'
 chapter: '角色篇'
 chapterNum: 2

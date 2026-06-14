@@ -2,6 +2,7 @@
 title: '跟 AI 把一個空網站，從零長出來（建站篇 3/9）'
 description: '料備齊了，這篇動手——而且你會第一次看到自己的網站在電腦上活起來。從叫 AI 搭骨架、改成你的站、寫第一篇文章，到本機預覽與版面微調，每一句關鍵指令和「為什麼這樣說」全攤給你看。你不會寫任何程式。'
 pubDate: '2026-06-02T12:00:00+08:00'
+heroImage: '../../assets/heroes/ep18-first-light.webp'
 pillar: 'AI 工作流'
 chapter: '建站實戰'
 chapterNum: 6

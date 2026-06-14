@@ -2,6 +2,7 @@
 title: '我把 AI 開成一支團隊，然後親手刪掉了自己的工作（多 session 工作法 1/4）'
 description: '能同時指揮好幾個 AI 一起做事，是我心中「把 AI 用到底」的樣子。直到那天，這份力量親手刪掉了我半天的工作。多 session 工作法事故全紀錄第一篇：戰場、慾望，與一場連環爆——為什麼災難從來不是單一大錯。'
 pubDate: '2026-06-03T00:00:00+08:00'
+heroImage: '../../assets/heroes/ep24-brooms-flood.webp'
 pillar: 'AI 工作流'
 chapter: '多 session 工作法'
 chapterNum: 7

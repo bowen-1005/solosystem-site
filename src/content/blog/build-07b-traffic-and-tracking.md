@@ -2,6 +2,7 @@
 title: '光被搜到還不夠：把社群導流和追蹤接起來（建站篇 8/9）'
 description: '架好站、上了 Google，然後呢？這篇講「主動去找人」這條線——開社群帳號、把貼文導回長文，以及怎麼裝一個門口計數器（GA4＋UTM），知道每個訪客是從哪來的。含我自己取帳號名撞牆、跟一個同名競品打照面的真實過程。'
 pubDate: '2026-06-03T00:00:00+08:00'
+heroImage: '../../assets/heroes/ep225-flyer-counter.webp'
 pillar: 'AI 工作流'
 chapter: '建站實戰'
 chapterNum: 6

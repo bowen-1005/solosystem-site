@@ -2,6 +2,7 @@
 title: '我給 AI 裝上三個會吵架的腦袋，然後一步步重建（多 session 工作法 3/4）'
 description: '走出事故的轉折不是某個聰明技術，是改變「怎麼跟 AI 一起想」：給它裝上會彼此反駁、不准投票了事的三個角色，加一套刻意練習的思考習慣。接著用八個里程碑，重建一套多開 session 不互相覆蓋的工作系統。'
 pubDate: '2026-06-03T00:00:00+08:00'
+heroImage: '../../assets/heroes/ep26-arguing-brains.webp'
 pillar: 'AI 工作流'
 chapter: '多 session 工作法'
 chapterNum: 7

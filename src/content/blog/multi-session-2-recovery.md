@@ -2,6 +2,7 @@
 title: '東西其實沒不見——但我的第一版解法，也是錯的（多 session 工作法 2/4）'
 description: '誤刪半天工作後我學到兩件事：版本控制裡「看起來不見」常常不等於真的不見；以及救完火才是難堪的開始——我第一版「以後不再出事」的解法，犯了五個看起來很合理的錯。一場關於救援與盲點的第一手復盤。'
 pubDate: '2026-06-03T00:00:00+08:00'
+heroImage: '../../assets/heroes/ep25-safe-inside.webp'
 pillar: 'AI 工作流'
 chapter: '多 session 工作法'
 chapterNum: 7

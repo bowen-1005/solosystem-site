@@ -2,6 +2,7 @@
 title: '不是問 AI，是啟動顧問——問問題之前，先決定問誰'
 description: '同一個問題，丟給通用 AI 得到平均答案，先指定對的專業角色再問，得到的是另一個等級的東西。這篇講角色思維的起手式：為什麼要先決定問誰、角色的兩個等級差在哪、以及最關鍵的——你不是專家，怎麼檢視專家角色的回答。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep05-which-door.webp'
 pillar: 'AI 工作流'
 chapter: '角色篇'
 chapterNum: 2

@@ -2,6 +2,7 @@
 title: '駕駛艙思維：讓 AI 每天早上自我巡檢——以及我第一版儀表板的死因'
 description: '我給 AI 工作環境裝了一個每天自動更新的駕駛艙：打開工作的第一件事，看一張狀態表。但第一版差點被我自己冷落——它報的全是真的，只是都不是我在乎的事。這篇講儀表板的兩種死法，和怎麼從「感受不到好處」開始重新設計。'
 pubDate: '2026-06-11'
+heroImage: '../../assets/heroes/ep11-ignored-light.webp'
 pillar: 'AI 工作流'
 chapter: '自動化篇'
 chapterNum: 4

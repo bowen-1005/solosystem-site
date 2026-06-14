@@ -2,6 +2,7 @@
 title: '上線後的鬼故事：當網站不聽話，我跟 AI 怎麼查到底（建站篇 5/9）'
 description: '我改了東西，網站卻整整不更新——而且程式明明是對的，我查了快兩個鐘頭。這篇完整重現上線後我踩的兩個坑（快取與時區），重點不是「怎麼不出錯」，是「出錯了，怎麼跟 AI 一步步逼出真因」。這是自架最該學會的一課。'
 pubDate: '2026-06-03T00:00:00+08:00'
+heroImage: '../../assets/heroes/ep20-stale-cache.webp'
 pillar: 'AI 工作流'
 chapter: '建站實戰'
 chapterNum: 6

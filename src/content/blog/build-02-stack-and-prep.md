@@ -2,6 +2,7 @@
 title: '白話技術選型 ＋ 開工前的準備清單（建站篇 2/9）'
 description: '要自己架站，你只需要會兩件事：申請帳號、打字。這篇用生活比喻講清楚 Astro、Cloudflare Pages、markdown 各是什麼，列出開工前要備好的帳號與工具，以及怎麼挑一個能陪你很多年的網域（含 .tw vs .cc、買幾年）。'
 pubDate: '2026-06-01T12:00:00+08:00'
+heroImage: '../../assets/heroes/ep17-three-tools.webp'
 pillar: 'AI 工作流'
 chapter: '建站實戰'
 chapterNum: 6
