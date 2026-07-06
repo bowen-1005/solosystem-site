@@ -15,7 +15,9 @@ export default defineConfig({
 			provider: fontProviders.local(),
 			name: 'Atkinson',
 			cssVariable: '--font-atkinson',
-			fallbacks: ['sans-serif'],
+			// Atkinson 只含拉丁字母，中文一律落到 fallback。
+			// 明列繁中系統字型，避免 Windows/Android 拿到醜的預設 sans。
+			fallbacks: ['PingFang TC', 'Noto Sans TC', 'Microsoft JhengHei', 'sans-serif'],
 			options: {
 				variants: [
 					{

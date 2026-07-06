@@ -9,12 +9,12 @@ import HeaderLink from './HeaderLink.astro';
 		<div class="internal-links">
 			<HeaderLink href="/">首頁</HeaderLink>
 			<HeaderLink href="/blog">文章</HeaderLink>
-			<div class="dropdown">
-				<a href="/blog" class="dropdown-toggle">系列 ▾</a>
+			<details class="dropdown">
+				<summary>系列 ▾</summary>
 				<div class="dropdown-menu">
 					{SERIES.map((s) => <a href={`/series/${s.slug}/`}>{s.name}</a>)}
 				</div>
-			</div>
+			</details>
 			<HeaderLink href="/about">關於</HeaderLink>
 			<HeaderLink href="/contact">聯絡</HeaderLink>
 		</div>
@@ -31,6 +31,15 @@ import HeaderLink from './HeaderLink.astro';
 		</div>
 	</nav>
 </header>
+<script>
+	// 點擊選單以外的地方時，收起「系列」下拉（原生 <details> 不會自動關）
+	document.addEventListener('click', (e) => {
+		const dd = document.querySelector('details.dropdown');
+		if (dd && dd.hasAttribute('open') && !dd.contains(e.target as Node)) {
+			dd.removeAttribute('open');
+		}
+	});
+</script>
 <style>
 	header {
 		margin: 0;
@@ -51,6 +60,7 @@ import HeaderLink from './HeaderLink.astro';
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap;
 	}
 	nav a {
 		padding: 1em 0.5em;
@@ -62,20 +72,31 @@ import HeaderLink from './HeaderLink.astro';
 		text-decoration: none;
 		border-bottom-color: var(--accent);
 	}
+	.internal-links {
+		display: flex;
+		align-items: center;
+	}
 	.social-links,
 	.social-links a {
 		display: flex;
 	}
+	/* 系列下拉：用原生 <details>，桌機點擊、手機點按都可用（不再依賴 hover） */
 	.dropdown {
 		position: relative;
-		display: inline-block;
 	}
-	.dropdown-toggle {
-		display: inline-block;
+	.dropdown summary {
+		list-style: none;
+		cursor: pointer;
 		padding: 1em 0.5em;
 		color: var(--black);
 		border-bottom: 4px solid transparent;
-		text-decoration: none;
+		user-select: none;
+	}
+	.dropdown summary::-webkit-details-marker {
+		display: none;
+	}
+	.dropdown[open] summary {
+		color: rgb(var(--accent));
 	}
 	.dropdown-menu {
 		position: absolute;
@@ -85,17 +106,7 @@ import HeaderLink from './HeaderLink.astro';
 		background: white;
 		box-shadow: 0 2px 8px rgba(var(--black), 12%);
 		border-radius: 0 0 8px 8px;
-		opacity: 0;
-		visibility: hidden;
-		transform: translateY(-4px);
-		transition: 0.15s ease;
 		z-index: 10;
-	}
-	.dropdown:hover .dropdown-menu,
-	.dropdown:focus-within .dropdown-menu {
-		opacity: 1;
-		visibility: visible;
-		transform: translateY(0);
 	}
 	.dropdown-menu a {
 		display: block;
@@ -108,6 +119,30 @@ import HeaderLink from './HeaderLink.astro';
 		color: rgb(var(--accent));
 	}
 	@media (max-width: 720px) {
+		nav {
+			justify-content: center;
+			padding: 0.2em 0;
+		}
+		h2 {
+			width: 100%;
+			text-align: center;
+			padding: 0.6em 0 0.1em;
+			font-size: 1.05em;
+		}
+		.internal-links {
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		nav a,
+		.dropdown summary {
+			padding: 0.55em 0.6em;
+		}
+		/* 手機上讓下拉選單置中對齊觸發鈕，避免超出畫面右緣 */
+		.dropdown-menu {
+			left: 50%;
+			transform: translateX(-50%);
+			max-width: 90vw;
+		}
 		.social-links {
 			display: none;
 		}

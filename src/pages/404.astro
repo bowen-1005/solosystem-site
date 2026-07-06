@@ -1,0 +1,80 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+<html lang="zh-Hant">
+	<head>
+		<BaseHead title={`找不到頁面 | ${SITE_TITLE}`} description="這個網址不存在，或內容已經搬家。" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="notfound">
+				<p class="code">404</p>
+				<h1>這裡沒有東西</h1>
+				<p class="lead">你找的頁面不存在，或者已經搬家了。</p>
+				<div class="actions">
+					<a class="btn" href="/">回首頁</a>
+					<a class="btn ghost" href="/blog/">看全部文章</a>
+				</div>
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>
+
+<style>
+	main {
+		max-width: min(600px, calc(100% - 2em));
+	}
+	.notfound {
+		padding: 3em 0 4em;
+		text-align: center;
+	}
+	.code {
+		margin: 0;
+		font-size: 4em;
+		font-weight: 700;
+		line-height: 1;
+		color: var(--accent);
+		letter-spacing: 0.05em;
+	}
+	.notfound h1 {
+		margin: 0.4em 0 0.3em;
+	}
+	.lead {
+		color: rgb(var(--gray));
+		margin-bottom: 2em;
+	}
+	.actions {
+		display: flex;
+		gap: 0.8em;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+	.btn {
+		display: inline-block;
+		padding: 0.65em 1.4em;
+		background: var(--accent);
+		color: #fff;
+		border-radius: 6px;
+		text-decoration: none;
+		transition: background 0.15s;
+	}
+	.btn:hover {
+		background: var(--accent-dark);
+		color: #fff;
+	}
+	.btn.ghost {
+		background: transparent;
+		color: var(--accent);
+		border: 1px solid rgba(var(--gray), 40%);
+	}
+	.btn.ghost:hover {
+		background: rgba(var(--gray-light), 40%);
+		color: var(--accent);
+	}
+</style>

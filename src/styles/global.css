@@ -5,10 +5,13 @@
  */
 
 :root {
+	/* 鎖定亮色配色：未做深色版前，避免 Android/iOS 自動深色反轉造成版面崩壞 */
+	color-scheme: light;
 	--accent: #2337ff;
 	--accent-dark: #000d8a;
 	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
+	/* 次要文字灰：由 96,115,159（對白底約 4.0:1，未達 AA）加深到約 4.6:1 */
+	--gray: 84, 101, 141;
 	--gray-light: 229, 233, 240;
 	--gray-dark: 34, 41, 57;
 	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
