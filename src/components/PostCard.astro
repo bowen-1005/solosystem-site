@@ -22,30 +22,32 @@ const metaParts = [pillar?.name, chapterLabel, epLabel].filter(Boolean);
 ---
 
 <article class="card">
-	<a href={`/blog/${post.id}/`}>
+	<a class="card-body" href={`/blog/${post.id}/`}>
 		{metaParts.length > 0 && <p class="meta">{metaParts.join(' · ')}</p>}
 		<h3 class="title">{d.title}</h3>
 		{d.description && <p class="excerpt">{d.description}</p>}
 		<p class="date"><FormattedDate date={d.pubDate} /></p>
-		{
-			d.tags && d.tags.length > 0 && (
-				<p class="tags">
-					{d.tags.map((t) => (
-						<span class="tag">#{t}</span>
-					))}
-				</p>
-			)
-		}
 	</a>
+	{
+		d.tags && d.tags.length > 0 && (
+			<p class="tags">
+				{d.tags.map((t) => (
+					<a class="tag" href={`/tags/${encodeURIComponent(t)}/`}>
+						#{t}
+					</a>
+				))}
+			</p>
+		)
+	}
 </article>
 
 <style>
 	.card {
+		padding: 1.25em 0;
 		border-bottom: 1px solid rgb(var(--gray-light));
 	}
-	.card a {
+	.card-body {
 		display: block;
-		padding: 1.25em 0;
 		text-decoration: none;
 		transition: 0.2s ease;
 	}
@@ -89,8 +91,14 @@ const metaParts = [pillar?.name, chapterLabel, epLabel].filter(Boolean);
 		background: rgb(var(--gray-light));
 		padding: 0.1em 0.6em;
 		border-radius: 999px;
+		text-decoration: none;
+		transition: 0.15s ease;
 	}
-	.card a:hover .title {
+	.tag:hover {
+		background: rgb(var(--accent));
+		color: #fff;
+	}
+	.card-body:hover .title {
 		color: rgb(var(--accent));
 	}
 </style>

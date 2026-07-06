@@ -125,6 +125,12 @@ const jsonLd =
 				background: rgb(var(--gray-light));
 				padding: 0.12em 0.7em;
 				border-radius: 999px;
+				text-decoration: none;
+				transition: 0.15s ease;
+			}
+			.post-tags .tag:hover {
+				background: rgb(var(--accent));
+				color: #fff;
 			}
 			.hero-image {
 				margin: 0 0 2.5em;
@@ -215,7 +221,7 @@ const jsonLd =
 	<body>
 		<Header />
 		<main>
-			<article>
+			<article data-pagefind-body>
 				<div class="prose">
 					<div class="title">
 						{
@@ -243,9 +249,11 @@ const jsonLd =
 						}
 						{
 							tags && tags.length > 0 && (
-								<p class="post-tags">
+								<p class="post-tags" data-pagefind-ignore>
 									{tags.map((t) => (
-										<span class="tag">#{t}</span>
+										<a class="tag" href={`/tags/${encodeURIComponent(t)}/`}>
+											#{t}
+										</a>
 									))}
 								</p>
 							)
@@ -270,7 +278,7 @@ const jsonLd =
 
 					{
 						showToc && (
-							<details class="toc" open>
+							<details class="toc" open data-pagefind-ignore>
 								<summary>目錄</summary>
 								<ol>
 									{toc.map((h) => (
@@ -286,7 +294,7 @@ const jsonLd =
 					<slot />
 					{
 						(prev || next) && (
-							<nav class="post-nav">
+							<nav class="post-nav" data-pagefind-ignore>
 								{prev ? (
 									<a class="post-nav-link prev" href={`/blog/${prev.slug}/`}>
 										<span class="dir">← 上一篇</span>

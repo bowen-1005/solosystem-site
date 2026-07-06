@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+import { filterPublished } from '../../series';
+
+const posts = filterPublished(await getCollection('blog'));
+const counts = new Map();
+for (const p of posts) {
+	for (const t of p.data.tags ?? []) {
+		counts.set(t, (counts.get(t) ?? 0) + 1);
+	}
+}
+// 依篇數多寡排序（多的在前），同數依名稱
+const tags = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
+---
+
+<!doctype html>
+<html lang="zh-Hant">
+	<head>
+		<BaseHead title={`標籤 | ${SITE_TITLE}`} description="用標籤瀏覽一人系統的全部文章。" />
+		<style>
+			.intro {
+				margin-bottom: 2em;
+			}
+			.intro h1 {
+				margin-bottom: 0.2em;
+			}
+			.intro p {
+				margin: 0;
+				color: rgb(var(--gray));
+			}
+			.cloud {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.6em;
+			}
+			.cloud a {
+				display: inline-flex;
+				align-items: baseline;
+				gap: 0.35em;
+				padding: 0.4em 0.9em;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 999px;
+				text-decoration: none;
+				color: rgb(var(--gray-dark));
+				transition: 0.15s ease;
+			}
+			.cloud a:hover {
+				border-color: rgb(var(--accent));
+				color: rgb(var(--accent));
+			}
+			.cloud .n {
+				font-size: 0.78em;
+				color: rgb(var(--gray));
+			}
+			.back {
+				margin-top: 2em;
+				font-size: 0.9em;
+			}
+			.back a {
+				text-decoration: none;
+			}
+			.back a:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="intro">
+				<h1>標籤</h1>
+				<p>用主題標籤瀏覽全部文章，數字是篇數。</p>
+			</div>
+			<div class="cloud">
+				{
+					tags.map(([tag, n]) => (
+						<a href={`/tags/${encodeURIComponent(tag)}/`}>
+							<span>#{tag}</span>
+							<span class="n">{n}</span>
+						</a>
+					))
+				}
+			</div>
+			<p class="back"><a href="/blog/">← 回全部文章</a></p>
+		</main>
+		<Footer />
+	</body>
+</html>

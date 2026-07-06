@@ -26,9 +26,10 @@ const seriesCards = SERIES.map((s) => ({
 <html lang="zh-Hant">
 	<head>
 		<BaseHead title={`文章 | ${SITE_TITLE}`} description="一人系統的全部文章，依四大主軸分門別類。" />
+		{import.meta.env.PROD && <link rel="stylesheet" href="/pagefind/pagefind-ui.css" />}
 		<style>
 			.intro {
-				margin-bottom: 2.5em;
+				margin-bottom: 1.5em;
 			}
 			.intro h1 {
 				margin-bottom: 0.2em;
@@ -36,6 +37,29 @@ const seriesCards = SERIES.map((s) => ({
 			.intro p {
 				margin: 0;
 				color: rgb(var(--gray));
+			}
+			.intro .browse {
+				margin-top: 0.5em;
+				font-size: 0.9em;
+			}
+			.intro .browse a {
+				text-decoration: none;
+				font-weight: 700;
+			}
+			.intro .browse a:hover {
+				text-decoration: underline;
+			}
+			.search-wrap {
+				margin-bottom: 2.5em;
+			}
+			#search {
+				--pagefind-ui-primary: #2337ff;
+				--pagefind-ui-text: rgb(15, 18, 25);
+				--pagefind-ui-background: #fff;
+				--pagefind-ui-border: rgb(229, 233, 240);
+				--pagefind-ui-border-width: 1px;
+				--pagefind-ui-border-radius: 10px;
+				--pagefind-ui-font: inherit;
 			}
 			.pillar-section {
 				margin-bottom: 3em;
@@ -133,7 +157,37 @@ const seriesCards = SERIES.map((s) => ({
 			<div class="intro">
 				<h1>文章</h1>
 				<p>先挑一個系列開始讀，或往下看全部文章（依主軸分類）。</p>
+				<p class="browse"><a href="/tags/">用標籤瀏覽 →</a></p>
 			</div>
+
+			{
+				import.meta.env.PROD && (
+					<div class="search-wrap">
+						<div id="search" />
+						<script is:inline src="/pagefind/pagefind-ui.js"></script>
+						<script is:inline>
+							window.addEventListener('DOMContentLoaded', function () {
+								if (typeof PagefindUI === 'undefined') return;
+								new PagefindUI({
+									element: '#search',
+									showImages: false,
+									showSubResults: true,
+									translations: {
+										placeholder: '搜尋文章…',
+										clear_search: '清除',
+										load_more: '看更多結果',
+										search_label: '搜尋',
+										zero_results: '找不到「[SEARCH_TERM]」相關的文章',
+										many_results: '找到 [COUNT] 篇符合「[SEARCH_TERM]」',
+										one_result: '找到 [COUNT] 篇符合「[SEARCH_TERM]」',
+										searching: '搜尋「[SEARCH_TERM]」中…',
+									},
+								});
+							});
+						</script>
+					</div>
+				)
+			}
 
 			{
 				seriesCards.length > 0 && (
