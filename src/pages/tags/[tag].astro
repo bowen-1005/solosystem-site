@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import PostCard from '../../components/PostCard.astro';
+import { SITE_TITLE } from '../../consts';
+import { filterPublished, sortByDateDesc } from '../../series';
+
+export async function getStaticPaths() {
+	const posts = filterPublished(await getCollection('blog'));
+	const byTag = new Map();
+	for (const p of posts) {
+		for (const t of p.data.tags ?? []) {
+			if (!byTag.has(t)) byTag.set(t, []);
+			byTag.get(t).push(p);
+		}
+	}
+	return [...byTag.entries()].map(([tag, tagPosts]) => ({
+		params: { tag },
+		props: { tag, posts: sortByDateDesc(tagPosts) },
+	}));
+}
+
+const { tag, posts } = Astro.props;
+---
+
+<!doctype html>
+<html lang="zh-Hant">
+	<head>
+		<BaseHead title={`#${tag} | ${SITE_TITLE}`} description={`所有標記「${tag}」的文章。`} />
+		<style>
+			.tag-intro {
+				margin-bottom: 2em;
+			}
+			.tag-intro h1 {
+				margin-bottom: 0.2em;
+			}
+			.tag-intro .count {
+				margin: 0;
+				color: rgb(var(--gray));
+				font-size: 0.9em;
+			}
+			.back {
+				margin-top: 2em;
+				font-size: 0.9em;
+			}
+			.back a {
+				text-decoration: none;
+			}
+			.back a:hover {
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="tag-intro">
+				<h1>#{tag}</h1>
+				<p class="count">共 {posts.length} 篇</p>
+			</div>
+			{posts.map((post) => <PostCard post={post} />)}
+			<p class="back"><a href="/tags/">← 看全部標籤</a> ·  <a href="/blog/">回全部文章</a></p>
+		</main>
+		<Footer />
+	</body>
+</html>
