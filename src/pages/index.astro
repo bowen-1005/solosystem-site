@@ -8,6 +8,10 @@ import { PILLARS, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { filterPublished, sortByDateDesc } from '../series';
 
 const latest = sortByDateDesc(filterPublished(await getCollection('blog'))).slice(0, 3);
+
+const circled = ['①', '②', '③', '④'];
+const activePillars = PILLARS.filter((p) => p.active);
+const upcomingPillars = PILLARS.filter((p) => !p.active);
 ---
 
 <!doctype html>
@@ -59,8 +63,29 @@ const latest = sortByDateDesc(filterPublished(await getCollection('blog'))).slic
 			.pillars .status.live {
 				color: rgb(var(--accent));
 			}
+			.upcoming {
+				margin: 0.2em 0 0;
+				font-size: 0.9em;
+				color: rgb(var(--gray));
+			}
+			.upcoming .up-item {
+				white-space: nowrap;
+			}
+			.upcoming .sep {
+				color: rgb(var(--gray-light));
+			}
 			.latest {
 				margin-top: 2.5em;
+			}
+			.see-all {
+				margin-top: 1em;
+			}
+			.see-all a {
+				font-weight: 700;
+				text-decoration: none;
+			}
+			.see-all a:hover {
+				text-decoration: underline;
 			}
 		</style>
 	</head>
@@ -88,24 +113,38 @@ const latest = sortByDateDesc(filterPublished(await getCollection('blog'))).slic
 			<h2>內容主軸</h2>
 			<ul class="pillars">
 				{
-					PILLARS.map((pillar) => (
+					activePillars.map((pillar) => (
 						<li>
 							<a href={`/${pillar.slug}/`}>
-								<span class="num">{['①', '②', '③', '④'][pillar.order - 1]}</span>
+								<span class="num">{circled[pillar.order - 1]}</span>
 								<span class="name">{pillar.name}</span>
 								<span class="hook">{pillar.hook}</span>
-								<span class={`status${pillar.active ? ' live' : ''}`}>
-									{pillar.active ? '連載中' : '籌備中'}
-								</span>
+								<span class="status live">連載中</span>
 							</a>
 						</li>
 					))
 				}
 			</ul>
+			{
+				upcomingPillars.length > 0 && (
+					<p class="upcoming">
+						接下來，陸續展開：
+						{upcomingPillars.map((p, i) => (
+							<>
+								{i > 0 && <span class="sep"> · </span>}
+								<span class="up-item">
+									{circled[p.order - 1]} {p.name}
+								</span>
+							</>
+						))}
+					</p>
+				)
+			}
 
 			<section class="latest">
 				<h2>最新文章</h2>
 				{latest.map((post) => <PostCard post={post} />)}
+				<p class="see-all"><a href="/blog/">看全部文章 →</a></p>
 			</section>
 		</main>
 		<Footer />

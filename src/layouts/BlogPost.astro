@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
+import type { MarkdownHeading } from 'astro';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -8,38 +9,72 @@ import Header from '../components/Header.astro';
 import { getPillar } from '../consts';
 
 type NavLink = { slug: string; title: string } | null;
-type Props = CollectionEntry<'blog'>['data'] & { prev?: NavLink; next?: NavLink };
+type Props = CollectionEntry<'blog'>['data'] & {
+	prev?: NavLink;
+	next?: NavLink;
+	headings?: MarkdownHeading[];
+	readingTime?: number;
+	showDate?: boolean;
+	ogType?: 'website' | 'article';
+};
 
-const { title, description, pubDate, updatedDate, heroImage, pillar, chapter, chapterNum, episode, tags, prev, next } =
-	Astro.props;
+const {
+	title,
+	description,
+	pubDate,
+	updatedDate,
+	heroImage,
+	pillar,
+	chapter,
+	chapterNum,
+	episode,
+	tags,
+	prev,
+	next,
+	headings = [],
+	readingTime,
+	showDate = true,
+	ogType = 'article',
+} = Astro.props;
 
 const pillarInfo = getPillar(pillar);
 const epLabel = episode !== undefined ? `EP${String(episode).padStart(2, '0')}` : null;
 const chapterLabel = chapter ? (chapterNum && chapterNum > 0 ? `Ch.${chapterNum} ${chapter}` : chapter) : null;
 const metaParts = [chapterLabel, epLabel].filter(Boolean);
+
+// 目錄：只取 H2，排除導覽用的「下一篇/上一篇」段落，超過 2 條才顯示（短文不需要）
+const NAV_HEADINGS = ['下一篇', '上一篇'];
+const toc = headings.filter((h) => h.depth === 2 && !NAV_HEADINGS.includes(h.text.trim()));
+const showToc = toc.length >= 3;
+
+// JSON-LD 結構化資料（文章頁才輸出）
+const imgURL = heroImage ? new URL(heroImage.src, Astro.site).href : new URL('/og-default.png', Astro.site).href;
+const jsonLd =
+	ogType === 'article'
+		? {
+				'@context': 'https://schema.org',
+				'@type': 'BlogPosting',
+				headline: title,
+				description,
+				image: imgURL,
+				datePublished: pubDate.toISOString(),
+				dateModified: (updatedDate ?? pubDate).toISOString(),
+				author: { '@type': 'Person', name: '一人系統' },
+				publisher: { '@type': 'Organization', name: '一人系統 Solosystem' },
+				mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+			}
+		: null;
 ---
 
 <html lang="zh-Hant">
 	<head>
-		<BaseHead title={title} description={description} />
+		<BaseHead title={title} description={description} image={heroImage} ogType={ogType} />
+		{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 		<style>
 			main {
 				width: calc(100% - 2em);
 				max-width: 100%;
 				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-				margin-bottom: 2.5em;
-			}
-			.hero-image img {
-				display: block;
-				width: 100%;
-				max-width: 520px;
-				height: auto;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
 			}
 			.prose {
 				width: 700px;
@@ -49,8 +84,8 @@ const metaParts = [chapterLabel, epLabel].filter(Boolean);
 				color: rgb(var(--gray-dark));
 			}
 			.title {
-				margin-bottom: 2em;
-				padding: 0.5em 0 0;
+				margin-bottom: 1.5em;
+				padding: 1em 0 0;
 				text-align: left;
 				line-height: 1.3;
 			}
@@ -91,6 +126,58 @@ const metaParts = [chapterLabel, epLabel].filter(Boolean);
 				padding: 0.12em 0.7em;
 				border-radius: 999px;
 			}
+			.hero-image {
+				margin: 0 0 2.5em;
+			}
+			.hero-image img {
+				display: block;
+				width: 100%;
+				max-width: 520px;
+				height: auto;
+				margin: 0 auto;
+				border-radius: 12px;
+				box-shadow: var(--box-shadow);
+			}
+			.toc {
+				margin: 0 0 2.5em;
+				border: 1px solid rgb(var(--gray-light));
+				border-radius: 10px;
+				background: rgba(var(--gray-light), 25%);
+				padding: 0.4em 1.2em;
+			}
+			.toc summary {
+				cursor: pointer;
+				font-weight: 700;
+				padding: 0.6em 0;
+				color: rgb(var(--black));
+				list-style: none;
+			}
+			.toc summary::-webkit-details-marker {
+				display: none;
+			}
+			.toc summary::before {
+				content: '＋ ';
+				color: rgb(var(--accent));
+			}
+			.toc[open] summary::before {
+				content: '－ ';
+			}
+			.toc ol {
+				margin: 0 0 0.8em;
+				padding-left: 1.4em;
+			}
+			.toc li {
+				margin: 0.25em 0;
+				line-height: 1.5;
+			}
+			.toc a {
+				color: rgb(var(--gray-dark));
+				text-decoration: none;
+			}
+			.toc a:hover {
+				color: rgb(var(--accent));
+				text-decoration: underline;
+			}
 			.post-nav {
 				display: flex;
 				justify-content: space-between;
@@ -129,9 +216,6 @@ const metaParts = [chapterLabel, epLabel].filter(Boolean);
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1040} height={1300} src={heroImage} alt={title} />}
-				</div>
 				<div class="prose">
 					<div class="title">
 						{
@@ -143,17 +227,20 @@ const metaParts = [chapterLabel, epLabel].filter(Boolean);
 								</p>
 							)
 						}
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										最後更新於 <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
 						<h1>{title}</h1>
+						{
+							showDate && (
+								<div class="date">
+									<FormattedDate date={pubDate} />
+									{readingTime && <span> · 約 {readingTime} 分鐘</span>}
+									{updatedDate && (
+										<div class="last-updated-on">
+											最後更新於 <FormattedDate date={updatedDate} />
+										</div>
+									)}
+								</div>
+							)
+						}
 						{
 							tags && tags.length > 0 && (
 								<p class="post-tags">
@@ -165,6 +252,37 @@ const metaParts = [chapterLabel, epLabel].filter(Boolean);
 						}
 						<hr />
 					</div>
+
+					{
+						heroImage && (
+							<div class="hero-image">
+								<Image
+									src={heroImage}
+									alt={title}
+									widths={[360, 520, 760, 1040]}
+									sizes="(max-width: 720px) 90vw, 520px"
+									loading="eager"
+									fetchpriority="high"
+								/>
+							</div>
+						)
+					}
+
+					{
+						showToc && (
+							<details class="toc" open>
+								<summary>目錄</summary>
+								<ol>
+									{toc.map((h) => (
+										<li>
+											<a href={`#${h.slug}`}>{h.text}</a>
+										</li>
+									))}
+								</ol>
+							</details>
+						)
+					}
+
 					<slot />
 					{
 						(prev || next) && (
