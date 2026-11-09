@@ -484,6 +484,6 @@ Patrick 等人（2009）的三元模型把它拆成三個面向：**大膽**（�
 
 ---
 
-*延伸閱讀：[黑暗三角的原始論文 Paulhus & Williams（2002）](https://doi.org/10.1016/S0092-6566(02)00505-6)　｜　[日常施虐狂的行為研究 Buckels, Jones & Paulhus（2013）](https://doi.org/10.1177/0956797613490749)　｜　[D 因子：黑暗人格的共同核心 Moshagen, Hilbig & Zettler（2018）](https://doi.org/10.1037/rev0000111)　｜　[DARVO 是什麼（Jennifer Freyd）](https://dynamic.uoregon.edu/jjf/defineDARVO.html)　｜　[BIFF 回應法（High Conflict Institute）](https://www.highconflictinstitute.com/biff/)　｜　書：Babiak & Hare《穿西裝的蛇》、Bill Eddy《BIFF: Quick Responses to High-Conflict People》*
+*延伸閱讀：[Paulhus & Williams（2002）〈The Dark Triad of personality〉](https://doi.org/10.1016/S0092-6566(02)00505-6)；[Buckels, Jones & Paulhus（2013）〈Behavioral confirmation of everyday sadism〉](https://doi.org/10.1177/0956797613490749)；[Moshagen, Hilbig & Zettler（2018）〈The dark core of personality〉](https://doi.org/10.1037/rev0000111)；Babiak & Hare《穿西裝的蛇》；Bill Eddy《BIFF: Quick Responses to High-Conflict People》（[BIFF 回應法說明，High Conflict Institute](https://www.highconflictinstitute.com/biff/)）；[DARVO 是什麼（Jennifer Freyd）](https://dynamic.uoregon.edu/jjf/defineDARVO.html)。*
 
 *本文為心理學知識整理與人際應對參考，不構成醫療、心理或法律建議。*
