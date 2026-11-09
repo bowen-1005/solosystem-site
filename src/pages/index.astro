@@ -7,10 +7,16 @@ import PostCard from '../components/PostCard.astro';
 import { PILLARS, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 import { filterPublished, sortByDateDesc } from '../series';
 
-const latest = sortByDateDesc(filterPublished(await getCollection('blog'))).slice(0, 3);
+const published = filterPublished(await getCollection('blog'));
+const latest = sortByDateDesc(published).slice(0, 3);
+const countOf = (key: string) => published.filter((p) => p.data.pillar === key).length;
 
 const circled = ['①', '②', '③', '④'];
-const activePillars = PILLARS.filter((p) => p.active);
+// 狀態字在 frontmatter 先組好（避開 Astro「表達式後接字面文字」的解析坑）
+const activePillars = PILLARS.filter((p) => p.active).map((p) => ({
+	...p,
+	status: `連載中 · ${countOf(p.key)} 篇`,
+}));
 const upcomingPillars = PILLARS.filter((p) => !p.active);
 ---
 
@@ -119,7 +125,7 @@ const upcomingPillars = PILLARS.filter((p) => !p.active);
 								<span class="num">{circled[pillar.order - 1]}</span>
 								<span class="name">{pillar.name}</span>
 								<span class="hook">{pillar.hook}</span>
-								<span class="status live">連載中</span>
+								<span class="status live">{pillar.status}</span>
 							</a>
 						</li>
 					))

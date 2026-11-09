@@ -60,12 +60,18 @@ export function postsInSeries(posts: Post[], key: string): Post[] {
 }
 
 // 全站閱讀動線的上一篇／下一篇：依系列順序（章節序→EP 序）跨章接續，
-// 章末篇自動接到下一章第一篇（EP04 記憶篇末 → EP05 角色篇首）。無 chapter 的文章不參與動線。
+// 章末篇自動接到下一章第一篇（EP04 記憶篇末 → EP05 角色篇首）。
+// 無 chapter 的文章不進系列動線，改在同主軸的無系列文章之間依日期接續。
 export function prevNextGlobal(
 	posts: Post[],
 	current: Post
 ): { prev: Post | null; next: Post | null } {
-	const line = sortBySeries(posts.filter((p) => p.data.chapter));
+	// 沒掛系列的文章（如經營心法單篇）：改走「同主軸、同樣沒系列」的發布日期動線
+	const line = current.data.chapter
+		? sortBySeries(posts.filter((p) => p.data.chapter))
+		: [...posts]
+				.filter((p) => !p.data.chapter && p.data.pillar === current.data.pillar)
+				.sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 	const i = line.findIndex((p) => p.id === current.id);
 	if (i === -1) return { prev: null, next: null };
 	return {
