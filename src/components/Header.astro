@@ -1,6 +1,11 @@
 ---
-import { SERIES, SITE_TITLE } from '../consts';
+import { PILLARS, SITE_TITLE, seriesOfPillar } from '../consts';
 import HeaderLink from './HeaderLink.astro';
+
+// 分類選單：主軸（已連載）→ 底下掛該主軸的系列
+const navGroups = PILLARS.filter((p) => p.active)
+	.sort((a, b) => a.order - b.order)
+	.map((pillar) => ({ pillar, series: seriesOfPillar(pillar.key) }));
 ---
 
 <header>
@@ -10,9 +15,22 @@ import HeaderLink from './HeaderLink.astro';
 			<HeaderLink href="/">首頁</HeaderLink>
 			<HeaderLink href="/blog">文章</HeaderLink>
 			<details class="dropdown">
-				<summary>系列 ▾</summary>
+				<summary>分類 ▾</summary>
 				<div class="dropdown-menu">
-					{SERIES.map((s) => <a href={`/series/${s.slug}/`}>{s.name}</a>)}
+					{
+						navGroups.map(({ pillar, series }) => (
+							<div class="dd-group">
+								<a class="dd-pillar" href={`/${pillar.slug}/`}>
+									{pillar.name}
+								</a>
+								{series.map((s) => (
+									<a class="dd-series" href={`/series/${s.slug}/`}>
+										{s.name}
+									</a>
+								))}
+							</div>
+						))
+					}
 				</div>
 			</details>
 			<HeaderLink href="/about">關於</HeaderLink>
@@ -117,6 +135,18 @@ import HeaderLink from './HeaderLink.astro';
 	.dropdown-menu a:hover {
 		background: rgb(var(--gray-light));
 		color: rgb(var(--accent));
+	}
+	/* 主軸＝粗體群組標題；系列＝縮排在主軸底下 */
+	.dd-group + .dd-group {
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+	.dropdown-menu a.dd-pillar {
+		font-weight: 700;
+	}
+	.dropdown-menu a.dd-series {
+		padding: 0.4em 1em 0.4em 1.8em;
+		font-size: 0.92em;
+		color: rgb(var(--gray-dark));
 	}
 	@media (max-width: 720px) {
 		nav {

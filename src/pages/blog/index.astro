@@ -4,22 +4,33 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import PostCard from '../../components/PostCard.astro';
-import { PILLARS, SERIES, SITE_TITLE } from '../../consts';
+import { PILLARS, SERIES, SITE_TITLE, seriesOfPillar } from '../../consts';
 import { filterPublished, groupByChapter, postsInSeries } from '../../series';
 
 const posts = filterPublished(await getCollection('blog'));
 
 // 依 PILLARS 順序分區，區內再按章節分組（28 篇平鋪難讀，章節分組好掃）
-const sections = PILLARS.map((pillar) => ({
-	pillar,
-	groups: groupByChapter(posts.filter((p) => p.data.pillar === pillar.key)),
-})).filter((s) => s.groups.length > 0);
+const sections = [...PILLARS]
+	.sort((a, b) => a.order - b.order)
+	.map((pillar) => ({
+		pillar,
+		count: posts.filter((p) => p.data.pillar === pillar.key).length,
+		groups: groupByChapter(posts.filter((p) => p.data.pillar === pillar.key)),
+	}))
+	.filter((s) => s.groups.length > 0);
 
-// 系列入口（只列有文章的系列）
-const seriesCards = SERIES.map((s) => ({
-	series: s,
-	count: postsInSeries(posts, s.key).length,
-})).filter((s) => s.count > 0);
+// 分類入口第一層：主軸卡（只列有文章的主軸）
+const pillarCards = sections.map(({ pillar, count }) => ({ pillar, count }));
+
+// 分類入口第二層：各主軸底下的系列卡（只列有文章的系列；沒有系列的主軸不出這塊）
+const seriesBlocks = sections
+	.map(({ pillar }) => ({
+		pillar: { ...pillar, seriesHead: `${pillar.name}・系列` },
+		cards: seriesOfPillar(pillar.key)
+			.map((s) => ({ series: s, count: postsInSeries(posts, s.key).length }))
+			.filter((s) => s.count > 0),
+	}))
+	.filter((b) => b.cards.length > 0);
 ---
 
 <!doctype html>
@@ -99,6 +110,9 @@ const seriesCards = SERIES.map((s) => ({
 				border-bottom: 2px solid rgb(var(--black));
 				padding-bottom: 0.4em;
 			}
+			.pillar-section {
+				scroll-margin-top: 1em;
+			}
 			.series-grid {
 				display: grid;
 				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -156,7 +170,7 @@ const seriesCards = SERIES.map((s) => ({
 		<main>
 			<div class="intro">
 				<h1>文章</h1>
-				<p>先挑一個系列開始讀，或往下看全部文章（依主軸分類）。</p>
+				<p>先挑一個主軸或系列開始讀，或往下看全部文章（依主軸分類）。</p>
 				<p class="browse"><a href="/tags/">用標籤瀏覽 →</a></p>
 			</div>
 
@@ -190,14 +204,14 @@ const seriesCards = SERIES.map((s) => ({
 			}
 
 			{
-				seriesCards.length > 0 && (
+				pillarCards.length > 0 && (
 					<section class="series-nav">
-						<h2 class="series-nav-head">系列</h2>
+						<h2 class="series-nav-head">主軸</h2>
 						<div class="series-grid">
-							{seriesCards.map(({ series, count }) => (
-								<a class="series-card" href={`/series/${series.slug}/`}>
-									<span class="s-name">{series.name}</span>
-									<span class="s-hook">{series.hook}</span>
+							{pillarCards.map(({ pillar, count }) => (
+								<a class="series-card pillar-card" href={`#${pillar.slug}`}>
+									<span class="s-name">{pillar.name}</span>
+									<span class="s-hook">{pillar.hook}</span>
 									<span class="s-count">{count} 篇</span>
 								</a>
 							))}
@@ -207,8 +221,25 @@ const seriesCards = SERIES.map((s) => ({
 			}
 
 			{
+				seriesBlocks.map(({ pillar, cards }) => (
+					<section class="series-nav">
+						<h2 class="series-nav-head">{pillar.seriesHead}</h2>
+						<div class="series-grid">
+							{cards.map(({ series, count }) => (
+								<a class="series-card" href={`/series/${series.slug}/`}>
+									<span class="s-name">{series.name}</span>
+									<span class="s-hook">{series.hook}</span>
+									<span class="s-count">{count} 篇</span>
+								</a>
+							))}
+						</div>
+					</section>
+				))
+			}
+
+			{
 				sections.map(({ pillar, groups }) => (
-					<section class="pillar-section">
+					<section class="pillar-section" id={pillar.slug}>
 						<a href={`/${pillar.slug}/`}>
 							<div class="pillar-head">
 								<h2>{pillar.name}</h2>
@@ -217,12 +248,16 @@ const seriesCards = SERIES.map((s) => ({
 						</a>
 						{groups.map((g) => {
 							const s = SERIES.find((x) => x.key === g.chapter);
+							// 沒掛系列的文章（chapter 未填）不出章節標題，直接列
+							const hasChapter = g.chapterNum < 900 || s;
 							return (
 								<div class="chapter-group">
-									<h3 class="chapter-head">
-										{g.chapterNum > 0 && g.chapterNum < 900 ? `Ch.${g.chapterNum}　` : ''}
-										{s ? <a href={`/series/${s.slug}/`}>{g.chapter}</a> : g.chapter}
-									</h3>
+									{hasChapter && (
+										<h3 class="chapter-head">
+											{g.chapterNum > 0 && g.chapterNum < 900 ? `Ch.${g.chapterNum}　` : ''}
+											{s ? <a href={`/series/${s.slug}/`}>{g.chapter}</a> : g.chapter}
+										</h3>
+									)}
 									{g.posts.map((post) => (
 										<PostCard post={post} />
 									))}
