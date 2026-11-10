@@ -8,6 +8,8 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { getPillar } from '../consts';
 import RailSpy from '../components/manual/RailSpy.astro';
+// 【全站版型預覽分支】所有文章都用手冊版型的樣式
+import '../styles/manual.css';
 
 type NavLink = { slug: string; title: string } | null;
 type Props = CollectionEntry<'blog'>['data'] & {
@@ -36,8 +38,10 @@ const {
 	readingTime,
 	showDate = true,
 	ogType = 'article',
-	look,
+	look: lookProp,
 } = Astro.props;
+// 【全站版型預覽分支】沒指定版型的文章，一律用手冊版型
+const look = lookProp ?? 'manual';
 
 // 手冊版型：<body id="look-manual">，樣式全部掛在這個 id 底下（styles/manual.css），其他文章不受影響
 const bodyId = look ? `look-${look}` : undefined;
