@@ -1,0 +1,6 @@
+---
+// 四特質段落容器：k = m（馬基維利）/ n（自戀）/ p（精神病態）/ s（施虐）
+interface Props { k: 'm' | 'n' | 'p' | 's' }
+const { k } = Astro.props;
+---
+<div class:list={['m-trait', `tr-${k}`]}><slot /></div>

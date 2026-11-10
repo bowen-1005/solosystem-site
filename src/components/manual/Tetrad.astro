@@ -1,0 +1,21 @@
+---
+// 文章開頭的四特質速覽卡（文字取自原報告），點了跳到該特質的識別段落
+const items = [
+	{ c: 'tr-m', k: 'M · 權謀', n: '馬基維利主義', d: '冷靜算計，把人當棋子', en: 'Machiavellianism', href: '#怎麼認出馬基維利主義者' },
+	{ c: 'tr-n', k: 'N · 自戀', n: '自戀', d: '需要被仰望，容不下批評', en: 'Narcissism', href: '#怎麼認出自戀者' },
+	{ c: 'tr-p', k: 'P · 冷酷', n: '精神病態', d: '衝動無懼，沒有罪惡感', en: 'Psychopathy', href: '#怎麼認出精神病態者' },
+	{ c: 'tr-s', k: 'S · 施虐', n: '日常施虐狂', d: '從他人的痛苦得到樂趣', en: 'Everyday Sadism', href: '#怎麼認出施虐傾向者' },
+];
+---
+<nav class="m-tetrad" aria-label="四種特質">
+	{
+		items.map((i) => (
+			<a class={i.c} href={i.href}>
+				<span class="k">{i.k}</span>
+				<span class="n">{i.n}</span>
+				<span class="d">{i.d}</span>
+				<span class="tg">{i.en}</span>
+			</a>
+		))
+	}
+</nav>

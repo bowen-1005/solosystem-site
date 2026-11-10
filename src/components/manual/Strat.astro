@@ -1,0 +1,6 @@
+---
+// 依特質策略卡：上緣色條＝該特質色
+interface Props { k: 'm' | 'n' | 'p' | 's' }
+const { k } = Astro.props;
+---
+<div class:list={['m-strat', `tr-${k}`]}><slot /></div>

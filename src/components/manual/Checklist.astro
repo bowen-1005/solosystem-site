@@ -1,0 +1,73 @@
+---
+// 自我檢核：slot 放一個有序清單（題目）＋計分說明清單。
+// 沒有 JavaScript 時就是普通清單；有的話把題目變成可勾選、即時計分，並標出落在哪一段。
+// 勾選狀態只存在讀者自己的瀏覽器（localStorage），不回傳任何地方。
+---
+<div class="m-check" data-check>
+	<div class="m-check-list"><slot /></div>
+	<div class="m-meter" hidden aria-live="polite">
+		<div class="m-meter-num"><span data-count>0</span><small data-total> / 0</small></div>
+		<div class="m-meter-bar"><i data-fill></i></div>
+		<p class="m-meter-verdict" data-verdict></p>
+		<button class="m-meter-reset" type="button" data-reset>清除勾選</button>
+	</div>
+</div>
+
+<script>
+	const VERDICTS = [
+		'<b>一般摩擦範圍。</b>持續觀察即可。',
+		'<b>值得留意的模式。</b>開始記錄具體事件、練習設界線。',
+		'<b>高度警訊。</b>認真評估距離，必要時尋求專業協助；有人身安全疑慮請撥 113 或 110。',
+	];
+	const LEVELS = ['var(--m-ok)', 'var(--narc)', 'var(--m-no)'];
+
+	document.querySelectorAll<HTMLElement>('[data-check]').forEach((root, idx) => {
+		const ol = root.querySelector('ol');
+		const meter = root.querySelector<HTMLElement>('.m-meter');
+		if (!ol || !meter) return;
+		const score = root.querySelector('ul');
+		const items = Array.from(ol.children) as HTMLElement[];
+		const key = `solosystem-check-${location.pathname}-${idx}`;
+
+		const boxes = items.map((li, i) => {
+			const label = document.createElement('label');
+			const input = document.createElement('input');
+			input.type = 'checkbox';
+			input.dataset.i = String(i);
+			const box = document.createElement('span');
+			box.className = 'm-box';
+			box.setAttribute('aria-hidden', 'true');
+			const text = document.createElement('span');
+			while (li.firstChild) text.appendChild(li.firstChild);
+			label.append(input, box, text);
+			li.appendChild(label);
+			return input;
+		});
+		ol.classList.add('is-interactive');
+		meter.hidden = false;
+		root.querySelector('[data-total]')!.textContent = ` / ${items.length}`;
+
+		const render = () => {
+			const n = boxes.filter((b) => b.checked).length;
+			const band = n <= 2 ? 0 : n <= 5 ? 1 : 2;
+			root.querySelector('[data-count]')!.textContent = String(n);
+			(root.querySelector('[data-fill]') as HTMLElement).style.width = `${(n / items.length) * 100}%`;
+			root.style.setProperty('--lvl', LEVELS[band]);
+			root.querySelector('[data-verdict]')!.innerHTML = VERDICTS[band];
+			if (score) Array.from(score.children).forEach((li, i) => li.classList.toggle('is-current', i === band));
+			try {
+				localStorage.setItem(key, JSON.stringify(boxes.map((b) => b.checked)));
+			} catch {}
+		};
+		try {
+			const saved = JSON.parse(localStorage.getItem(key) || 'null');
+			if (Array.isArray(saved)) saved.forEach((v, i) => boxes[i] && (boxes[i].checked = !!v));
+		} catch {}
+		boxes.forEach((b) => b.addEventListener('change', render));
+		root.querySelector('[data-reset]')!.addEventListener('click', () => {
+			boxes.forEach((b) => (b.checked = false));
+			render();
+		});
+		render();
+	});
+</script>

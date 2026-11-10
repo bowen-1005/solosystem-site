@@ -1,0 +1,9 @@
+---
+interface Props { n: string | number; title: string }
+const { n, title } = Astro.props;
+---
+<div class="m-step">
+	<span class="m-step-dot" aria-hidden="true">{n}</span>
+	<p class="m-step-h">{title}</p>
+	<slot />
+</div>

@@ -24,6 +24,9 @@ const blog = defineCollection({
 			series: z.array(z.string()).optional(),
 			tags: z.array(z.string()).optional(),
 			heroImage: z.optional(image()),
+			// 版型（選填）：'manual'＝手冊版型（襯線標題、灰綠底、深青主色、卡片元件，樣式在 styles/manual.css）
+			// 目前只有〈黑暗人格應對手冊〉使用；不填＝全站預設版型
+			look: z.enum(['manual']).optional(),
 		}),
 });
 

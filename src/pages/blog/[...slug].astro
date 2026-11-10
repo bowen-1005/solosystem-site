@@ -24,8 +24,12 @@ type Props = {
 const { post, prev, next } = Astro.props;
 const { Content, headings } = await render(post);
 
-// 預估閱讀時間：中文約每分鐘 400 字（去掉 markdown 標記後粗估）
-const plain = post.body?.replace(/[#>*`_~\-\[\]()!|]/g, '') ?? '';
+// 預估閱讀時間：中文約每分鐘 400 字（去掉 markdown 標記後粗估；MDX 另外去掉 import 行與元件標籤）
+const body = post.body ?? '';
+const prose = post.filePath?.endsWith('.mdx')
+	? body.replace(/^import .*$/gm, '').replace(/<\/?[A-Z][^>]*>/g, '')
+	: body;
+const plain = prose.replace(/[#>*`_~\-\[\]()!|]/g, '');
 const readingTime = Math.max(1, Math.round(plain.length / 400));
 ---
 

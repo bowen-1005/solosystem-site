@@ -1,0 +1,1092 @@
+/* ============================================================
+   手冊版型（look: 'manual'）
+   字體、配色取自原報告的 field-manual 版面，融入站上原有骨架（導覽、寬度、頁尾不變）。
+   全部掛在 <body id="look-manual"> 底下，其他文章完全不受影響。
+   元件在 src/components/manual/，引用框與表格的轉換在 src/plugins/rehype-manual.mjs。
+   ============================================================ */
+
+/* ---------- 設計變數 ---------- */
+#look-manual {
+	--m-bg: #f3f5f4;
+	--m-surface: #ffffff;
+	--m-sunk: #e8edeb;
+	--m-ink: #1b2326;
+	--m-text: #2a3337;
+	--m-muted: #56635f;
+	--m-line: #d3dbd8;
+	--m-accent: #1d5c57;
+	--m-accent-soft: #dcebe8;
+	--m-ok: #2d6b3f;
+	--m-no: #9a3324;
+	--mach: #35598f;
+	--narc: #9a6a1c;
+	--psy: #8c2b2b;
+	--sad: #6a3b6e;
+	--mach-soft: #e2e9f4;
+	--narc-soft: #f4ebda;
+	--psy-soft: #f4e1e0;
+	--sad-soft: #eee3ef;
+	--f-display: 'Noto Serif TC', 'Songti TC', 'PMingLiU', serif;
+	--f-body: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', system-ui, sans-serif;
+	--f-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+	background: var(--m-bg);
+	color: var(--m-text);
+}
+#look-manual .tr-m { --c: var(--mach); --soft: var(--mach-soft); }
+#look-manual .tr-n { --c: var(--narc); --soft: var(--narc-soft); }
+#look-manual .tr-p { --c: var(--psy); --soft: var(--psy-soft); }
+#look-manual .tr-s { --c: var(--sad); --soft: var(--sad-soft); }
+
+/* ---------- 頁面與內文 ---------- */
+#look-manual main {
+	font-family: var(--f-body);
+	font-size: 17px;
+	line-height: 1.9;
+	letter-spacing: 0.01em;
+}
+#look-manual footer {
+	background: var(--m-bg);
+	border-top: 1px solid var(--m-line);
+}
+#look-manual .prose {
+	width: 680px;
+	color: var(--m-text);
+	counter-reset: h2c;
+}
+#look-manual .prose p {
+	margin: 0 0 1.15em;
+}
+#look-manual .prose strong {
+	color: var(--m-ink);
+}
+#look-manual .prose a {
+	color: var(--m-accent);
+	text-underline-offset: 0.22em;
+	text-decoration-thickness: 1px;
+}
+/* 中文斜體是電腦硬斜的假斜體：改正體 */
+#look-manual .prose em {
+	font-style: normal;
+}
+#look-manual .prose h1,
+#look-manual .prose h2,
+#look-manual .prose h3,
+#look-manual .prose h4 {
+	font-family: var(--f-display);
+	color: var(--m-ink);
+	text-wrap: balance;
+}
+#look-manual .prose .title {
+	padding-top: 1.4em;
+}
+#look-manual .prose .title h1 {
+	font-size: clamp(27px, 4.4vw, 38px);
+	font-weight: 800;
+	line-height: 1.34;
+	letter-spacing: 0.02em;
+}
+#look-manual .prose .series-meta {
+	font-family: var(--f-mono);
+	font-size: 12.5px;
+	letter-spacing: 0.14em;
+}
+#look-manual .prose .series-meta a {
+	color: var(--m-accent);
+}
+#look-manual .prose .date {
+	color: var(--m-muted);
+}
+#look-manual .prose .post-tags .tag {
+	background: var(--m-surface);
+	border: 1px solid var(--m-line);
+	color: var(--m-muted);
+}
+#look-manual .prose .post-tags .tag:hover {
+	background: var(--m-accent);
+	border-color: var(--m-accent);
+	color: #fff;
+}
+#look-manual .prose hr {
+	border-top-color: var(--m-line);
+}
+
+/* H2：章節編號＋粗底線 */
+#look-manual .prose h2 {
+	counter-increment: h2c;
+	font-size: 1.5em;
+	font-weight: 800;
+	line-height: 1.4;
+	margin: 2.6em 0 0.9em;
+	padding-bottom: 0.45em;
+	border-bottom: 2px solid var(--m-ink);
+	scroll-margin-top: 16px;
+}
+#look-manual .prose h2::before {
+	content: counter(h2c, decimal-leading-zero);
+	display: inline-block;
+	margin-right: 0.75em;
+	font-family: var(--f-mono);
+	font-size: 0.5em;
+	font-weight: 500;
+	color: var(--m-accent);
+	letter-spacing: 0.06em;
+	vertical-align: 0.3em;
+}
+#look-manual .prose h3 {
+	font-size: 1.22em;
+	font-weight: 800;
+	margin: 2em 0 0.7em;
+}
+
+/* 清單 */
+#look-manual .prose ul,
+#look-manual .prose ol {
+	padding-left: 1.3em;
+}
+#look-manual .prose li {
+	margin: 0.35em 0;
+}
+#look-manual .prose li::marker {
+	color: var(--c, var(--m-accent));
+}
+#look-manual .prose ol > li::marker {
+	font-family: var(--f-mono);
+	font-weight: 500;
+}
+
+/* ---------- 目錄：卡片；寬螢幕變左側固定導覽 ---------- */
+#look-manual .prose .toc {
+	background: var(--m-surface);
+	border: 1px solid var(--m-line);
+	border-radius: 12px;
+	padding: 0.4em 1.3em;
+}
+#look-manual .prose .toc summary {
+	font-family: var(--f-display);
+	color: var(--m-ink);
+}
+#look-manual .prose .toc summary::before {
+	color: var(--m-accent);
+}
+#look-manual .prose .toc ol {
+	list-style: none;
+	padding-left: 0;
+	counter-reset: t;
+	columns: 2;
+	column-gap: 2em;
+}
+#look-manual .prose .toc li {
+	counter-increment: t;
+	display: flex;
+	gap: 0.6em;
+	break-inside: avoid;
+	font-size: 0.93em;
+}
+#look-manual .prose .toc li::before {
+	content: counter(t, decimal-leading-zero);
+	font-family: var(--f-mono);
+	font-size: 0.82em;
+	color: var(--m-accent);
+	padding-top: 0.12em;
+	flex: none;
+}
+#look-manual .prose .toc a {
+	color: var(--m-text);
+}
+@media (max-width: 720px) {
+	#look-manual .prose .toc ol {
+		columns: 1;
+	}
+}
+@media (min-width: 1180px) {
+	#look-manual .prose .toc {
+		position: fixed;
+		top: 96px;
+		left: max(16px, calc(50% - 340px - 260px));
+		width: 228px;
+		max-height: calc(100vh - 130px);
+		overflow: auto;
+		background: transparent;
+		border: 0;
+		border-radius: 0;
+		padding: 0;
+		margin: 0;
+	}
+	#look-manual .prose .toc summary {
+		font-family: var(--f-mono);
+		font-size: 11.5px;
+		letter-spacing: 0.14em;
+		color: var(--m-muted);
+		padding: 0 0 0.6em 14px;
+	}
+	#look-manual .prose .toc summary::before {
+		content: '';
+	}
+	#look-manual .prose .toc ol {
+		columns: 1;
+		border-left: 1px solid var(--m-line);
+	}
+	#look-manual .prose .toc li {
+		margin: 0;
+		font-size: 13.5px;
+		line-height: 1.5;
+		gap: 0;
+	}
+	#look-manual .prose .toc li::before {
+		display: none;
+	}
+	#look-manual .prose .toc li a {
+		display: block;
+		padding: 5px 0 5px 14px;
+		margin-left: -1px;
+		border-left: 2px solid transparent;
+		color: var(--m-muted);
+	}
+	#look-manual .prose .toc li a:hover {
+		color: var(--m-ink);
+	}
+	#look-manual .prose .toc li a.is-active {
+		color: var(--m-ink);
+		font-weight: 700;
+		border-left-color: var(--m-accent);
+	}
+}
+
+/* ---------- 引用框三標記（rehype-manual 轉出的 class） ---------- */
+#look-manual .prose blockquote {
+	margin: 1.6em 0;
+	padding: 16px 20px;
+	background: var(--m-sunk);
+	border: 0;
+	border-radius: 12px;
+	font-size: 1em;
+	color: var(--m-text);
+}
+#look-manual .prose blockquote p {
+	margin: 0 0 0.7em;
+}
+#look-manual .prose blockquote p:last-child {
+	margin-bottom: 0;
+}
+#look-manual .m-chip {
+	display: inline-block;
+	font-size: 12.5px;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	line-height: 1.7;
+	color: var(--c, var(--m-accent));
+	background: var(--m-accent-soft);
+	padding: 1px 11px;
+	border-radius: 99px;
+	margin-bottom: 10px;
+}
+#look-manual .prose blockquote.m-pull {
+	background: transparent;
+	border-left: 4px solid var(--m-accent);
+	border-radius: 0;
+	padding: 2px 0 2px 20px;
+	font-family: var(--f-display);
+	font-size: 1.14em;
+	font-weight: 600;
+	line-height: 1.8;
+	color: var(--m-ink);
+}
+#look-manual .prose blockquote.m-say {
+	background: var(--m-surface);
+	border: 1px solid var(--m-line);
+	border-left: 4px solid var(--c, var(--m-accent));
+}
+#look-manual .prose blockquote.m-say .m-line {
+	font-size: 1.04em;
+	color: var(--m-ink);
+}
+#look-manual .prose blockquote.m-say .m-sit {
+	display: block;
+	font-size: 0.82em;
+	color: var(--m-muted);
+	letter-spacing: 0.02em;
+}
+#look-manual .prose blockquote.m-say .m-why {
+	font-size: 0.9em;
+	color: var(--m-muted);
+	border-top: 1px dashed var(--m-line);
+	padding-top: 0.7em;
+	margin-top: 0.9em;
+}
+#look-manual .prose blockquote.m-say .m-why b {
+	color: var(--m-text);
+	margin-right: 0.4em;
+}
+#look-manual .prose blockquote.m-think {
+	background: var(--soft, var(--m-accent-soft));
+}
+#look-manual .prose blockquote.m-think .m-chip {
+	background: var(--m-surface);
+}
+#look-manual .prose blockquote.m-xo {
+	background: var(--m-surface);
+	border: 1px solid var(--m-line);
+}
+#look-manual .prose blockquote.m-xo .m-x {
+	color: var(--m-no);
+}
+#look-manual .prose blockquote.m-xo .m-o {
+	color: var(--m-ok);
+	font-weight: 700;
+}
+
+/* ---------- 表格：每格仍有框線（站上守則），改淡色＋圓角外框，手機可橫滑 ---------- */
+#look-manual .m-tbl {
+	overflow-x: auto;
+	border: 1px solid var(--m-line);
+	border-radius: 12px;
+	background: var(--m-surface);
+	margin: 1.6em 0;
+}
+#look-manual .m-tbl table {
+	margin: 0;
+	min-width: 620px;
+	font-size: 0.88em;
+	line-height: 1.65;
+}
+#look-manual .m-tbl th,
+#look-manual .m-tbl td {
+	border: 0;
+	border-bottom: 1px solid var(--m-line);
+	border-right: 1px solid var(--m-line);
+	padding: 11px 13px;
+}
+#look-manual .m-tbl th:last-child,
+#look-manual .m-tbl td:last-child {
+	border-right: 0;
+}
+#look-manual .m-tbl thead th {
+	font-family: var(--f-display);
+	font-size: 1.06em;
+	background: transparent;
+	color: var(--m-ink);
+	border-bottom: 2px solid var(--m-line);
+}
+#look-manual .m-tbl thead th[class*='tr-'] {
+	color: var(--c);
+	border-top: 4px solid var(--c);
+}
+#look-manual .m-tbl tbody tr:nth-child(2n) {
+	background: transparent;
+}
+#look-manual .m-tbl tbody td:first-child {
+	white-space: nowrap;
+}
+#look-manual .m-tbl tbody td:first-child strong {
+	color: var(--m-muted);
+	font-size: 0.94em;
+}
+#look-manual .m-tbl tbody tr:last-child td {
+	border-bottom: 0;
+}
+#look-manual .m-tbl tr.m-lever td {
+	background: var(--m-sunk);
+	font-weight: 500;
+	color: var(--m-ink);
+}
+#look-manual .prose .m-tbl-hint {
+	display: none;
+	font-size: 12.5px;
+	color: var(--m-muted);
+	margin: -1em 0 1.4em;
+}
+@media (max-width: 680px) {
+	#look-manual .prose .m-tbl-hint {
+		display: block;
+	}
+}
+
+/* ---------- 四特質速覽卡 ---------- */
+#look-manual .m-tetrad {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1px;
+	background: var(--m-line);
+	border: 1px solid var(--m-line);
+	border-radius: 12px;
+	overflow: hidden;
+	margin: 2em 0 0.5em;
+}
+#look-manual .m-tetrad a {
+	background: var(--m-surface);
+	padding: 14px 14px 16px;
+	text-decoration: none;
+	color: var(--m-ink);
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	border-top: 4px solid var(--c);
+	line-height: 1.5;
+}
+#look-manual .m-tetrad a:hover {
+	background: var(--soft);
+}
+#look-manual .m-tetrad .k {
+	font-family: var(--f-mono);
+	font-size: 11.5px;
+	letter-spacing: 0.08em;
+	color: var(--c);
+}
+#look-manual .m-tetrad .n {
+	font-family: var(--f-display);
+	font-weight: 800;
+	font-size: 17px;
+}
+#look-manual .m-tetrad .d {
+	font-size: 13px;
+	color: var(--m-muted);
+	line-height: 1.55;
+}
+#look-manual .m-tetrad .tg {
+	font-family: var(--f-mono);
+	font-size: 11px;
+	color: var(--m-muted);
+	margin-top: auto;
+	padding-top: 6px;
+}
+@media (max-width: 720px) {
+	#look-manual .m-tetrad {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+/* ---------- 四特質段落：標題、圓點、提示卡換成該特質色 ---------- */
+#look-manual .prose h2:has(+ .m-trait) {
+	border-bottom-color: var(--trait-c);
+}
+#look-manual .prose h2:has(+ .tr-m) { --trait-c: var(--mach); }
+#look-manual .prose h2:has(+ .tr-n) { --trait-c: var(--narc); }
+#look-manual .prose h2:has(+ .tr-p) { --trait-c: var(--psy); }
+#look-manual .prose h2:has(+ .tr-s) { --trait-c: var(--sad); }
+#look-manual .prose h2:has(+ .m-trait)::before {
+	color: var(--trait-c);
+}
+#look-manual .prose h2:has(+ .m-trait)::after {
+	display: inline-block;
+	margin-left: 0.8em;
+	vertical-align: 0.3em;
+	font-family: var(--f-mono);
+	font-size: 0.46em;
+	font-weight: 500;
+	letter-spacing: 0.1em;
+	color: var(--trait-c);
+	white-space: nowrap;
+}
+#look-manual .prose h2:has(+ .tr-m)::after { content: 'M · 權謀'; }
+#look-manual .prose h2:has(+ .tr-n)::after { content: 'N · 自戀'; }
+#look-manual .prose h2:has(+ .tr-p)::after { content: 'P · 冷酷'; }
+#look-manual .prose h2:has(+ .tr-s)::after { content: 'S · 施虐'; }
+
+/* 核心特質／識別訊號面板 */
+#look-manual .m-panel {
+	background: var(--m-surface);
+	border: 1px solid var(--m-line);
+	border-radius: 12px;
+	padding: 14px 20px 6px;
+	margin: 1.2em 0;
+}
+#look-manual .prose .m-panel-h {
+	font-family: var(--f-display);
+	font-weight: 800;
+	font-size: 1.08em;
+	color: var(--m-ink);
+	margin: 0 0 0.4em;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+#look-manual .m-panel-h::before {
+	content: '';
+	width: 8px;
+	height: 8px;
+	border-radius: 2px;
+	background: var(--c, var(--m-accent));
+	flex: none;
+}
+/* 面板裡只有粗體的一行（言語／行為／關係模式）＝小標 */
+#look-manual .prose .m-panel p:has(> strong:only-child) {
+	font-size: 0.8em;
+	letter-spacing: 0.12em;
+	margin: 1em 0 0.1em;
+}
+#look-manual .prose .m-panel p:has(> strong:only-child) strong {
+	color: var(--c, var(--m-accent));
+}
+#look-manual .prose .m-panel ul {
+	margin: 0 0 0.6em;
+}
+#look-manual .prose .m-panel li {
+	font-size: 0.96em;
+	line-height: 1.75;
+}
+
+/* 補充說明（研究觀察、亞型…） */
+#look-manual .m-metas {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+	margin: 1.2em 0;
+}
+#look-manual .m-meta {
+	background: var(--soft, var(--m-accent-soft));
+	border-radius: 10px;
+	padding: 14px 18px;
+	font-size: 0.92em;
+	line-height: 1.8;
+}
+#look-manual .m-metas .m-meta {
+	margin: 0;
+}
+#look-manual .m-trait > .m-meta {
+	margin: 1.2em 0;
+}
+#look-manual .prose .m-meta p {
+	margin: 0 0 0.5em;
+}
+#look-manual .prose .m-meta p:last-child {
+	margin-bottom: 0;
+}
+#look-manual .prose .m-meta-h {
+	font-weight: 700;
+	color: var(--c, var(--m-accent));
+}
+@media (max-width: 720px) {
+	#look-manual .m-metas {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* 觀念卡、識別通則卡、修復卡 */
+#look-manual .m-cards > ul,
+#look-manual .m-cards > ol {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+	margin: 1.4em 0;
+	counter-reset: r;
+}
+#look-manual .m-cards li {
+	counter-increment: r;
+	background: var(--m-surface);
+	border: 1px solid var(--m-line);
+	border-radius: 12px;
+	padding: 14px 18px 16px;
+	margin: 0;
+	font-size: 0.93em;
+	line-height: 1.75;
+}
+#look-manual .m-cards li::before {
+	content: counter(r, decimal-leading-zero);
+	display: block;
+	font-family: var(--f-mono);
+	font-size: 12px;
+	color: var(--m-accent);
+	letter-spacing: 0.06em;
+}
+#look-manual .m-cards-alpha li::before {
+	content: counter(r, upper-alpha);
+}
+#look-manual .m-cards li > strong:first-child {
+	display: block;
+	font-family: var(--f-display);
+	font-size: 1.08em;
+	margin: 2px 0 4px;
+}
+@media (max-width: 640px) {
+	#look-manual .m-cards > ul,
+	#look-manual .m-cards > ol {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* 六種操控手法 */
+#look-manual .m-flags {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 18px 16px;
+	margin: 1.4em 0;
+}
+#look-manual .m-flag {
+	border-top: 2px solid var(--m-ink);
+	padding-top: 10px;
+	font-size: 0.92em;
+	line-height: 1.7;
+}
+#look-manual .prose .m-flag p {
+	margin: 0;
+}
+#look-manual .prose .m-flag-h {
+	font-family: var(--f-display);
+	font-weight: 800;
+	font-size: 1.08em;
+	color: var(--m-ink);
+}
+#look-manual .prose .m-flag-en {
+	font-family: var(--f-mono);
+	font-size: 0.78em;
+	color: var(--m-muted);
+	margin-bottom: 4px;
+}
+@media (max-width: 720px) {
+	#look-manual .m-flags {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+@media (max-width: 460px) {
+	#look-manual .m-flags {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* 五原則：時間軸 */
+#look-manual .m-steps {
+	border-left: 2px solid var(--m-accent);
+	margin: 1.6em 0 1.6em 13px;
+}
+#look-manual .m-step {
+	position: relative;
+	padding: 0 0 18px 30px;
+}
+#look-manual .m-step:last-child {
+	padding-bottom: 2px;
+}
+#look-manual .m-step-dot {
+	position: absolute;
+	left: -14px;
+	top: 3px;
+	width: 26px;
+	height: 26px;
+	border-radius: 50%;
+	background: var(--m-accent);
+	color: #fff;
+	font-family: var(--f-mono);
+	font-size: 12.5px;
+	display: grid;
+	place-items: center;
+}
+#look-manual .prose .m-step-h {
+	font-family: var(--f-display);
+	font-size: 1.12em;
+	font-weight: 800;
+	color: var(--m-ink);
+	margin: 0 0 0.45em;
+	line-height: 1.55;
+}
+
+/* 溝通工具卡 */
+#look-manual .m-tool {
+	background: var(--m-surface);
+	border: 1px solid var(--m-line);
+	border-radius: 12px;
+	padding: 16px 22px 4px;
+	margin: 1.1em 0;
+}
+#look-manual .prose .m-tool-h {
+	font-family: var(--f-display);
+	font-weight: 800;
+	font-size: 1.14em;
+	color: var(--m-ink);
+	margin: 0 0 0.45em;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 2px 10px;
+}
+#look-manual .m-tool-en {
+	font-family: var(--f-mono);
+	font-size: 0.66em;
+	font-weight: 500;
+	color: var(--m-muted);
+}
+#look-manual .prose .m-tool blockquote.m-say,
+#look-manual .prose .m-tool blockquote.m-xo {
+	background: var(--m-sunk);
+	border: 0;
+	border-left: 4px solid var(--m-accent);
+	margin: 0.9em 0 1em;
+}
+#look-manual .m-when {
+	border-top: 1px dashed var(--m-line);
+	padding-top: 10px;
+	margin: 0 0 14px;
+	font-size: 0.9em;
+	line-height: 1.75;
+	color: var(--m-muted);
+}
+#look-manual .prose .m-when p {
+	margin: 0 0 0.3em;
+}
+#look-manual .prose .m-when strong {
+	color: var(--m-ink);
+}
+
+/* 依特質策略卡 */
+#look-manual .m-strat {
+	background: var(--m-surface);
+	border: 1px solid var(--m-line);
+	border-top: 5px solid var(--c);
+	border-radius: 12px;
+	padding: 4px 22px 6px;
+	margin: 1.6em 0;
+}
+#look-manual .prose .m-strat h3 {
+	color: var(--c);
+	margin-top: 0.8em;
+}
+#look-manual .prose .m-strat > p > strong:first-child {
+	color: var(--c);
+}
+#look-manual .prose .m-strat blockquote.m-say {
+	background: var(--soft);
+	border: 0;
+	border-left: 4px solid var(--c);
+}
+#look-manual .prose .m-strat blockquote.m-say .m-chip {
+	background: var(--m-surface);
+}
+
+/* 有效做法／要避免：✓ ✕ 雙欄 */
+#look-manual .m-dd {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 4px 24px;
+	margin: 0.6em 0 1em;
+}
+#look-manual .prose .m-dd-h {
+	font-size: 0.86em;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	margin: 0 0 0.3em;
+}
+#look-manual .prose .m-do .m-dd-h {
+	color: var(--m-ok);
+}
+#look-manual .prose .m-dont .m-dd-h {
+	color: var(--m-no);
+}
+#look-manual .prose .m-dd ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+#look-manual .prose .m-dd li {
+	position: relative;
+	padding-left: 1.5em;
+	margin: 0.3em 0;
+	font-size: 0.95em;
+	line-height: 1.7;
+}
+#look-manual .m-do li::before {
+	content: '✓';
+	position: absolute;
+	left: 0;
+	color: var(--m-ok);
+	font-weight: 700;
+}
+#look-manual .m-dont li::before {
+	content: '✕';
+	position: absolute;
+	left: 0;
+	color: var(--m-no);
+	font-weight: 700;
+}
+@media (max-width: 640px) {
+	#look-manual .m-dd {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 14px;
+	}
+}
+
+/* 情境：左欄身分＋退出難度，右欄做法 */
+#look-manual .m-scenes {
+	border-top: 1px solid var(--m-line);
+	margin: 1.4em 0;
+}
+#look-manual .m-scene {
+	display: grid;
+	grid-template-columns: 10em minmax(0, 1fr);
+	gap: 20px;
+	padding: 16px 0;
+	border-bottom: 1px solid var(--m-line);
+}
+#look-manual .prose .m-scene-h {
+	font-family: var(--f-display);
+	font-weight: 800;
+	font-size: 1.14em;
+	line-height: 1.4;
+	color: var(--m-ink);
+	margin: 0;
+}
+#look-manual .m-badge {
+	display: inline-block;
+	font-size: 12px;
+	line-height: 1.7;
+	padding: 0 9px;
+	border-radius: 99px;
+	border: 1px solid currentColor;
+	margin-top: 6px;
+}
+#look-manual .m-badge.hi { color: var(--m-no); }
+#look-manual .m-badge.md { color: var(--narc); }
+#look-manual .m-badge.lo { color: var(--m-ok); }
+#look-manual .prose .m-scene-note {
+	font-size: 0.82em;
+	line-height: 1.6;
+	color: var(--m-muted);
+	margin: 6px 0 0;
+}
+#look-manual .prose .m-scene-body ul {
+	margin: 0;
+	padding-left: 1.1em;
+	font-size: 0.96em;
+}
+@media (max-width: 640px) {
+	#look-manual .m-scene {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 8px;
+	}
+	#look-manual .prose .m-scene-note {
+		display: inline;
+		margin-left: 0.6em;
+	}
+}
+
+/* 安全退出：三欄 */
+#look-manual .m-cols3 {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 12px;
+	margin: 1.4em 0;
+}
+#look-manual .m-cols3 .m-panel {
+	margin: 0;
+	padding: 14px 16px 8px;
+}
+#look-manual .prose .m-cols3 ul {
+	padding-left: 1.1em;
+	font-size: 0.92em;
+	line-height: 1.75;
+}
+@media (max-width: 760px) {
+	#look-manual .m-cols3 {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+/* 照照鏡子 */
+#look-manual .m-callout {
+	background: var(--m-accent-soft);
+	border-radius: 12px;
+	padding: 16px 20px;
+	margin: 1.6em 0;
+}
+#look-manual .prose .m-callout-h {
+	font-weight: 700;
+	color: var(--m-accent);
+	margin: 0 0 0.3em;
+}
+#look-manual .prose .m-callout p:last-child {
+	margin-bottom: 0;
+}
+
+/* 自我檢核：可勾選＋即時計分（Checklist.astro） */
+#look-manual .m-check {
+	background: var(--m-surface);
+	border: 1px solid var(--m-line);
+	border-radius: 14px;
+	padding: 14px 16px;
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) 190px;
+	gap: 18px;
+	margin: 1.4em 0 1.6em;
+}
+#look-manual .prose .m-check ol.is-interactive {
+	list-style: none;
+	margin: 0 0 1em;
+	padding: 0;
+}
+#look-manual .prose .m-check ol.is-interactive li {
+	margin: 0;
+}
+#look-manual .m-check label {
+	display: flex;
+	gap: 12px;
+	align-items: flex-start;
+	padding: 8px 10px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-size: 0.95em;
+	line-height: 1.65;
+	position: relative;
+}
+#look-manual .m-check label:hover {
+	background: var(--m-sunk);
+}
+#look-manual .m-check input {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+}
+#look-manual .m-box {
+	flex: none;
+	width: 20px;
+	height: 20px;
+	border: 2px solid var(--m-muted);
+	border-radius: 5px;
+	margin-top: 3px;
+	display: grid;
+	place-items: center;
+	font-size: 13px;
+	color: #fff;
+}
+#look-manual .m-check input:checked + .m-box {
+	background: var(--m-accent);
+	border-color: var(--m-accent);
+}
+#look-manual .m-check input:checked + .m-box::after {
+	content: '✓';
+}
+#look-manual .m-check input:focus-visible + .m-box {
+	outline: 2px solid var(--m-accent);
+	outline-offset: 2px;
+}
+#look-manual .m-meter {
+	position: sticky;
+	top: 20px;
+	align-self: start;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 8px 4px;
+}
+#look-manual .m-meter[hidden] {
+	display: none;
+}
+#look-manual .m-meter-num {
+	font-family: var(--f-display);
+	font-size: 48px;
+	font-weight: 800;
+	line-height: 1;
+	color: var(--m-ink);
+	font-variant-numeric: tabular-nums;
+}
+#look-manual .m-meter-num small {
+	font-size: 18px;
+	color: var(--m-muted);
+	font-weight: 600;
+}
+#look-manual .m-meter-bar {
+	height: 8px;
+	border-radius: 99px;
+	background: var(--m-sunk);
+	overflow: hidden;
+}
+#look-manual .m-meter-bar i {
+	display: block;
+	height: 100%;
+	width: 0;
+	background: var(--lvl, var(--m-ok));
+	transition: width 0.25s;
+}
+#look-manual .prose .m-meter-verdict {
+	font-size: 0.9em;
+	line-height: 1.7;
+	margin: 0;
+}
+#look-manual .m-meter-verdict b {
+	color: var(--lvl, var(--m-ok));
+}
+#look-manual .m-meter-reset {
+	align-self: flex-start;
+	font: inherit;
+	font-size: 13px;
+	padding: 4px 14px;
+	border-radius: 99px;
+	border: 1px solid var(--m-line);
+	background: transparent;
+	color: var(--m-muted);
+	cursor: pointer;
+}
+#look-manual .prose .m-check ul li {
+	border-radius: 8px;
+	padding: 2px 8px;
+	margin-left: -8px;
+	transition: background 0.2s;
+}
+#look-manual .prose .m-check ul li.is-current {
+	background: var(--m-sunk);
+}
+@media (max-width: 640px) {
+	#look-manual .m-check {
+		grid-template-columns: minmax(0, 1fr);
+	}
+	#look-manual .m-meter {
+		position: static;
+		border-top: 1px solid var(--m-line);
+		padding-top: 14px;
+	}
+}
+
+/* 常見問題：問句加 Q */
+#look-manual .prose h2#常見問題 ~ p:has(> strong:only-child) {
+	font-family: var(--f-display);
+	font-size: 1.08em;
+	margin: 1.6em 0 0.35em;
+}
+#look-manual .prose h2#常見問題 ~ p:has(> strong:only-child)::before {
+	content: 'Q';
+	font-family: var(--f-mono);
+	font-weight: 500;
+	color: var(--m-accent);
+	margin-right: 0.6em;
+}
+
+/* 延伸閱讀、文末說明 */
+#look-manual .prose h2#延伸閱讀 ~ ul {
+	font-size: 0.9em;
+	line-height: 1.8;
+}
+#look-manual .prose h2#延伸閱讀 ~ h3 {
+	font-size: 1.05em;
+	margin-top: 1.4em;
+}
+#look-manual .prose p.m-note {
+	font-size: 0.88em;
+	line-height: 1.85;
+	color: var(--m-muted);
+}
+
+/* 上下篇導覽 */
+#look-manual .prose .post-nav {
+	border-top-color: var(--m-line);
+}
+#look-manual .prose .post-nav-link {
+	background: var(--m-surface);
+	border: 1px solid var(--m-line);
+	border-radius: 12px;
+	padding: 12px 16px;
+}
+#look-manual .prose .post-nav-link .t {
+	font-family: var(--f-display);
+}
+
+@media (max-width: 720px) {
+	#look-manual main {
+		font-size: 16.5px;
+		line-height: 1.85;
+	}
+	#look-manual .prose h2 {
+		font-size: 1.36em;
+	}
+	#look-manual .prose blockquote {
+		padding: 14px 16px;
+	}
+}

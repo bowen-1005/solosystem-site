@@ -3,6 +3,7 @@
 import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
 import { defineConfig, fontProviders } from 'astro/config';
+import rehypeManual from './src/plugins/rehype-manual.mjs';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,6 +11,10 @@ export default defineConfig({
 	// 若日後加掛 www 或改主網域，務必同步更新此處。
 	site: 'https://solosystem.cc',
 	integrations: [mdx(), sitemap()],
+	markdown: {
+		// 「手冊版型」轉換：只對 frontmatter look: 'manual' 的文章生效，其他文章不受影響
+		rehypePlugins: [rehypeManual],
+	},
 	fonts: [
 		{
 			provider: fontProviders.local(),

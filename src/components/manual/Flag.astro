@@ -1,0 +1,9 @@
+---
+interface Props { t: string; en?: string }
+const { t, en } = Astro.props;
+---
+<div class="m-flag">
+	<p class="m-flag-h">{t}</p>
+	{en && <p class="m-flag-en">{en}</p>}
+	<p class="m-flag-d"><slot /></p>
+</div>
