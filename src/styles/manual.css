@@ -96,6 +96,9 @@
 #look-manual .prose .date {
 	color: var(--m-muted);
 }
+#look-manual .prose .last-updated-on {
+	font-style: normal;
+}
 #look-manual .prose .post-tags .tag {
 	background: var(--m-surface);
 	border: 1px solid var(--m-line);
