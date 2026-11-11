@@ -1,7 +1,7 @@
 /**
  * rehype-manual：「手冊版型」的 build 階段轉換。
  *
- * 只在 frontmatter `look: 'manual'` 的文章生效（其他文章原樣輸出）。
+ * astro.config 以 { all: true } 掛上＝所有文章都套；不帶選項時只套 frontmatter `look: 'manual'` 的文章。
  * markdown 原文不用改，照既有寫法辨識：
  *   > **你可以這樣說：** …      → 話術卡（話術放大、「（…）」說明縮小、「情境 →」變小標）
  *   > **思考重點：** …          → 淡青提示卡
@@ -69,8 +69,10 @@ function splitLabeledLines(bq) {
 		const parts = [cur];
 		n.children.forEach((c, i) => {
 			const next = n.children[i + 1];
-			if (c.type === 'text' && c.value.includes('\n') && isEl(next, 'strong')) {
-				const idx = c.value.lastIndexOf('\n');
+			// 只在「粗體就是新一行的開頭」時才拆（換行後到粗體之間只有空白），否則原樣保留
+			const nl = c.type === 'text' ? c.value.lastIndexOf('\n') : -1;
+			if (nl >= 0 && isEl(next, 'strong') && !c.value.slice(nl + 1).trim()) {
+				const idx = nl;
 				const before = c.value.slice(0, idx);
 				if (before) cur.children.push(text(before));
 				cur = el('p', null, []);
@@ -241,7 +243,7 @@ function walk(parent) {
 	}
 }
 
-/** options.all = true：不看 frontmatter，所有文章都套（全站版型預覽用） */
+/** options.all = true：不看 frontmatter，所有文章都套（2026-11-10 起全站預設，astro.config 這樣設） */
 export default function rehypeManual(options = {}) {
 	return (tree, file) => {
 		const fm = file?.data?.astro?.frontmatter;

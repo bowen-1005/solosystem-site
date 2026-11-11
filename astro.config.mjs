@@ -10,11 +10,9 @@ export default defineConfig({
 	// 正式網域（2026-05-30 註冊）。影響 sitemap.xml、RSS、canonical、Open Graph 的絕對網址。
 	// 若日後加掛 www 或改主網域，務必同步更新此處。
 	site: 'https://solosystem.cc',
-	// 【全站版型預覽分支】快取獨立，不跟其他工作桌共用 node_modules/.astro
-	cacheDir: './.astro-cache',
 	integrations: [mdx(), sitemap()],
 	markdown: {
-		// 【全站版型預覽分支】all: true＝所有文章都套手冊版型的引用框／表格轉換
+		// 手冊版型（2026-11-10 起全站文章預設）：三標記引用框、表格自動轉成卡片
 		rehypePlugins: [[rehypeManual, { all: true }]],
 	},
 	fonts: [

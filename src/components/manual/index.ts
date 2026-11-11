@@ -1,6 +1,5 @@
 // 「手冊版型」（frontmatter look: 'manual'）用的 MDX 元件。
-// 樣式在這裡引入：只會跟著用到這些元件的文章頁輸出，其他文章不多載 CSS。
-import '../../styles/manual.css';
+// 樣式 styles/manual.css 由 layouts/BlogPost.astro 統一載入。
 
 export { default as Callout } from './Callout.astro';
 export { default as Cards } from './Cards.astro';
