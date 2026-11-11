@@ -62,12 +62,14 @@ const navGroups = PILLARS.filter((p) => p.active)
 	header {
 		margin: 0;
 		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+		background: var(--surface);
+		border-bottom: 1px solid rgb(var(--gray-light));
 	}
 	h2 {
 		margin: 0;
-		font-size: 1em;
+		font-size: 1.05em;
+		font-weight: 800;
+		letter-spacing: 0.04em;
 	}
 
 	h2 a,
@@ -114,16 +116,17 @@ const navGroups = PILLARS.filter((p) => p.active)
 		display: none;
 	}
 	.dropdown[open] summary {
-		color: rgb(var(--accent));
+		color: var(--accent);
 	}
 	.dropdown-menu {
 		position: absolute;
 		top: 100%;
 		left: 0;
 		min-width: 10em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 12%);
-		border-radius: 0 0 8px 8px;
+		background: var(--surface);
+		border: 1px solid rgb(var(--gray-light));
+		box-shadow: var(--box-shadow);
+		border-radius: 0 0 10px 10px;
 		z-index: 10;
 	}
 	.dropdown-menu a {
@@ -133,8 +136,8 @@ const navGroups = PILLARS.filter((p) => p.active)
 		white-space: nowrap;
 	}
 	.dropdown-menu a:hover {
-		background: rgb(var(--gray-light));
-		color: rgb(var(--accent));
+		background: var(--accent-soft);
+		color: var(--accent);
 	}
 	/* 主軸＝粗體群組標題；系列＝縮排在主軸底下 */
 	.dd-group + .dd-group {
