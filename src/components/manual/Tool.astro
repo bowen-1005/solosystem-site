@@ -1,0 +1,8 @@
+---
+interface Props { name: string; en?: string }
+const { name, en } = Astro.props;
+---
+<div class="m-tool">
+	<p class="m-tool-h"><span>{name}</span>{en && <span class="m-tool-en">{en}</span>}</p>
+	<slot />
+</div>

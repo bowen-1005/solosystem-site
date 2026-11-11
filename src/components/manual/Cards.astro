@@ -1,0 +1,6 @@
+---
+// 把裡面的 markdown 清單排成卡片；alpha＝A、B、C 編號，否則 01、02
+interface Props { variant?: 'num' | 'alpha' }
+const { variant = 'num' } = Astro.props;
+---
+<div class:list={['m-cards', `m-cards-${variant}`]}><slot /></div>

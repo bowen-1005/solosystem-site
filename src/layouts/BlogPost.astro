@@ -7,6 +7,9 @@ import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
 import { getPillar } from '../consts';
+import RailSpy from '../components/manual/RailSpy.astro';
+// 手冊版型樣式（2026-11-10 起全站文章預設）
+import '../styles/manual.css';
 
 type NavLink = { slug: string; title: string } | null;
 type Props = CollectionEntry<'blog'>['data'] & {
@@ -35,7 +38,16 @@ const {
 	readingTime,
 	showDate = true,
 	ogType = 'article',
+	look: lookProp,
 } = Astro.props;
+// 版型：沒指定就用手冊版型（全站預設）；frontmatter 的 look 保留給日後其他版型
+const look = lookProp ?? 'manual';
+
+// 手冊版型：<body id="look-manual">，樣式全部掛在這個 id 底下（styles/manual.css）；首頁、列表頁不用這個 layout，不受影響
+const bodyId = look ? `look-${look}` : undefined;
+// 手冊版型的字型只在這類文章載入（Noto 繁中由 Google 切片、按需下載）
+const MANUAL_FONTS =
+	'https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap';
 
 const pillarInfo = getPillar(pillar);
 const epLabel = episode !== undefined ? `EP${String(episode).padStart(2, '0')}` : null;
@@ -70,6 +82,15 @@ const jsonLd =
 	<head>
 		<BaseHead title={title} description={description} image={heroImage} ogType={ogType} />
 		{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+		{
+			look === 'manual' && (
+				<>
+					<link rel="preconnect" href="https://fonts.googleapis.com" />
+					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+					<link rel="stylesheet" href={MANUAL_FONTS} />
+				</>
+			)
+		}
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -218,7 +239,7 @@ const jsonLd =
 		</style>
 	</head>
 
-	<body>
+	<body id={bodyId}>
 		<Header />
 		<main>
 			<article data-pagefind-body>
@@ -318,5 +339,6 @@ const jsonLd =
 			</article>
 		</main>
 		<Footer />
+		{look === 'manual' && <RailSpy />}
 	</body>
 </html>

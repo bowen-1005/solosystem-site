@@ -1,0 +1,14 @@
+---
+// 情境列：左欄身分＋退出難度標籤＋一句說明，右欄做法清單
+interface Props { who: string; level: 'hi' | 'md' | 'lo'; note: string }
+const { who, level, note } = Astro.props;
+const badge = `退出難度 ${{ hi: '高', md: '中', lo: '低' }[level]}`;
+---
+<div class="m-scene">
+	<div class="m-scene-who">
+		<p class="m-scene-h">{who}</p>
+		<span class:list={['m-badge', level]}>{badge}</span>
+		<p class="m-scene-note">{note}</p>
+	</div>
+	<div class="m-scene-body"><slot /></div>
+</div>
