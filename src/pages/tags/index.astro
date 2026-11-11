@@ -42,6 +42,7 @@ const tags = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeComp
 				align-items: baseline;
 				gap: 0.35em;
 				padding: 0.4em 0.9em;
+				background: var(--surface);
 				border: 1px solid rgb(var(--gray-light));
 				border-radius: 999px;
 				text-decoration: none;
@@ -49,8 +50,8 @@ const tags = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeComp
 				transition: 0.15s ease;
 			}
 			.cloud a:hover {
-				border-color: rgb(var(--accent));
-				color: rgb(var(--accent));
+				border-color: var(--accent);
+				color: var(--accent);
 			}
 			.cloud .n {
 				font-size: 0.78em;

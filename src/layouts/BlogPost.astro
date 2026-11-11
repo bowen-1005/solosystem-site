@@ -45,9 +45,6 @@ const look = lookProp ?? 'manual';
 
 // 手冊版型：<body id="look-manual">，樣式全部掛在這個 id 底下（styles/manual.css）；首頁、列表頁不用這個 layout，不受影響
 const bodyId = look ? `look-${look}` : undefined;
-// 手冊版型的字型只在這類文章載入（Noto 繁中由 Google 切片、按需下載）
-const MANUAL_FONTS =
-	'https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;800&family=Noto+Sans+TC:wght@400;500;700&family=IBM+Plex+Mono:wght@500&display=swap';
 
 const pillarInfo = getPillar(pillar);
 const epLabel = episode !== undefined ? `EP${String(episode).padStart(2, '0')}` : null;
@@ -82,15 +79,6 @@ const jsonLd =
 	<head>
 		<BaseHead title={title} description={description} image={heroImage} ogType={ogType} />
 		{jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
-		{
-			look === 'manual' && (
-				<>
-					<link rel="preconnect" href="https://fonts.googleapis.com" />
-					<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-					<link rel="stylesheet" href={MANUAL_FONTS} />
-				</>
-			)
-		}
 		<style>
 			main {
 				width: calc(100% - 2em);
@@ -127,7 +115,7 @@ const jsonLd =
 				letter-spacing: 0.02em;
 			}
 			.series-meta a {
-				color: rgb(var(--accent));
+				color: var(--accent);
 				text-decoration: none;
 				font-weight: 700;
 			}
@@ -150,7 +138,7 @@ const jsonLd =
 				transition: 0.15s ease;
 			}
 			.post-tags .tag:hover {
-				background: rgb(var(--accent));
+				background: var(--accent);
 				color: #fff;
 			}
 			.hero-image {
@@ -184,7 +172,7 @@ const jsonLd =
 			}
 			.toc summary::before {
 				content: '＋ ';
-				color: rgb(var(--accent));
+				color: var(--accent);
 			}
 			.toc[open] summary::before {
 				content: '－ ';
@@ -202,7 +190,7 @@ const jsonLd =
 				text-decoration: none;
 			}
 			.toc a:hover {
-				color: rgb(var(--accent));
+				color: var(--accent);
 				text-decoration: underline;
 			}
 			.post-nav {
@@ -234,7 +222,7 @@ const jsonLd =
 				line-height: 1.4;
 			}
 			.post-nav-link:hover .t {
-				color: rgb(var(--accent));
+				color: var(--accent);
 			}
 		</style>
 	</head>

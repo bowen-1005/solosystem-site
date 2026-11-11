@@ -64,10 +64,10 @@ const seriesBlocks = sections
 				margin-bottom: 2.5em;
 			}
 			#search {
-				--pagefind-ui-primary: #2337ff;
-				--pagefind-ui-text: rgb(15, 18, 25);
+				--pagefind-ui-primary: #1d5c57;
+				--pagefind-ui-text: rgb(27, 35, 38);
 				--pagefind-ui-background: #fff;
-				--pagefind-ui-border: rgb(229, 233, 240);
+				--pagefind-ui-border: rgb(211, 219, 216);
 				--pagefind-ui-border-width: 1px;
 				--pagefind-ui-border-radius: 10px;
 				--pagefind-ui-font: inherit;
@@ -99,7 +99,7 @@ const seriesBlocks = sections
 				color: rgb(var(--black));
 			}
 			.pillar-head a:hover h2 {
-				color: rgb(var(--accent));
+				color: var(--accent);
 			}
 			.series-nav {
 				margin-bottom: 3em;
@@ -123,17 +123,19 @@ const seriesBlocks = sections
 				flex-direction: column;
 				gap: 0.3em;
 				padding: 1em 1.1em;
+				background: var(--surface);
 				border: 1px solid rgb(var(--gray-light));
 				border-radius: 12px;
 				text-decoration: none;
 				transition: 0.2s ease;
 			}
 			.series-card:hover {
-				border-color: rgb(var(--accent));
+				border-color: var(--accent);
 				box-shadow: var(--box-shadow);
 			}
 			.series-card .s-name {
-				font-weight: 700;
+				font-family: var(--f-display);
+				font-weight: 800;
 				font-size: 1.1em;
 				color: rgb(var(--black));
 			}
@@ -143,8 +145,10 @@ const seriesBlocks = sections
 				line-height: 1.5;
 			}
 			.series-card .s-count {
-				font-size: 0.78em;
-				color: rgb(var(--accent));
+				font-family: var(--f-mono);
+				letter-spacing: 0.04em;
+				font-size: 0.75em;
+				color: var(--accent);
 			}
 			.chapter-group {
 				margin-top: 1.6em;
@@ -153,7 +157,7 @@ const seriesBlocks = sections
 				font-size: 1em;
 				margin: 0 0 0.2em 0;
 				color: rgb(var(--gray-dark));
-				border-left: 3px solid rgb(var(--accent));
+				border-left: 3px solid var(--accent);
 				padding-left: 0.5em;
 			}
 			.chapter-head a {
@@ -161,7 +165,7 @@ const seriesBlocks = sections
 				text-decoration: none;
 			}
 			.chapter-head a:hover {
-				color: rgb(var(--accent));
+				color: var(--accent);
 			}
 		</style>
 	</head>

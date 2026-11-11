@@ -32,9 +32,28 @@ const upcomingPillars = PILLARS.filter((p) => !p.active);
 				display: grid;
 				gap: 0.75em;
 			}
+			main h2 {
+				border-bottom: 2px solid rgb(var(--black));
+				padding-bottom: 0.4em;
+				margin-bottom: 0.8em;
+			}
+			.tagline {
+				font-family: var(--f-display);
+				font-size: 1.22em;
+				font-weight: 600;
+				line-height: 1.6;
+				color: rgb(var(--black));
+				border-left: 4px solid var(--accent);
+				padding-left: 0.8em;
+			}
 			.pillars li {
+				background: var(--surface);
 				border: 1px solid rgb(var(--gray-light));
-				border-radius: 10px;
+				border-radius: 12px;
+				transition: 0.2s ease;
+			}
+			.pillars li:hover {
+				border-color: var(--accent);
 			}
 			.pillars a {
 				display: flex;
@@ -45,16 +64,16 @@ const upcomingPillars = PILLARS.filter((p) => !p.active);
 				color: rgb(var(--black));
 				transition: 0.2s ease;
 			}
-			.pillars a:hover {
-				border-color: rgb(var(--accent));
-				background: rgba(var(--gray-light), 35%);
+			.pillars a:hover .name {
+				color: var(--accent);
 			}
 			.pillars .num {
 				font-weight: 700;
-				color: rgb(var(--accent));
+				color: var(--accent);
 			}
 			.pillars .name {
-				font-weight: 700;
+				font-family: var(--f-display);
+				font-weight: 800;
 			}
 			.pillars .hook {
 				font-size: 0.85em;
@@ -62,12 +81,14 @@ const upcomingPillars = PILLARS.filter((p) => !p.active);
 			}
 			.pillars .status {
 				margin-left: auto;
+				font-family: var(--f-mono);
+				letter-spacing: 0.04em;
 				font-size: 0.72em;
 				color: rgb(var(--gray));
 				flex-shrink: 0;
 			}
 			.pillars .status.live {
-				color: rgb(var(--accent));
+				color: var(--accent);
 			}
 			.upcoming {
 				margin: 0.2em 0 0;
@@ -99,7 +120,7 @@ const upcomingPillars = PILLARS.filter((p) => !p.active);
 		<Header />
 		<main>
 			<h1>一人系統 Solosystem</h1>
-			<p><em>不是更努力，是把工作和生活當系統來設計。</em></p>
+			<p class="tagline">不是更努力，是把工作和生活當系統來設計。</p>
 			<p>
 				大多數人靠「更努力」撐住工作與生活——但一個人能扛的時間和精力有限。
 				極少數人開始換個做法：把工作和生活當成一套「系統」來設計，
