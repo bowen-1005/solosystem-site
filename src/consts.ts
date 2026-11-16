@@ -46,6 +46,7 @@ export const SERIES: Series[] = [
 	{ key: '進化篇', slug: 'evolution', name: '進化篇', hook: '矛盾、反省、進化——系統活著的證據', order: 5, pillar: 'AI 工作流' },
 	{ key: '建站實戰', slug: 'build', name: '建站實戰', hook: '不會寫程式，也能跟 AI 從零架一個自己的站', order: 6, pillar: 'AI 工作流' },
 	{ key: '多 session 工作法', slug: 'multi-session', name: '多 session 工作法', hook: '多開 Claude Code 並行，又不互相覆蓋', order: 7, pillar: 'AI 工作流' },
+	{ key: '常駐助理篇', slug: 'always-on', name: '常駐助理篇', hook: '把一台閒置的電腦，變成不睡覺的助理', order: 8, pillar: 'AI 工作流' },
 ];
 
 export const getSeries = (key?: string): Series | undefined =>
