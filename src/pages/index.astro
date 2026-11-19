@@ -74,6 +74,19 @@ const upcomingPillars = PILLARS.filter((p) => !p.active);
 			.pillars .name {
 				font-family: var(--f-display);
 				font-weight: 800;
+				white-space: nowrap;
+			}
+			/* 窄螢幕：名稱與狀態同一行，說明換到下一行（避免名稱被擠成兩行） */
+			@media (max-width: 560px) {
+				.pillars a {
+					flex-wrap: wrap;
+					row-gap: 0.15em;
+				}
+				.pillars .hook {
+					order: 3;
+					flex-basis: 100%;
+					padding-left: 1.55em;
+				}
 			}
 			.pillars .hook {
 				font-size: 0.85em;

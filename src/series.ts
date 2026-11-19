@@ -66,7 +66,7 @@ export function prevNextGlobal(
 	posts: Post[],
 	current: Post
 ): { prev: Post | null; next: Post | null } {
-	// 沒掛系列的文章（如經營心法單篇）：改走「同主軸、同樣沒系列」的發布日期動線
+	// 沒掛系列的文章（如「觀察、思考、學習」的單篇）：改走「同主軸、同樣沒系列」的發布日期動線
 	const line = current.data.chapter
 		? sortBySeries(posts.filter((p) => p.data.chapter))
 		: [...posts]

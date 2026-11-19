@@ -20,7 +20,8 @@ export interface Pillar {
 export const PILLARS: Pillar[] = [
 	{ key: 'AI 工作流', slug: 'ai', name: 'AI 工作流', hook: '用 AI 放大一個人能做的事', order: 1, active: true },
 	{ key: '工作系統', slug: 'work', name: '工作系統', hook: '把流程設計成會自己運轉的系統', order: 2, active: false },
-	{ key: '經營心法', slug: 'ops', name: '經營心法', hook: '跨行業一通百通的經營直覺', order: 3, active: true },
+	// ③ 2026-11-19 由「經營心法」改名；網址沿用 /ops/，避免已分享的連結失效
+	{ key: '觀察、思考、學習', slug: 'ops', name: '觀察、思考、學習', hook: '把看到的想清楚，把學到的留下來', order: 3, active: true },
 	{ key: '生活設計', slug: 'life', name: '生活設計', hook: '把自己活成一套系統', order: 4, active: false },
 ];
 
