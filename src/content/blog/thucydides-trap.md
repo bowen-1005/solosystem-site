@@ -86,7 +86,7 @@ tags: ['修昔底德陷阱', '美中關係', '地緣政治', '馬斯克', '歷�
 <div class="dg-box is-no"><b>戰爭</b><small>16 個案例中有 12 個</small></div>
 <div class="dg-box is-ok"><b>和平轉移</b><small>16 個案例中有 4 個</small></div>
 </div>
-<figcaption>依艾利森的論述整理。循環本身不會自動開戰，多半是一個第三方事件在緊繃氣氛中被放大。</figcaption>
+<figcaption>依艾利森的論述整理。上面三格和中間兩格會互相推高，緊張程度一路往上。</figcaption>
 </figure>
 
 修昔底德把國家行為的動機歸納為「恐懼、榮譽、利益」。循環本身不會自動變成戰爭，往往是一個本來可控的第三方事件，在緊繃氣氛中被放大成大戰。
@@ -97,25 +97,25 @@ tags: ['修昔底德陷阱', '美中關係', '地緣政治', '馬斯克', '歷�
 
 <figure class="dg">
 <div class="dg-title">圖 2｜500 年 16 次霸權挑戰（守成方對崛起方）</div>
-<ol class="dg-tl is-wide">
-<li><span class="dg-when">15 世紀末</span><span class="dg-what"><b>葡萄牙對西班牙</b><small>和平</small></span></li>
-<li><span class="dg-when">16 世紀上半</span><span class="dg-what"><b>法國對哈布斯堡</b><small>戰爭：義大利戰爭</small></span></li>
-<li><span class="dg-when">16–17 世紀</span><span class="dg-what"><b>哈布斯堡對鄂圖曼</b><small>戰爭：鄂圖曼—哈布斯堡戰爭</small></span></li>
-<li><span class="dg-when">17 世紀上半</span><span class="dg-what"><b>哈布斯堡對瑞典</b><small>戰爭：三十年戰爭</small></span></li>
-<li><span class="dg-when">17 世紀中後</span><span class="dg-what"><b>荷蘭對英格蘭</b><small>戰爭：英荷戰爭</small></span></li>
-<li><span class="dg-when">17 世紀末–18 世紀中</span><span class="dg-what"><b>法國對大不列顛</b><small>戰爭：九年戰爭、西班牙王位繼承戰爭</small></span></li>
-<li><span class="dg-when">18 世紀末–19 世紀初</span><span class="dg-what"><b>英國對法國</b><small>戰爭：拿破崙戰爭</small></span></li>
-<li><span class="dg-when">19 世紀中</span><span class="dg-what"><b>英、法對俄國</b><small>戰爭：克里米亞戰爭</small></span></li>
-<li><span class="dg-when">19 世紀中</span><span class="dg-what"><b>法國對德國</b><small>戰爭：普法戰爭</small></span></li>
-<li><span class="dg-when">19 世紀末–20 世紀初</span><span class="dg-what"><b>中、俄對日本</b><small>戰爭：甲午戰爭、日俄戰爭</small></span></li>
-<li><span class="dg-when">約 1890–1920</span><span class="dg-what"><b>英國對美國</b><small>和平交棒</small></span></li>
-<li><span class="dg-when">20 世紀初</span><span class="dg-what"><b>英國對德國</b><small>戰爭：第一次世界大戰</small></span></li>
-<li><span class="dg-when">1930 年代–1945</span><span class="dg-what"><b>蘇、英、法對德國</b><small>戰爭：第二次世界大戰（歐洲）</small></span></li>
-<li><span class="dg-when">1930 年代–1945</span><span class="dg-what"><b>美國對日本</b><small>戰爭：太平洋戰爭</small></span></li>
-<li><span class="dg-when">1940 年代–1991</span><span class="dg-what"><b>美國對蘇聯</b><small>和平：冷戰，大國沒有直接熱戰</small></span></li>
-<li><span class="dg-when">1990 年代至今</span><span class="dg-what"><b>英、法對德國</b><small>和平</small></span></li>
+<ol class="dg-tl">
+<li><span class="dg-when">1475–1500</span><span class="dg-what"><b>葡萄牙對西班牙</b><small>和平</small></span></li>
+<li><span class="dg-when">1500–1550</span><span class="dg-what"><b>法國對哈布斯堡</b><small>戰爭：義大利戰爭</small></span></li>
+<li><span class="dg-when">1520–1650</span><span class="dg-what"><b>哈布斯堡對鄂圖曼</b><small>戰爭：鄂圖曼—哈布斯堡戰爭</small></span></li>
+<li><span class="dg-when">1600–1650</span><span class="dg-what"><b>哈布斯堡對瑞典</b><small>戰爭：三十年戰爭</small></span></li>
+<li><span class="dg-when">1650–1700</span><span class="dg-what"><b>荷蘭對英格蘭</b><small>戰爭：英荷戰爭</small></span></li>
+<li><span class="dg-when">1690–1750</span><span class="dg-what"><b>法國對大不列顛</b><small>戰爭：九年戰爭、西班牙王位繼承戰爭</small></span></li>
+<li><span class="dg-when">1780–1815</span><span class="dg-what"><b>英國對法國</b><small>戰爭：拿破崙戰爭</small></span></li>
+<li><span class="dg-when">1830–1856</span><span class="dg-what"><b>英、法對俄國</b><small>戰爭：克里米亞戰爭</small></span></li>
+<li><span class="dg-when">1850–1871</span><span class="dg-what"><b>法國對德國</b><small>戰爭：普法戰爭</small></span></li>
+<li><span class="dg-when">1890–1905</span><span class="dg-what"><b>中、俄對日本</b><small>戰爭：甲午戰爭、日俄戰爭</small></span></li>
+<li><span class="dg-when">1890–1920</span><span class="dg-what"><b>英國對美國</b><small>和平交棒</small></span></li>
+<li><span class="dg-when">1900–1914</span><span class="dg-what"><b>英國對德國</b><small>戰爭：第一次世界大戰</small></span></li>
+<li><span class="dg-when">1930–1945</span><span class="dg-what"><b>蘇、英、法對德國</b><small>戰爭：第二次世界大戰（歐洲）</small></span></li>
+<li><span class="dg-when">1930–1945</span><span class="dg-what"><b>美國對日本</b><small>戰爭：太平洋戰爭</small></span></li>
+<li><span class="dg-when">1945–1991</span><span class="dg-what"><b>美國對蘇聯</b><small>和平：冷戰，大國沒有直接熱戰</small></span></li>
+<li><span class="dg-when">1990–今</span><span class="dg-what"><b>英、法對德國</b><small>和平</small></span></li>
 </ol>
-<figcaption>資料：哈佛貝爾弗中心〈Thucydides’s Trap Case File〉。時期為競爭所在年代的約略範圍。</figcaption>
+<figcaption>資料：哈佛貝爾弗中心〈Thucydides’s Trap Case File〉。年份為競爭所在時期的約略範圍。</figcaption>
 </figure>
 
 四個沒打起來的案例有個共同點：雙方，包括守成方在內，都在態度與行動上做了痛苦的重大調整。也要注意，最近三個和平案例都發生在 20 世紀之後。
