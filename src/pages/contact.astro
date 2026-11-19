@@ -31,9 +31,12 @@ import { SITE_TITLE } from '../consts';
 			<p>我會親自閱讀每一封信，盡力回覆。</p>
 
 			<div class="cta">
+				{/* email_off：同 Footer.astro，避免 Cloudflare 改寫成會 404 的 /cdn-cgi/l/email-protection */}
+				<!--email_off-->
 				<a href="mailto:contact@solosystem.cc" class="mail-btn">
 					contact@solosystem.cc
 				</a>
+				<!--/email_off-->
 			</div>
 		</main>
 		<Footer />

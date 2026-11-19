@@ -5,7 +5,8 @@ const today = new Date();
 <footer>
 	&copy; {today.getFullYear()} 一人系統 Solosystem. 版權所有.
 	<div class="contact-link">
-		<a href="/contact">與我聯絡</a> · <a href="mailto:contact@solosystem.cc">contact@solosystem.cc</a>
+		{/* email_off：叫 Cloudflare 別把 mailto 改寫成 /cdn-cgi/l/email-protection（Google 爬到會報 404，2026-11-19） */}
+		<a href="/contact">與我聯絡</a> · <!--email_off--><a href="mailto:contact@solosystem.cc">contact@solosystem.cc</a><!--/email_off-->
 	</div>
 	<div class="social-links">
 		<a href="/rss.xml" target="_blank">
