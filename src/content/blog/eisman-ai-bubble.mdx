@@ -1,0 +1,1871 @@
+---
+title: '做空 2008 的人怎麼看 AI：Steve Eisman 對談逐段解讀'
+description: 'Steve Eisman 在 The Diary Of A CEO（2026-11-23）談 AI 泡沫、兩家模型公司的集中風險、期中選舉後的資料中心政治，以及一般人該怎麼投資。逐段摘譯、分析與查證。'
+pubDate: '2026-11-24T00:00:00+08:00'
+pillar: '觀察、思考、學習'
+tags: ['Steve Eisman', 'AI 泡沫', '大賣空', '投資', '訪談解讀']
+---
+
+import { Interview, Page, Say, Ana, Chk, Theory } from '../../components/interview';
+
+<Interview tabs={[["p-main", "主文｜26 段解讀"], ["ev-history", "事件｜1843–1929"], ["ev-2008", "事件｜2008 次貸"], ["ev-dotcom", "事件｜網路泡沫"], ["ev-ai2026", "事件｜2026 AI 資本支出"], ["p-refs", "參考文獻（128）"]]}>
+
+<Page id="p-main" title="主文" on>
+<header class="hero">
+<div class="kicker">Interview Notes · 2026-11-23</div>
+<p class="lede">《大賣空》裡那位脾氣很衝的基金經理人 Steve Eisman，上了 Steven Bartlett 的 The Diary Of A CEO。九十多分鐘從 1843 年的恐慌一路講到 Anthropic 的上市文件、期中選舉後的資料中心，最後講到他三十年前失去的兒子。這頁把整集拆成 26 段，每段先摘譯他說了什麼，再寫我的整理，並把他引用的數字和理論查過一遍。</p>
+<div class="bio">
+<p><b>來賓是誰</b>Steve Eisman，賓州大學、哈佛法學院畢業，當過企業律師，後來在 Oppenheimer 當股票分析師。2008 年前他在摩根士丹利旗下的 FrontPoint 押注次貸崩盤，被 Michael Lewis 寫進《大賣空》，電影裡由 Steve Carell 演出。之後在 Neuberger Berman 管理基金，2025 年起和太太 Valerie 經營自己的節目與 Substack〈The Real Eisman Playbook〉<sup class="ref"><a href="#ref-1" data-tab="p-refs">1</a></sup><sup class="ref"><a href="#ref-2" data-tab="p-refs">2</a></sup>。</p>
+</div>
+<div class="meta">
+<span>來賓：Steve Eisman</span>
+<span>主持：Steven Bartlett</span>
+<span>上架：2026-11-23</span>
+<span>長度：約 1 小時 34 分</span>
+</div>
+<div class="video">
+<iframe src="https://www.youtube-nocookie.com/embed/4Unch--PmW0" title="The Man Who Predicted The Last Crash WARNS A Recession Starts If These 2 Fail! | Steve Eisman" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<p class="video-cap">原始影片：<a href="https://www.youtube.com/watch?v=4Unch--PmW0" target="_blank" rel="noopener">The Diary Of A CEO（YouTube）</a>。每段標題旁的時間碼可以直接跳到影片該處。</p>
+</header>
+<div class="legend">
+<div class="l-say"><b>訪談摘譯</b>他和主持人講了什麼，濃縮改寫成中文，不是逐字翻譯。</div>
+<div class="l-ana"><b>分析總結</b>我的整理：這段的重點、前後脈絡、該怎麼讀。</div>
+<div class="l-chk"><b>查證</b>他引用的數字和說法，對照公開資料的結果。</div>
+</div>
+<nav class="iv-toc" aria-label="本頁目錄">
+<b>26 段目錄</b>
+<ol>
+<li><a href="#s01">AI 是泡沫嗎</a></li>
+<li><a href="#s02">1843–1929 的繁榮與崩盤</a></li>
+<li><a href="#s03">拉斯維加斯的晚餐</a></li>
+<li><a href="#s04">放款業的時間差</a></li>
+<li><a href="#s05">大賣空到底怎麼做</a></li>
+<li><a href="#s06">網路泡沫才是 AI 的鏡子</a></li>
+<li><a href="#s07">ARR、token maxing 與 S-1</a></li>
+<li><a href="#s08">整條產業鏈吊在兩家公司身上</a></li>
+<li><a href="#s09">股市和 GDP 押了多少在 AI</a></li>
+<li><a href="#s10">政府會出手救嗎</a></li>
+<li><a href="#s11">期中選舉之後，慢一點反而好</a></li>
+<li><a href="#s12">Google 搜尋和地方政治</a></li>
+<li><a href="#s13">被債市綁住：CoreWeave</a></li>
+<li><a href="#s14">模型公司沒有護城河</a></li>
+<li><a href="#s15">他說 AI 末日論是一場算計</a></li>
+<li><a href="#s16">政治、工作與創業</a></li>
+<li><a href="#s17">他自己的部位</a></li>
+<li><a href="#s18">一般人：買指數就好</a></li>
+<li><a href="#s19">加密貨幣與黃金</a></li>
+<li><a href="#s20">赤字與美國公債</a></li>
+<li><a href="#s21">現在該買房嗎</a></li>
+<li><a href="#s22">看管理層、雙頭壟斷、FICO</a></li>
+<li><a href="#s23">賣鏟子的人</a></li>
+<li><a href="#s24">給 18 歲的建議</a></li>
+<li><a href="#s25">我們活在更好的年代</a></li>
+<li><a href="#s26">Max、悲傷與現在</a></li>
+</ol>
+</nav>
+<figure class="dg">
+<div class="dg-title">圖 1｜這一集在講什麼</div>
+<div class="dg-row is-stack">
+<div class="dg-box is-dim">
+<b>歷史</b>
+<small>1843–1929、2000、2008<br />第 1–6 段</small>
+</div>
+<div class="dg-box is-key">
+<b>AI 四個風險</b>
+<small>集中、資本密集、護城河、地方政治<br />第 7–16 段</small>
+</div>
+<div class="dg-box">
+<b>怎麼投資</b>
+<small>他自己的部位、一般人的做法<br />第 17–23 段</small>
+</div>
+<div class="dg-box is-dim">
+<b>人生</b>
+<small>天賦、時代、喪子<br />第 24–26 段</small>
+</div>
+</div>
+<figcaption>前三分之一用歷史打底，中段是本集主菜：他認為 AI 熱潮有四個弱點，期中選舉又多加了一個變數。</figcaption>
+</figure>
+
+<article class="seg" id="s01">
+<div class="seg-head">
+<span class="seg-no">01</span>
+<h2>AI 是泡沫嗎？他原本說「大概是」</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=131s"} target="_blank" rel="noopener">▶ 02:11</a>
+<Say>
+<p><span class="who h">Bartlett：</span>我們現在是不是在 AI 泡沫裡？</p>
+<p><span class="who">Eisman：</span>不敢百分之百確定。原本偏向「是」，但期中選舉之後，他反而沒那麼篤定了。</p>
+<p><span class="who h">Bartlett：</span>那先從歷史講起，泡沫是怎麼長出來、又怎麼破的。</p>
+</Say>
+<Ana>
+<p>開場第一句就把整集的懸念放好了。一個以做空出名的人，在選後反而不敢說是泡沫，原因要到第 11 段才揭曉：選舉讓資料中心的建設可能變慢，而變慢對某些公司是好事。</p>
+<p>聽這集要記得他的身分。Eisman 現在是自媒體人，自己有 YouTube 節目和 Substack，節目裡講的是他公開的看法，讀者不要當成跟單建議。</p>
+</Ana>
+</article>
+
+<article class="seg" id="s02">
+<div class="seg-head">
+<span class="seg-no">02</span>
+<h2>1843 到 1929：沒有監管的年代，差不多每 20 年一次崩盤</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=163s"} target="_blank" rel="noopener">▶ 02:43</a>
+<Say>
+<p>他說，大蕭條以前的美國經濟幾乎沒有監管，繁榮和崩盤大約每 20 年來一次。1843 到 1929 年之間至少有四次衰退或蕭條，他特別點名 1870 年代那一次拖了十年，非常慘。</p>
+<p>沒有監管的世界裡，模式都一樣：狂熱、過度投資、一切看起來很好，然後崩掉。大蕭條之後美國改了制度，有了存款保險，銀行和華爾街都被管起來，此後雖然有景氣放緩，1970 年代也不好過，但一直到網路泡沫和金融海嘯之前，沒有再出現災難級的崩盤。</p>
+</Say>
+<Ana>
+<p>這段是他整套論點的底層假設：<b>泡沫是人性加上缺乏約束的產物</b>，監管能壓低頻率，但壓不掉。後面他談 AI 時一直回到這裡，因為 AI 資料中心的融資有很大一塊走在銀行體系之外，這正是監管比較鬆的地方。</p>
+<p>「每 20 年一次」是他的口語說法。實際上 1857、1873、1893、1907、1929 幾次大恐慌之間隔 14 到 22 年，平均約 18 年，說法不離譜。他說的 1870 年那次，指的是 1873 年恐慌之後的蕭條。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-ok">大致正確</span>1857 到 1907 年間四次主要恐慌，加上 1929 年，間隔 16、20、14、22 年<sup class="ref"><a href="#ref-3" data-tab="p-refs">3</a></sup><sup class="ref"><a href="#ref-4" data-tab="p-refs">4</a></sup>。</p>
+<p><span class="verdict v-part">年份與長度有出入</span>是 1873 年不是 1870 年。美國國家經濟研究局（NBER）記錄的衰退是 1873 年 10 月到 1879 年 3 月，共 65 個月，是美國有紀錄以來最長的一次（大蕭條是 43 個月），但不到十年；歐洲史學的「長蕭條」則指 1873 到 1896 年<sup class="ref"><a href="#ref-3" data-tab="p-refs">3</a></sup><sup class="ref"><a href="#ref-5" data-tab="p-refs">5</a></sup>。</p>
+<p><span class="verdict v-part">需修正</span>那時不是「完全沒有監管」，1863–64 年已有《國民銀行法》，缺的是中央銀行和存款保險這類危機安全網<sup class="ref"><a href="#ref-4" data-tab="p-refs">4</a></sup>。存款保險在 1933 年由《銀行法》設立，1934 年生效<sup class="ref"><a href="#ref-6" data-tab="p-refs">6</a></sup>。</p>
+</Chk>
+<a class="goto" href="#ev-history" data-tab="ev-history"><span><b>事件頁｜1843–1929 的繁榮與崩盤</b><br />1837、1857、1873、1893、1907、1929 六次恐慌，以及 1933 年後的制度改變</span></a>
+</article>
+
+<article class="seg" id="s03">
+<div class="seg-head">
+<span class="seg-no">03</span>
+<h2>拉斯維加斯的晚餐：一個不用管理的「管理人」</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=243s"} target="_blank" rel="noopener">▶ 04:03</a>
+<Say>
+<p>2007 年他在拉斯維加斯一場晚餐上，坐到一位 CDO 管理人旁邊，就是 Michael Lewis 寫進《大賣空》的 Wing。Eisman 先替對方說句公道話：他做的事和同業沒兩樣，只是剛好被寫進書裡。</p>
+<p>接著他解釋次貸：房貸機構用 Fair Isaac（FICO）的信用分數審核，他的說法是 650 分以下大概算次級，720 分以上算優質。到後期，每年大約有 6,000 億美元的次級房貸被賣到華爾街，包裝成債券賣給全世界。</p>
+<p>Wing 收取管理費，自己一張債券都沒持有。Eisman 當時想不通有什麼好管理的：貸款一旦包進證券化商品，表現就看借款人還不還錢，管理人沒辦法像股票基金那樣換掉爛標的。後來他想通了：美林（Merrill Lynch）是最大的次貸證券化發行商之一，自己發行、自己賣看起來不太好看，於是讓 Wing 去買美林的商品，再跟客戶說這是第三方在管理的。他形容 Wing 是美林的門面。</p>
+<p>他從這件事得出一條到現在還常講的原則：<span class="q">{"\"Incentives trump ethics every time.\""}</span>（誘因每次都贏過道德）。放款機構、華爾街、CDO 管理人全都按量計酬，沒有人按品質拿錢，所以會一直放款，放到不能再放為止。</p>
+</Say>
+<Ana>
+<p>這段是全集最值得帶走的一句話。它就是經濟學裡的<b>委託代理問題</b>：做決定的人（放款員、承銷部門）拿的是成交量的獎金，承擔後果的是別人（買債券的退休基金）。只要報酬跟品質脫鉤，道德勸說就擋不住。</p>
+<p>拿來看 AI 也一樣。他後面一再問的也是同一題：在這條產業鏈上，誰是按量拿錢的？誰最後扛風險？</p>
+</Ana>
+<Theory>
+<h4>委託代理問題（principal–agent problem）</h4>
+<p>Jensen 與 Meckling 1976 年的經典論文把企業看成一串契約：委託人把事情交給代理人，但兩者利益不一致、資訊又不對稱，代理人就會照自己的利益做事，委託人得花「代理成本」去監督或設計誘因<sup class="ref"><a href="#ref-7" data-tab="p-refs">7</a></sup>。美國金融危機調查委員會（FCIC）的結論也把「發起後即出售」模式下的誘因錯置列為危機成因之一：放款端拿走手續費，風險被轉手出去<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。</p>
+</Theory>
+<Chk>
+<p><span class="verdict v-part">分數線需修正</span>次貸沒有單一的法定分數線。2001 年美國聯邦銀行監理機關的次貸指引，以 FICO 660 分以下作為次級風險的例子<sup class="ref"><a href="#ref-9" data-tab="p-refs">9</a></sup>；消費者金融保護局（CFPB）的分級是 620 分以下為次級、720 分以上為超優質<sup class="ref"><a href="#ref-10" data-tab="p-refs">10</a></sup>。他說的 650 介於兩者之間，720 則對得上。</p>
+<p><span class="verdict v-ok">屬實</span>FCIC 報告記載，Wing Chau 管理的 CDO 多數由美林承銷，美林是當時 CDO 市場的龍頭，2003 到 2007 年發行了 142 檔<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。SEC 後來認定 Chau 的公司 Harding Advisory 曾應美林要求買進特定債券，對他處以罰款並禁止從業<sup class="ref"><a href="#ref-11" data-tab="p-refs">11</a></sup>。</p>
+</Chk>
+<a class="goto" href="#ev-2008" data-tab="ev-2008"><span><b>事件頁｜2008 次貸危機與大賣空</b><br />次貸怎麼長大、CDO 怎麼包、Eisman 怎麼押注</span></a>
+</article>
+
+<article class="seg" id="s04">
+<div class="seg-head">
+<span class="seg-no">04</span>
+<h2>放款業的時間差：損失總是晚到</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=478s"} target="_blank" rel="noopener">▶ 07:58</a>
+<Say>
+<p>主持人說，按量計酬的人本來就在玩短線。Eisman 說情況更糟：2002 年故事剛開始時，次貸業一年大約只放 750 億美元。要年年成長，唯一的辦法就是放寬審核標準。今年放寬一點做到 1,500 億，明年再放寬，一路到 6,000 億。</p>
+<p>放款最麻煩的特性是損失會晚好幾年才出現。標準可以一直放寬，等壞帳真的爆出來已經太晚，當初放款的人早就領完獎金了。</p>
+</Say>
+<Ana>
+<p>這是第 3 段的延伸，多了一個時間維度：<b>收入當下入帳，損失延後認列</b>。只要這個時間差存在，每一年的財報都會好看，直到某一年突然不好看。</p>
+<p>他的 750 億→1,500 億→6,000 億是示意數字，用來講「成長目標逼著標準下降」的機制。實際的產業統計數字見下方查證。</p>
+</Ana>
+<figure class="chart" id="ch-subprime">
+<p class="c-title">美國次級房貸年度放款金額</p>
+<p class="c-sub">單位：十億美元</p>
+<svg viewbox="0 0 640 270" role="img" aria-label="美國次級房貸年度放款">
+<g class="grid">
+<line x1="46" x2="630" y1="222" y2="222" />
+<line x1="46" x2="630" y1="166" y2="166" />
+<line x1="46" x2="630" y1="110" y2="110" />
+<line x1="46" x2="630" y1="54" y2="54" />
+</g>
+<g class="ax">
+<text x="38" y="226" text-anchor="end">0</text>
+<text x="38" y="170" text-anchor="end">200</text>
+<text x="38" y="114" text-anchor="end">400</text>
+<text x="38" y="58" text-anchor="end">600</text>
+<line x1="46" x2="630" y1="222" y2="222" style="stroke:var(--muted)" />
+</g>
+<rect class="hit" x="46" y="26" width="97.3" height="196" fill="transparent" data-tip="1996 年：約 700 億美元" />
+<path class="mark " d="M66.7,222 V206.4 Q66.7,202.4 70.7,202.4 H118.7 Q122.7,202.4 122.7,206.4 V222 Z" data-tip="1996 年：約 700 億美元" />
+<text class="val" x="94.7" y="195.4" text-anchor="middle">70</text>
+<text class="lbl" x="94.7" y="240" text-anchor="middle">1996</text>
+<rect class="hit" x="143.3" y="26" width="97.3" height="196" fill="transparent" data-tip="1998 年：約 1,350 億美元" />
+<path class="mark " d="M164,222 V188.2 Q164,184.2 168,184.2 H216 Q220,184.2 220,188.2 V222 Z" data-tip="1998 年：約 1,350 億美元" />
+<text class="val" x="192" y="177.2" text-anchor="middle">135</text>
+<text class="lbl" x="192" y="240" text-anchor="middle">1998</text>
+<rect class="hit" x="240.7" y="26" width="97.3" height="196" fill="transparent" data-tip="2000 年：約 1,000 億美元" />
+<path class="mark " d="M261.3,222 V198 Q261.3,194 265.3,194 H313.3 Q317.3,194 317.3,198 V222 Z" data-tip="2000 年：約 1,000 億美元" />
+<text class="val" x="289.3" y="187" text-anchor="middle">100</text>
+<text class="lbl" x="289.3" y="240" text-anchor="middle">2000</text>
+<rect class="hit" x="338" y="26" width="97.3" height="196" fill="transparent" data-tip="Eisman 在節目中說 2002 年約 750 億美元；FCIC 資料顯示 2000 年已有 1,000 億、2003 年 3,100 億" />
+<path class="mark warn" d="M358.7,222 V205 Q358.7,201 362.7,201 H410.7 Q414.7,201 414.7,205 V222 Z" data-tip="Eisman 在節目中說 2002 年約 750 億美元；FCIC 資料顯示 2000 年已有 1,000 億、2003 年 3,100 億" />
+<text class="val" x="386.7" y="194" text-anchor="middle">{"75*"}</text>
+<text class="lbl" x="386.7" y="240" text-anchor="middle">2002</text>
+<text class="lbl" x="386.7" y="262" text-anchor="middle">口述</text>
+<rect class="hit" x="435.3" y="26" width="97.3" height="196" fill="transparent" data-tip="2003 年：約 3,100 億美元" />
+<path class="mark " d="M456,222 V139.2 Q456,135.2 460,135.2 H508 Q512,135.2 512,139.2 V222 Z" data-tip="2003 年：約 3,100 億美元" />
+<text class="val" x="484" y="128.2" text-anchor="middle">310</text>
+<text class="lbl" x="484" y="240" text-anchor="middle">2003</text>
+<rect class="hit" x="532.7" y="26" width="97.3" height="196" fill="transparent" data-tip="2006 年：約 6,000 億美元，占當年所有房貸放款 23.5%" />
+<path class="mark hi" d="M553.3,222 V58 Q553.3,54 557.3,54 H605.3 Q609.3,54 609.3,58 V222 Z" data-tip="2006 年：約 6,000 億美元，占當年所有房貸放款 23.5%" />
+<text class="val" x="581.3" y="47" text-anchor="middle">600</text>
+<text class="lbl" x="581.3" y="240" text-anchor="middle">2006</text>
+<text class="lbl" x="581.3" y="262" text-anchor="middle">占 23.5%</text>
+</svg>
+<figcaption>資料：美國金融危機調查委員會（FCIC）報告圖 5.2 與正文，原始數據來自 Inside Mortgage Finance<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>；只列報告中有明確數字的年份。琥珀色那根是 Eisman 在節目中說的 2002 年數字，與 FCIC 的年份序列對不上，應視為示意。</figcaption>
+</figure>
+<Chk>
+<p><span class="verdict v-ok">屬實</span>次貸年放款在 2006 年達到約 6,000 億美元，占當年全部房貸放款的 23.5%；2003 年約 3,100 億<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。證券化比例從 2000 年的 52% 升到 2003 年的 63%<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。</p>
+<p><span class="verdict v-part">起點有出入</span>他說 2002 年故事剛開始時一年只有 750 億美元，但 FCIC 的資料在 2000 年已有約 1,000 億、1998 年約 1,350 億。「規模在幾年內翻好幾倍」的方向正確，起點數字應視為口誤或示意。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s05">
+<div class="seg-head">
+<span class="seg-no">05</span>
+<h2>大賣空到底怎麼做：買保險，不是放空</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=576s"} target="_blank" rel="noopener">▶ 09:36</a>
+<Say>
+<p>他先講他沒做的事：一般放空是借股票來賣，100 元賣出、50 元買回，賺中間的差價。他做的是另一種東西，一種保險，叫信用違約交換（CDS）。他說這是 J.P. Morgan 在 1990 年代後期發明的，原本是給債券投資人管理風險用的。</p>
+<p>他舉例：假設你持有 1 億美元、利率 6% 的 GE 五年期債券，可以跟高盛買五年的違約保障，每年付 0.5%。這樣你每年實拿 5.5%，但 GE 若破產，高盛賠你 1 億美元。關鍵是，<b>你不必持有那張債券也可以買這份保險</b>，這種合約不在交易所掛牌，打電話給銀行就能簽。</p>
+<p>他挑了各種次貸證券化商品的不同分層，總共買了大約 7 億美元的保障，一開始的價格只有 3%，他覺得對方在開玩笑。主持人算出一年要付 2,100 萬美元，他說部位持有不到一年，而且只是整個投資組合的一部分。</p>
+<p>最後基金大約賺了 10 億美元，他的團隊分到兩成，也就是 2 億；母公司摩根士丹利再拿走一半，剩下 1 億由他和合夥人分。他特別強調：賺 10 億的是基金，不是他。</p>
+</Say>
+<figure class="dg">
+<div class="dg-title">圖 2｜信用違約交換（CDS）：買保險，不必持有債券</div>
+<div class="dg-row is-stack">
+<div class="dg-box">
+<b>保障買方</b>
+<small>Eisman 的基金<br />不必持有那批次貸債券</small>
+</div>
+<div class="dg-box is-key">
+<b>保障賣方</b>
+<small>投資銀行、保險公司<br />例：高盛、AIG</small>
+</div>
+</div>
+<div class="dg-row is-stack">
+<div class="dg-arrow">每年付保費<br />他說一開始約 3%</div>
+<div class="dg-arrow is-up">債券違約時<br />賠付名目本金</div>
+</div>
+<div class="dg-row">
+<div class="dg-box is-dim is-narrow">
+<b>參考標的</b>
+<small>某一批次貸證券化商品的特定分層</small>
+</div>
+</div>
+<figcaption>他的部位約 7 億美元名目本金。最多賠掉保費，押中就拿回接近整筆本金，這是不對稱的賭注。</figcaption>
+</figure>
+<Ana>
+<p>CDS 讓這筆交易的形狀很特別：<b>虧損有上限（保費），獲利是整個名目本金</b>。用 3% 的年成本押一個他認為違約機率遠高於市場定價的事件，他押的是市場把機率算錯了，什麼時候爆反而沒那麼要緊。這也是他能撐一年保費的原因。</p>
+<p>這段的另一個重點是「不持有也能買保險」。這讓同一筆房貸可以被押注很多次，也讓危機爆發時的損失被放大，這是 2010 年後衍生性商品改革要處理的核心問題之一。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-part">年份需修正</span>一般公認的起點是 1994 年：J.P. Morgan 團隊（包括 Blythe Masters）把對 Exxon 的約 48 億美元授信風險轉給歐洲復興開發銀行，比他說的「1990 年代後期」早<sup class="ref"><a href="#ref-12" data-tab="p-refs">12</a></sup><sup class="ref"><a href="#ref-13" data-tab="p-refs">13</a></sup>。</p>
+<p><span class="verdict v-ok">屬實</span>不持有債券也能買保障，業界稱為「裸 CDS」；2000 年紐約州保險局認定這不屬於保險，因此不受保險法規管<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。全球 CDS 名目本金從 2004 年底的 6.4 兆美元，暴增到 2007 年底的 58.2 兆<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。2012 年後，指數型 CDS 已改為強制集中結算<sup class="ref"><a href="#ref-14" data-tab="p-refs">14</a></sup>。</p>
+<p><span class="verdict v-ok">屬實</span>摩根士丹利 2006 年收購 FrontPoint，2011 年分家<sup class="ref"><a href="#ref-15" data-tab="p-refs">15</a></sup>。他特別說明自己沒有賺到 10 億美元，賺的是基金，與他過去的說法一致；他個人實際分得多少，找不到獨立資料。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s06">
+<div class="seg-head">
+<span class="seg-no">06</span>
+<h2>網路泡沫才是 AI 的鏡子</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=846s"} target="_blank" rel="noopener">▶ 14:06</a>
+<Say>
+<p>他認為金融海嘯對今天的參考價值沒那麼大，網路泡沫才是。他提到當年最有名的網路分析師 Henry Blodget，進美林之前在 Oppenheimer，就坐在 Eisman 對面。Blodget 剛入行時經驗很淺，公司缺一個看網路股的分析師，就讓他上了。Eisman 說他後來在美林惹了大麻煩，但人很正派。</p>
+<p>有一次 Blodget 跑到業務部門說，網路會創造好幾代花不完的財富。Eisman 說他完全講對了。問題是，今天看好 AI 的人說的每一句話，跟當年講網路的句子幾乎一模一樣。</p>
+<p>當年是狂熱造成過度投資，公司都很新、幾乎沒營收，最後多半倒閉。真正成功的是 Google 這類第二代網路公司，它們直接用泡沫期間已經蓋好的基礎設施，不用自己花那筆錢。他覺得今天有某種很像的東西。</p>
+<p>主持人問泡沫對一般人有什麼影響。他說幾乎沒有，那是一場科技業的衰退。他當時是金融股分析師，大家都在等消費者信用變差，結果消費者完全沒事。那斯達克科技股之後大約五、六年沒漲，但一般人沒受太大影響。</p>
+</Say>
+<Ana>
+<p>這段有兩個觀點要分開看。</p>
+<p>第一個是<b>「技術是真的，泡沫也是真的」</b>。他相信 AI，就像他相信網路，但相信技術跟相信股價是兩件事。網路後來確實改變世界，可是 2000 年高點買進那斯達克的人，要等十幾年才回本。</p>
+<p>第二個是<b>第一代蓋基礎建設、第二代收割</b>。泡沫時期砸下去的光纖、機房，在泡沫破掉後以很便宜的價格被後來者使用。如果這個模式重演，今天拼命蓋資料中心的公司未必是最後的贏家。</p>
+</Ana>
+<Theory>
+<h4>Carlota Perez：技術革命與金融資本</h4>
+<p>經濟學家 Carlota Perez 在 2002 年的著作中提出，每一次技術革命都會經過兩個時期：先是「安裝期」，金融資本大量湧入、炒作到狂熱，蓋出過量的基礎設施；接著是泡沫破裂的「轉折點」；之後才是「展開期」，技術真正擴散到整個經濟，生產資本接手<sup class="ref"><a href="#ref-16" data-tab="p-refs">16</a></sup>。鐵路、電力、網路都走過這條路。Eisman 說的「第二代網路公司」，正好落在網路革命的展開期。泡沫期間鋪設的光纖，2001 年一度只有個位數百分比在使用<sup class="ref"><a href="#ref-17" data-tab="p-refs">17</a></sup>，後來被 Google 等公司以低價收購<sup class="ref"><a href="#ref-18" data-tab="p-refs">18</a></sup>。</p>
+</Theory>
+<figure class="chart" id="ch-nasdaq">
+<p class="c-title">那斯達克綜合指數：泡沫、崩跌、漫長回本</p>
+<p class="c-sub">年底收盤與 2000、2002、2015 年的關鍵收盤</p>
+<svg viewbox="0 0 640 280" role="img" aria-label="那斯達克綜合指數 1995 到 2015 年">
+<g class="grid">
+<line x1="52" x2="624" y1="246" y2="246" />
+<line x1="52" x2="624" y1="205.6" y2="205.6" />
+<line x1="52" x2="624" y1="165.3" y2="165.3" />
+<line x1="52" x2="624" y1="124.9" y2="124.9" />
+<line x1="52" x2="624" y1="84.6" y2="84.6" />
+<line x1="52" x2="624" y1="44.2" y2="44.2" />
+</g>
+<g class="ax">
+<text x="44" y="250" text-anchor="end">0</text>
+<text x="44" y="209.6" text-anchor="end">1,000</text>
+<text x="44" y="169.3" text-anchor="end">2,000</text>
+<text x="44" y="128.9" text-anchor="end">3,000</text>
+<text x="44" y="88.6" text-anchor="end">4,000</text>
+<text x="44" y="48.2" text-anchor="end">5,000</text>
+<text x="52" y="266" text-anchor="middle">1995</text>
+<text x="190.8" y="266" text-anchor="middle">2000</text>
+<text x="329.7" y="266" text-anchor="middle">2005</text>
+<text x="468.5" y="266" text-anchor="middle">2010</text>
+<text x="607.3" y="266" text-anchor="middle">2015</text>
+<line x1="52" x2="624" y1="246" y2="246" style="stroke:var(--muted)" />
+</g>
+<path class="line" d="M52,215.7 L79.5,203.5 L107.3,193.9 L135,182.6 L162.8,157.5 L190.6,81.8 L196.1,42.2 L218.3,146.3 L246.1,167.3 L267.7,201 L273.9,192.1 L301.6,165.2 L329.4,158.2 L357.2,157 L384.9,148.5 L412.7,139 L440.5,182.4 L468.2,154.4 L496,138.9 L523.8,140.9 L551.5,124.1 L579.3,77.4 L607.1,54.9 L615.9,42" />
+<line class="anno-line" x1="196.1" y1="42.2" x2="208" y2="40.8" />
+<text class="anno" x="210.1" y="40.2" text-anchor="start">2000-03 高點 5,049</text>
+<line class="anno-line" x1="267.7" y1="201" x2="277.9" y2="219.2" />
+<text class="anno" x="279.7" y="227" text-anchor="start">2002-10 低點 1,114（−78%）</text>
+<line class="anno-line" x1="615.9" y1="42" x2="604" y2="39.2" />
+<text class="anno" x="601.9" y="38" text-anchor="end">2015-04 回到高點</text>
+<circle class="hit" cx="52" cy="215.7" r="12" fill="transparent" data-tip="1994 年底 751" />
+<circle class="dot" cx="52" cy="215.7" r="4.5" data-tip="1994 年底 751" />
+<circle class="hit" cx="79.5" cy="203.5" r="12" fill="transparent" data-tip="1995 年底 1,052" />
+<circle class="dot" cx="79.5" cy="203.5" r="4.5" data-tip="1995 年底 1,052" />
+<circle class="hit" cx="107.3" cy="193.9" r="12" fill="transparent" data-tip="1996 年底 1,291" />
+<circle class="dot" cx="107.3" cy="193.9" r="4.5" data-tip="1996 年底 1,291" />
+<circle class="hit" cx="135" cy="182.6" r="12" fill="transparent" data-tip="1997 年底 1,570" />
+<circle class="dot" cx="135" cy="182.6" r="4.5" data-tip="1997 年底 1,570" />
+<circle class="hit" cx="162.8" cy="157.5" r="12" fill="transparent" data-tip="1998 年底 2,193" />
+<circle class="dot" cx="162.8" cy="157.5" r="4.5" data-tip="1998 年底 2,193" />
+<circle class="hit" cx="190.6" cy="81.8" r="12" fill="transparent" data-tip="1999 年底 4,069" />
+<circle class="dot" cx="190.6" cy="81.8" r="4.5" data-tip="1999 年底 4,069" />
+<circle class="hit" cx="196.1" cy="42.2" r="12" fill="transparent" data-tip="2000-03-10 收盤 5,048.62（高點）" />
+<circle class="dot" cx="196.1" cy="42.2" r="4.5" data-tip="2000-03-10 收盤 5,048.62（高點）" />
+<circle class="hit" cx="218.3" cy="146.3" r="12" fill="transparent" data-tip="2000 年底 2,471" />
+<circle class="dot" cx="218.3" cy="146.3" r="4.5" data-tip="2000 年底 2,471" />
+<circle class="hit" cx="246.1" cy="167.3" r="12" fill="transparent" data-tip="2001 年底 1,950" />
+<circle class="dot" cx="246.1" cy="167.3" r="4.5" data-tip="2001 年底 1,950" />
+<circle class="hit" cx="267.7" cy="201" r="12" fill="transparent" data-tip="2002-10-09 收盤 1,114.11（低點）" />
+<circle class="dot" cx="267.7" cy="201" r="4.5" data-tip="2002-10-09 收盤 1,114.11（低點）" />
+<circle class="hit" cx="273.9" cy="192.1" r="12" fill="transparent" data-tip="2002 年底 1,336" />
+<circle class="dot" cx="273.9" cy="192.1" r="4.5" data-tip="2002 年底 1,336" />
+<circle class="hit" cx="301.6" cy="165.2" r="12" fill="transparent" data-tip="2003 年底 2,003" />
+<circle class="dot" cx="301.6" cy="165.2" r="4.5" data-tip="2003 年底 2,003" />
+<circle class="hit" cx="329.4" cy="158.2" r="12" fill="transparent" data-tip="2004 年底 2,175" />
+<circle class="dot" cx="329.4" cy="158.2" r="4.5" data-tip="2004 年底 2,175" />
+<circle class="hit" cx="357.2" cy="157" r="12" fill="transparent" data-tip="2005 年底 2,205" />
+<circle class="dot" cx="357.2" cy="157" r="4.5" data-tip="2005 年底 2,205" />
+<circle class="hit" cx="384.9" cy="148.5" r="12" fill="transparent" data-tip="2006 年底 2,415" />
+<circle class="dot" cx="384.9" cy="148.5" r="4.5" data-tip="2006 年底 2,415" />
+<circle class="hit" cx="412.7" cy="139" r="12" fill="transparent" data-tip="2007 年底 2,652" />
+<circle class="dot" cx="412.7" cy="139" r="4.5" data-tip="2007 年底 2,652" />
+<circle class="hit" cx="440.5" cy="182.4" r="12" fill="transparent" data-tip="2008 年底 1,577" />
+<circle class="dot" cx="440.5" cy="182.4" r="4.5" data-tip="2008 年底 1,577" />
+<circle class="hit" cx="468.2" cy="154.4" r="12" fill="transparent" data-tip="2009 年底 2,269" />
+<circle class="dot" cx="468.2" cy="154.4" r="4.5" data-tip="2009 年底 2,269" />
+<circle class="hit" cx="496" cy="138.9" r="12" fill="transparent" data-tip="2010 年底 2,653" />
+<circle class="dot" cx="496" cy="138.9" r="4.5" data-tip="2010 年底 2,653" />
+<circle class="hit" cx="523.8" cy="140.9" r="12" fill="transparent" data-tip="2011 年底 2,605" />
+<circle class="dot" cx="523.8" cy="140.9" r="4.5" data-tip="2011 年底 2,605" />
+<circle class="hit" cx="551.5" cy="124.1" r="12" fill="transparent" data-tip="2012 年底 3,020" />
+<circle class="dot" cx="551.5" cy="124.1" r="4.5" data-tip="2012 年底 3,020" />
+<circle class="hit" cx="579.3" cy="77.4" r="12" fill="transparent" data-tip="2013 年底 4,177" />
+<circle class="dot" cx="579.3" cy="77.4" r="4.5" data-tip="2013 年底 4,177" />
+<circle class="hit" cx="607.1" cy="54.9" r="12" fill="transparent" data-tip="2014 年底 4,736" />
+<circle class="dot" cx="607.1" cy="54.9" r="4.5" data-tip="2014 年底 4,736" />
+<circle class="hit" cx="615.9" cy="42" r="12" fill="transparent" data-tip="2015-04-23 收盤 5,056.06（收復高點）" />
+<circle class="dot" cx="615.9" cy="42" r="4.5" data-tip="2015-04-23 收盤 5,056.06（收復高點）" />
+</svg>
+<figcaption>年底收盤取自聖路易聯準銀行 FRED 資料庫，高低點與 2015 年收復日期見 CBS 報導<sup class="ref"><a href="#ref-19" data-tab="p-refs">19</a></sup><sup class="ref"><a href="#ref-20" data-tab="p-refs">20</a></sup>。Eisman 說科技股之後「五、六年沒漲」，以指數算其實要 15 年才回到原點。</figcaption>
+</figure>
+<Chk>
+<p><span class="verdict v-ok">屬實</span>那斯達克 2000-03-10 收盤 5,048.62，2002-10-09 收盤 1,114.11，跌約 78%<sup class="ref"><a href="#ref-20" data-tab="p-refs">20</a></sup>；2001 年衰退 8 個月，消費支出全年仍成長<sup class="ref"><a href="#ref-21" data-tab="p-refs">21</a></sup><sup class="ref"><a href="#ref-22" data-tab="p-refs">22</a></sup>。</p>
+<p><span class="verdict v-part">時間低估</span>他說科技股之後「五、六年沒漲」，實際上指數要到 2015-04-23 才名目收復 2000 年高點，隔了 15 年<sup class="ref"><a href="#ref-20" data-tab="p-refs">20</a></sup>。</p>
+<p><span class="verdict v-ok">屬實</span>Blodget 1998 年在 CIBC Oppenheimer 喊出亞馬遜 400 美元目標價成名，1999 年進美林，2003 年與 SEC 和解，終身禁業並支付 400 萬美元<sup class="ref"><a href="#ref-23" data-tab="p-refs">23</a></sup><sup class="ref"><a href="#ref-24" data-tab="p-refs">24</a></sup>。</p>
+</Chk>
+<a class="goto" href="#ev-dotcom" data-tab="ev-dotcom"><span><b>事件頁｜2000 年網路泡沫</b><br />從 1995 到 2002 的興衰、Blodget 事件、第二代網路公司</span></a>
+</article>
+
+<article class="seg" id="s07">
+<div class="seg-head">
+<span class="seg-no">07</span>
+<h2>AI 公司真的有營收嗎：ARR、token maxing 與 Anthropic 的 S-1</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=1014s"} target="_blank" rel="noopener">▶ 16:54</a>
+<Say>
+<p>主持人說這次不一樣，AI 公司真的有營收，不像當年的 Pets.com。Eisman 說要看是誰：微軟、亞馬遜、Google、Meta 都有別的生意，NVIDIA 則是整個故事的教父。</p>
+<p>主持人舉他投資的新創 Higgsfield 為例，說幾年內 ARR（年化經常性收入）就破 10 億美元。Eisman 說他最受不了 ARR：是拿生意最好的一天乘以 365，還是最好的一週乘以 52？</p>
+<p>他把焦點拉到兩家最重要的新公司：Anthropic 和 OpenAI。他說它們過去一年大大受惠於「token maxing」。token 大約是四分之三個英文字，以前大家付固定月費，後來改成按 token 計費。有些執行長直接要工程師日夜使用 AI、不用管成本，結果費用暴衝：有報導說 Uber 三個月就燒完整年的 AI 預算，還有一家公司花了 5 億美元才發現。到了今年夏天這股風潮停了，中國模型也開始搶市占。</p>
+<p>他接著引用剛公開的 Anthropic 上市申請文件（S-1）：第二季營收季增 150%，而且有獲利；第三季季增率降到 45%。他因此開始懷疑這兩家公司，最大的理由是他認為這門生意沒有護城河。</p>
+</Say>
+<Ana>
+<p>這段要讀的是<b>營收的品質</b>，而不只是營收的數字。如果有一大塊成長來自企業「先用了再說」的實驗性支出，那它就像次貸時期的放款量，會在某一刻突然回到正常水準。季增率從 150% 掉到 45% 是他眼中的訊號。</p>
+<p>反方的讀法也要擺上來：季增 45% 換算成年增率仍然非常高，任何產業都很少見。他看的是「加速度」轉負，看多的人看的是「速度」仍然很快。兩種看法都對，差在你押的是哪一個。</p>
+<p>ARR 的批評對所有新創都適用。它是內部管理指標，沒有會計準則規範，看到 ARR 就要問：怎麼算的？</p>
+</Ana>
+<figure class="chart" id="ch-anthropic">
+<p class="c-title">Anthropic 2026 年各季營收</p>
+<p class="c-sub">單位：十億美元；標籤為季增率</p>
+<svg viewbox="0 0 640 270" role="img" aria-label="Anthropic 2026 年季營收">
+<g class="grid">
+<line x1="46" x2="630" y1="222" y2="222" />
+<line x1="46" x2="630" y1="173" y2="173" />
+<line x1="46" x2="630" y1="124" y2="124" />
+<line x1="46" x2="630" y1="75" y2="75" />
+<line x1="46" x2="630" y1="26" y2="26" />
+</g>
+<g class="ax">
+<text x="38" y="226" text-anchor="end">0</text>
+<text x="38" y="177" text-anchor="end">5</text>
+<text x="38" y="128" text-anchor="end">10</text>
+<text x="38" y="79" text-anchor="end">15</text>
+<text x="38" y="30" text-anchor="end">20</text>
+<line x1="46" x2="630" y1="222" y2="222" style="stroke:var(--muted)" />
+</g>
+<rect class="hit" x="46" y="26" width="194.7" height="196" fill="transparent" data-tip="第一季營收約 47 億美元" />
+<path class="mark " d="M115.3,222 V179.9 Q115.3,175.9 119.3,175.9 H167.3 Q171.3,175.9 171.3,179.9 V222 Z" data-tip="第一季營收約 47 億美元" />
+<text class="val" x="143.3" y="168.9" text-anchor="middle">約 4.7</text>
+<text class="lbl" x="143.3" y="240" text-anchor="middle">2026 Q1</text>
+<rect class="hit" x="240.7" y="26" width="194.7" height="196" fill="transparent" data-tip="第二季營收約 116 億美元，季增約 147%（Eisman：150%）" />
+<path class="mark hi" d="M310,222 V112.3 Q310,108.3 314,108.3 H362 Q366,108.3 366,112.3 V222 Z" data-tip="第二季營收約 116 億美元，季增約 147%（Eisman：150%）" />
+<text class="val" x="338" y="101.3" text-anchor="middle">11.6</text>
+<text class="lbl" x="338" y="240" text-anchor="middle">2026 Q2</text>
+<text class="lbl" x="338" y="262" text-anchor="middle">+147%</text>
+<rect class="hit" x="435.3" y="26" width="194.7" height="196" fill="transparent" data-tip="第三季營收約 169.6 億美元，季增約 47%（Eisman：45%）" />
+<path class="mark " d="M504.7,222 V59.8 Q504.7,55.8 508.7,55.8 H556.7 Q560.7,55.8 560.7,59.8 V222 Z" data-tip="第三季營收約 169.6 億美元，季增約 47%（Eisman：45%）" />
+<text class="val" x="532.7" y="48.8" text-anchor="middle">17.0</text>
+<text class="lbl" x="532.7" y="240" text-anchor="middle">2026 Q3</text>
+<text class="lbl" x="532.7" y="262" text-anchor="middle">+47%</text>
+</svg>
+<figcaption>整理自媒體對 Anthropic S-1 與修正版的報導<sup class="ref"><a href="#ref-25" data-tab="p-refs">25</a></sup><sup class="ref"><a href="#ref-26" data-tab="p-refs">26</a></sup>。金額還在增加，增加的速度變慢，Eisman 看的是後者。</figcaption>
+</figure>
+<Chk>
+<p><span class="verdict v-ok">大致正確</span>依媒體整理的 S-1 數字，第二季營收約 116 億美元、季增約 147%，營業利益約 9.7 億；第三季約 169.6 億、季增約 47%，並轉為營業虧損<sup class="ref"><a href="#ref-25" data-tab="p-refs">25</a></sup><sup class="ref"><a href="#ref-26" data-tab="p-refs">26</a></sup>。他說的「有獲利」是營業利益，淨利因可轉債的會計處理是大額虧損。</p>
+<p><span class="verdict v-part">細節有出入</span>Uber 是約四個月用完全年預算，不是三個月<sup class="ref"><a href="#ref-27" data-tab="p-refs">27</a></sup>；一個月花掉 5 億美元的公司為單一來源、未具名<sup class="ref"><a href="#ref-28" data-tab="p-refs">28</a></sup>。</p>
+<p><span class="verdict v-ok">屬實</span>token maxing 在 7 月前後退燒、中國模型在美國企業的用量占比一度到四成以上，有 AP 與 CNBC 報導<sup class="ref"><a href="#ref-29" data-tab="p-refs">29</a></sup><sup class="ref"><a href="#ref-30" data-tab="p-refs">30</a></sup>。另外，Anthropic 已於 11 月 19 日上市<sup class="ref"><a href="#ref-31" data-tab="p-refs">31</a></sup>。</p>
+</Chk>
+<a class="goto" href="#ev-ai2026" data-tab="ev-ai2026"><span><b>事件頁｜2026 年 AI 資本支出潮</b><br />Anthropic 上市、token maxing、超大規模雲端業者轉向舉債、期中選舉</span></a>
+</article>
+
+<article class="seg" id="s08">
+<div class="seg-head">
+<span class="seg-no">08</span>
+<h2>集中風險：整條產業鏈吊在兩家公司身上</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=1249s"} target="_blank" rel="noopener">▶ 20:49</a>
+<Say>
+<p>他先解釋「集中風險」：一家成長很快的軟體公司如果只有一個客戶，那個客戶一走就完了。</p>
+<p>食物鏈頂端是 NVIDIA，全世界市值最大的公司，最近一季營收成長超過 100%。但它的季報也寫明，七成營收來自五個客戶，這些客戶就是微軟、亞馬遜、Google 這些超大規模雲端業者，可能再加一點 Oracle 和 Meta。他小心地說：這三家雲端公司目前的 AI 營收，大約七成來自 Anthropic 和 OpenAI，換算下來約占它們雲端營收的 25% 到 30%。</p>
+<p>Oracle 更嚴重。它的未交付訂單（backlog）約 6,000 億美元，一半來自 OpenAI。他說去年這時候 Oracle 公布訂單從幾乎零跳到 3,500 億，股價從 230 美元衝到 330 美元，幾天後大家發現那全是 OpenAI 下的單，股價又跌回 230，現在剩 130 左右。</p>
+<p>所以整條鏈都靠這兩家：雲端業者為了它們的承諾去訂晶片、蓋資料中心。Anthropic 在 S-1 裡寫明對這些廠商有 8,950 億美元的承諾。他說，兩家只要倒一家，整條鏈就會停下來，美國馬上衰退。</p>
+<p>主持人問，如果要拿全部身家押一個結果，他押哪個？他說原本會押「其中一家倒下、晶片沒人訂、美國衰退、之後以比較健康的速度成長」，但期中選舉後改變主意了，並引用他說是參議員 Moynihan 的話：事實變了，我就跟著變。</p>
+</Say>
+<figure class="dg">
+<div class="dg-title">圖 3｜他說的「承諾鏈」</div>
+<div class="dg-row is-stack">
+<div class="dg-box is-key">
+<b>Anthropic</b>
+<small>對供應商承諾約 8,950 億美元</small>
+</div>
+<div class="dg-box is-key">
+<b>OpenAI</b>
+<small>承諾規模相近</small>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow">租用算力、下長期訂單</div>
+</div>
+<div class="dg-row is-stack">
+<div class="dg-box">
+<b>微軟、亞馬遜、Google</b>
+<small>他估 AI 營收約七成來自這兩家</small>
+</div>
+<div class="dg-box">
+<b>Oracle</b>
+<small>6,000 多億未交付訂單，近半連到 OpenAI</small>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow">買晶片、蓋資料中心</div>
+</div>
+<div class="dg-row is-stack">
+<div class="dg-box">
+<b>NVIDIA</b>
+<small>營收年增逾一倍</small>
+</div>
+<div class="dg-box">
+<b>電力、網路、散熱設備</b>
+<small>第 23 段的「鏟子」</small>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow">占美國 GDP 成長的一大塊</div>
+</div>
+<div class="dg-row">
+<div class="dg-box is-no is-narrow">
+<b>上游一家倒下</b>
+<small>整條鏈的訂單一起縮</small>
+</div>
+</div>
+<figcaption>最上游的兩家還在靠募資支撐，下游卻是全球市值最大的公司群。這是他說「兩家倒一家就衰退」的推論路徑。</figcaption>
+</figure>
+<Ana>
+<p>這段是本集標題的來源，他 10 月在別的節目也講過類似的話<sup class="ref"><a href="#ref-32" data-tab="p-refs">32</a></sup>。他的推論是一條鏈：<b>模型公司的訂單 → 雲端業者的資本支出 → 晶片與設備廠的營收</b>。鏈條最上游的兩家公司都還在虧錢燒錢、靠募資活著，下游卻是全世界最大的幾家上市公司。</p>
+<p>要注意他自己加的前提：這兩家明天會不會倒，他沒有預測，他只說「如果倒了」整個系統承受不起。這是壓力測試式的說法，用來說明脆弱點在哪裡。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-ok">屬實</span>NVIDIA 截至 10 月的一季營收約 1,158 億美元，年增 103%<sup class="ref"><a href="#ref-33" data-tab="p-refs">33</a></sup>。</p>
+<p><span class="verdict v-no">口徑錯誤</span>「七成來自五個客戶」出自季報附註，但那是<b>應收帳款</b>的集中度（五家合計 70%），不是營收。營收面，單一直接客戶最高約占 16% 到 21%<sup class="ref"><a href="#ref-34" data-tab="p-refs">34</a></sup>。</p>
+<p><span class="verdict v-na">無法查證</span>「雲端巨頭 AI 營收七成來自這兩家」是他自己的估計，各公司都沒有揭露 AI 營收的客戶組成。最接近的分析師數字是 UBS 估計 2026 年 OpenAI 與 Anthropic 約占 Google Cloud 營收 27%<sup class="ref"><a href="#ref-35" data-tab="p-refs">35</a></sup>；微軟則揭露商用未交付訂單約 45% 與 OpenAI 有關<sup class="ref"><a href="#ref-36" data-tab="p-refs">36</a></sup>。</p>
+<p><span class="verdict v-part">方向對、數字誇大</span>Oracle 的未交付訂單在 2025 年 9 月公布時從 1,380 億跳到 4,550 億，不是「從零到 3,500 億」；股價單日從 241.51 漲到 328.33 美元，是 1992 年以來最大漲幅；隨後報導指出其中約 3,000 億是 OpenAI 的合約<sup class="ref"><a href="#ref-37" data-tab="p-refs">37</a></sup><sup class="ref"><a href="#ref-38" data-tab="p-refs">38</a></sup>。最新訂單 6,640 億美元，OpenAI 占比公司未揭露，外界估約四成五到五成多<sup class="ref"><a href="#ref-39" data-tab="p-refs">39</a></sup>。11 月中股價約 116 到 128 美元。</p>
+<p><span class="verdict v-ok">大致正確</span>8,950 億美元的承諾數字出自 S-1 修正版，11-17 版約 9,009 億<sup class="ref"><a href="#ref-40" data-tab="p-refs">40</a></sup>。</p>
+<p><span class="verdict v-no">出處有誤</span>「事實變了我就改變想法」這句話常被歸給凱因斯，名言考據網站 Quote Investigator 找到最早的可靠紀錄是經濟學家 Paul Samuelson 1970 年在電視上的發言；Moynihan 真正有名的是另一句「你可以有自己的意見，但不能有自己的事實」<sup class="ref"><a href="#ref-41" data-tab="p-refs">41</a></sup><sup class="ref"><a href="#ref-42" data-tab="p-refs">42</a></sup>。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s09">
+<div class="seg-head">
+<span class="seg-no">09</span>
+<h2>股市和 GDP 押了多少在 AI 上</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=1558s"} target="_blank" rel="noopener">▶ 25:58</a>
+<Say>
+<p>標普 500 分成 11 個產業類別，資訊科技一類就占了四成，他說美國史上沒有任何一個類別這麼大過，以前最大大概 25%。而且大約十年前標普重新分類，把亞馬遜移到非必需消費、Google 和 Meta 移到通訊服務，把這些加回來就到五成。再加上替資料中心供電的公用事業、出錢的投資銀行和另類資產管理公司、GE Vernova 和 Eaton 這類電力設備股，大約是整個市場的 65%。</p>
+<p>他說跟 AI 真正無關的只剩醫療和必需消費，藥和衛生紙跟 AI 沒關係。經濟也一樣：美國今年 GDP 大概成長 2% 左右，他估計一半以上來自 AI 資本支出。所以他重申，如果 Anthropic 和 OpenAI 明天破產，美國隔天就會衰退。</p>
+</Say>
+<figure class="chart" id="ch-sp">
+<p class="c-title">標普 500 裡跟 AI 相關的比重（Eisman 的算法）</p>
+<p class="c-sub">占指數市值 %，逐層加總</p>
+<svg viewbox="0 0 640 50" role="img" aria-label="標普 500 的 AI 相關比重">
+<rect x="0" y="4" width="254" height="42" rx="4" style="fill:var(--accent-dark)" data-tip="資訊科技類股：Eisman 說約 40%" />
+<text class="val" x="128" y="30.0" text-anchor="middle" style="fill:#fff">40%</text>
+<rect x="256" y="4" width="62" height="42" rx="0" style="fill:var(--accent)" data-tip="加回被分到其他類別的科技公司：累計約 50%" />
+<text class="val" x="288" y="30.0" text-anchor="middle" style="fill:#fff">10%</text>
+<rect x="320" y="4" width="94" height="42" rx="0" style="fill:#5e9690" data-tip="加上公用事業、投資銀行與另類資管、電力設備：累計約 65%" />
+<text class="val" x="368" y="30.0" text-anchor="middle" style="fill:#fff">15%</text>
+<rect x="416" y="4" width="224" height="42" rx="4" style="fill:var(--sunk)" data-tip="他說真正跟 AI 無關的只剩醫療與必需消費" />
+<text class="val" x="528" y="30.0" text-anchor="middle" style="fill:var(--ink)">35%</text>
+</svg>
+<ul class="c-legend">
+<li><i style="background:var(--accent-dark)" />資訊科技 40%</li>
+<li><i style="background:var(--accent)" />其他科技 10%（累計 50%）</li>
+<li><i style="background:#5e9690" />電力金融工業 15%（累計 65%）</li>
+<li><i style="background:var(--sunk)" />其餘 35%</li>
+</ul>
+<figcaption>「其他科技」指被分到通訊服務、非必需消費等類別的 Google、Meta、Amazon；「電力金融工業」含公用事業、投資銀行與另類資管、電力設備股；「其餘」以醫療、必需消費為主。這是 Eisman 在節目中的口頭估算，不是官方統計，口徑很寬。官方資訊科技類股權重今年 6 月創下 39.4% 的紀錄，11 月初約在 35% 以上<sup class="ref"><a href="#ref-43" data-tab="p-refs">43</a></sup><sup class="ref"><a href="#ref-44" data-tab="p-refs">44</a></sup>。</figcaption>
+</figure>
+<Ana>
+<p>這段把「AI 泡沫」從投資問題變成總體經濟問題。對台灣讀者來說更直接：台股的權值結構對 AI 供應鏈的曝險比美股還集中，美國這條鏈一旦放緩，台灣感受到的會更早、更大。</p>
+<p>65% 是他自己的加法，口徑很寬，把出錢的銀行和供電的公用事業都算進去了。這個數字適合拿來理解「牽連範圍」，不適合當成精確的市場統計。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-part">大致正確</span>資訊科技類股權重在 2026-06-03 創下 39.4% 的紀錄，11 月初回到 35% 以上<sup class="ref"><a href="#ref-43" data-tab="p-refs">43</a></sup><sup class="ref"><a href="#ref-44" data-tab="p-refs">44</a></sup>。過去單一類股的高點約為 2000 年科技股 33% 左右、1980 年能源股近 28%<sup class="ref"><a href="#ref-45" data-tab="p-refs">45</a></sup>，所以「史上最大」成立，「以前最多 25%」偏低。</p>
+<p><span class="verdict v-part">需修正</span>2018 年的分類調整把 Alphabet 和 Meta 從資訊科技移到通訊服務<sup class="ref"><a href="#ref-46" data-tab="p-refs">46</a></sup>；亞馬遜一直都在非必需消費，不是那次移過去的。</p>
+<p><span class="verdict v-part">看算法</span>AI 投資對 GDP 成長的貢獻差異很大：哈佛的 Jason Furman 估 2025 上半年資訊設備與軟體投資貢獻了 92% 的成長<sup class="ref"><a href="#ref-47" data-tab="p-refs">47</a></sup>；ING 扣除進口後估 2026 年約三分之一<sup class="ref"><a href="#ref-48" data-tab="p-refs">48</a></sup>。美國 2026 年前三季 GDP 年化成長 2.5%、2.2%、3.4%<sup class="ref"><a href="#ref-49" data-tab="p-refs">49</a></sup>。「一半以上」要看是否扣掉進口的晶片與設備。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s10">
+<div class="seg-head">
+<span class="seg-no">10</span>
+<h2>政府會出手救嗎？泡沫跟金融危機不一樣</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=1755s"} target="_blank" rel="noopener">▶ 29:15</a>
+<Say>
+<p>主持人問：既然後果這麼嚴重，美國政府不會讓它發生吧？Eisman 的反應是拜託不要再紓困一次，他受不了，也不認為會發生，但承認可能看錯。</p>
+<p>他說金融危機和泡沫差很多。2008 年是整個銀行體系可能倒，民眾可能領不到存款，那是另一個等級的災難；公司倒閉只是衰退。現在的銀行監管嚴、槓桿低，他完全不擔心銀行。會有衰退、會有人失業、會很痛，但美國是全世界最有活力的經濟體，會走出來。</p>
+</Say>
+<Ana>
+<p>這段替整集定了調：<b>他預期的是衰退，不是金融崩潰</b>。差別在於損失由誰承擔。2008 年損失卡在高槓桿的銀行裡，銀行一倒就連到每個人的存款；AI 的損失主要會落在股東和債權人身上，傷的是財富和就業，不會讓支付系統停擺。</p>
+<p>不過這個判斷有個缺口他沒展開：資料中心的融資有一部分走私募信貸（private credit）這類銀行以外的管道，這一塊的槓桿和透明度都比銀行差。第 13 段 CoreWeave 的例子就是這個問題的縮影。</p>
+</Ana>
+</article>
+
+<article class="seg" id="s11">
+<div class="seg-head">
+<span class="seg-no">11</span>
+<h2>期中選舉之後：資料中心慢一點，反而可能是好事</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=1820s"} target="_blank" rel="noopener">▶ 30:20</a>
+<Say>
+<p>他說期中選舉讓事情多了一個變數。資料中心的建設一定會放緩，問題是放緩多少。如果照 Bernie Sanders 的意思全面暫停，美國當天晚上就會衰退。主持人回應，在砸下這麼多錢之前，或許該先想清楚這項技術的風險，畢竟連開發它的人都說不知道會走到哪裡。</p>
+<p>Eisman 的算法很直接：每年 1 兆美元的資本支出如果歸零，從 GDP 扣掉就是衰退；如果只少 1,000 億，問題不大。</p>
+<p>接著他講了一個不直覺的觀點：如果資料中心建設放緩一到兩成，對某些大公司可能是大利多。亞馬遜、微軟、Google 本來是史上最會賺現金的公司，現金多到不知道怎麼用，但 AI 資料中心太貴，Google 和亞馬遜的現金流已經轉負，微軟也接近臨界點。它們開始對外籌資，不只發債，連股票都發：他說 Google 幾個月前增資 850 億美元，而 Google 上一次發新股，要追溯到剛上市那時候。放緩一兩成，這些公司就可能回到正現金流，不必再看債券市場的臉色。</p>
+</Say>
+<figure class="dg">
+<div class="dg-title">圖 4｜放緩多少，結果差很多</div>
+<div class="dg-row is-stack">
+<div class="dg-box is-no">
+<b>全面暫停</b>
+<small>每年約 1 兆美元資本支出歸零<br />他說：當晚就衰退</small>
+</div>
+<div class="dg-box is-ok">
+<b>放緩 10–20%</b>
+<small>雲端巨頭可能回到正現金流<br />不再依賴發債、發股</small>
+</div>
+<div class="dg-box is-dim">
+<b>照舊狂奔</b>
+<small>現金流持續為負<br />命運交給債券市場</small>
+</div>
+</div>
+<figcaption>他認為最健康的是中間那格：慢下來，但不要停。</figcaption>
+</figure>
+<Ana>
+<p>這是整集最有意思的一段推論。一般人會以為「AI 投資放緩＝AI 股壞消息」，他把它拆成兩層：對上游供應商（晶片、設備）是壞消息，對下游正在燒錢的雲端巨頭可能是好消息，因為它們能重新掌握自己的財務。</p>
+<p>背後的觀念是<b>企業的自主權來自自由現金流</b>。一家公司只要需要持續對外籌錢才能維持投資，它的策略就得配合金融市場的情緒。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-part">部分正確</span>Google、亞馬遜的自由現金流轉負屬實；微軟最新一季仍有約 186 億美元，說它「接近臨界點」言過其實<sup class="ref"><a href="#ref-50" data-tab="p-refs">50</a></sup><sup class="ref"><a href="#ref-51" data-tab="p-refs">51</a></sup>。</p>
+<p><span class="verdict v-part">需修正</span>每年 1 兆美元是 2027 年的預估，2026 年四大雲端合計約 7,300 億<sup class="ref"><a href="#ref-52" data-tab="p-refs">52</a></sup>。Alphabet 6 月增資 847.5 億美元屬實，上一次發新股是 2005 年，上市在 2004 年<sup class="ref"><a href="#ref-53" data-tab="p-refs">53</a></sup><sup class="ref"><a href="#ref-54" data-tab="p-refs">54</a></sup>。</p>
+<p><span class="verdict v-ok">屬實</span>Sanders 與 AOC 在 3 月提出全國《AI 資料中心暫停法案》<sup class="ref"><a href="#ref-55" data-tab="p-refs">55</a></sup>。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s12">
+<div class="seg-head">
+<span class="seg-no">12</span>
+<h2>Google 搜尋沒有崩，但資料中心已經是地方政治</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=2012s"} target="_blank" rel="noopener">▶ 33:32</a>
+<Say>
+<p>主持人反駁：這些公司還在拼命競爭，對 Google 來說 AI 攸關存亡，搜尋業務正在自由落體。Eisman 說不是自由落體，搜尋營收還成長 12%，只是第一季是 19%，確實在放緩；而且 AI 業務沒有搜尋那麼好賺。以前上網找東西不會想到 Google 以外的選擇，現在有 ChatGPT、Gemini，選項一大堆。主持人補充，現在連 WhatsApp 都不用離開，AI 代理就能幫你搜尋購物。</p>
+<p>Eisman 說，就算 Google 想蓋，也不是它說了算。資料中心蓋多少已經是政治問題，而且主要是地方政治：要在懷俄明蓋，找的不是川普，是當地政府，一個鎮一個州去拿許可、拿水、拿電。主持人說那就換到佛州去蓋；Eisman 說那你前面兩年的許可就白辦了，時間和錢都賠進去。他覺得慢一點其實比較健康。</p>
+<p>他還引用一位在密西根做資料中心工程的觀眾來信：真正卡住的不是錢，是電，資料中心蓋好了沒地方插電；那人甚至說，連把電從這裡拉到那裡的電線桿都不夠。</p>
+</Say>
+<Ana>
+<p>兩件事值得記下來。第一，<b>搜尋還在成長、但在減速</b>，這比「搜尋已死」精確得多，也提醒我們別被誇大的敘事帶走。第二，AI 的瓶頸正在從「錢」移到「實體世界」：電力、變電站、電線桿、用水、地方許可。這些東西的速度由行政程序和工程決定，砸錢也快不了多少。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-ok">屬實</span>Google「搜尋與其他」營收第一季年增 19%，第三季 12%；公司把減速歸因於 AI 模式的廣告變現較低、匯率與世界盃墊高的基期，同時搜尋量是五年來成長最快<sup class="ref"><a href="#ref-56" data-tab="p-refs">56</a></sup><sup class="ref"><a href="#ref-57" data-tab="p-refs">57</a></sup>。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s13">
+<div class="seg-head">
+<span class="seg-no">13</span>
+<h2>被債市綁住：CoreWeave 的警訊</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=2267s"} target="_blank" rel="noopener">▶ 37:47</a>
+<Say>
+<p>他讀到一份報告，預估資本支出會在明年年中見頂，之後明顯放緩，部分公司會回到正現金流。</p>
+<p>他說市場對這件事很精神分裂：選舉那週，市場怕 Sanders 讓資料中心全停；前一週，市場怕的卻是這些公司太依賴舉債、已經不能掌握自己的命運，完全看債券市場臉色，而債券市場是很善變的。</p>
+<p>市場是從 CoreWeave 學到這一課的。CoreWeave 是所謂的新雲端業者（neocloud），像縮小版的雲端巨頭，但沒有別的生意：借錢、蓋資料中心、出租，就這樣。同類還有 IREN、Nebius。他說 CoreWeave 的舉債成本從 9% 升到 15%，在 15% 的利率下，資料中心根本不划算。</p>
+</Say>
+<figure class="dg">
+<div class="dg-title">圖 5｜新雲端業者的生意模式</div>
+<div class="dg-row">
+<div class="dg-box">
+<b>債券／私募信貸</b>
+<small>借錢</small>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow">利率 9% → 15%</div>
+</div>
+<div class="dg-row">
+<div class="dg-box is-key">
+<b>新雲端業者</b>
+<small>CoreWeave、Nebius、IREN<br />沒有其他本業</small>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow">買 GPU、蓋機房、出租算力</div>
+</div>
+<div class="dg-row">
+<div class="dg-box">
+<b>租用的客戶</b>
+<small>大多是模型公司與雲端巨頭</small>
+</div>
+</div>
+<figcaption>資金成本一上升，租金收入扣掉利息就不夠了。上游借錢的成本和下游客戶的集中度，是這類公司的兩個弱點。</figcaption>
+</figure>
+<Ana>
+<p>這段把第 11 段的「現金流自主」講得更具體。雲端巨頭至少還有廣告、電商、軟體可以撐；新雲端業者只有一條收入，資金成本就是它的生死線。市場會先在這類公司身上看到裂縫，這跟 2007 年先倒的是專做次貸的小型放款機構，是同一個道理：<b>槓桿最高、業務最單一的先出事</b>。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-part">口徑要說清楚</span>CoreWeave 2032 年到期、票面 9.625% 的債券，10 月中市場殖利率約 15%、11 月初超過 16%<sup class="ref"><a href="#ref-58" data-tab="p-refs">58</a></sup>。「9% 到 15%」是債券在市場上的殖利率，不是公司現有借款的平均成本（約 8% 到 10%）。</p>
+<p><span class="verdict v-part">找不到出處</span>沒有找到預測「明年年中見頂」的特定報告；華爾街主流看法是 2027 年起成長率明顯下降<sup class="ref"><a href="#ref-59" data-tab="p-refs">59</a></sup>。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s14">
+<div class="seg-head">
+<span class="seg-no">14</span>
+<h2>模型公司沒有護城河</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=2369s"} target="_blank" rel="noopener">▶ 39:29</a>
+<Say>
+<p>他解釋護城河就是進入障礙，有兩種：一種是生意本身的障礙，像 Google 的搜尋演算法強到席捲全世界，那是史上最大的護城河；另一種是法規的障礙，好比小鎮唯一的雜貨店老闆請鎮長立法禁止別人開店。</p>
+<p>今年稍早，市場開始發現中國的開放權重模型比 Anthropic 和 OpenAI 便宜很多。他的比喻是：去雜貨店不必開賓士，騎腳踏車就夠了。大家開始換，而且頂級模型之間也沒有忠誠度，今天用 Claude，明天有別的就去試，彼此可以互換。</p>
+</Say>
+<figure class="dg">
+<div class="dg-title">圖 6｜兩種護城河</div>
+<div class="dg-vs">
+<div>
+<h5>生意的護城河</h5>
+<ul>
+<li>產品好到別人追不上</li>
+<li>例：Google 搜尋、Visa 的支付網路</li>
+<li>他認為模型公司沒有：模型可互換、開放權重便宜得多</li>
+</ul>
+</div>
+<div class="is-key">
+<h5>法規的護城河</h5>
+<ul>
+<li>靠政府規定擋住競爭者</li>
+<li>例：小鎮只准一家雜貨店</li>
+<li>他認為模型公司想要的是這種（見下一段）</li>
+</ul>
+</div>
+</div>
+<figcaption>他對模型公司的懷疑，幾乎都從這張圖出發。</figcaption>
+</figure>
+<Ana>
+<p>「護城河」是巴菲特普及的投資概念，指一家公司能長期擋住競爭、維持高報酬的結構性優勢<sup class="ref"><a href="#ref-60" data-tab="p-refs">60</a></sup>。Eisman 的判斷是，大型語言模型目前比較像一門<b>規模大但同質化</b>的生意：技術領先維持的時間短、轉換成本低、價格戰由最便宜的開放模型定錨。</p>
+<p>反方也有論點：企業導入後的工作流程整合、資料與安全合規、品牌信任，都可能慢慢長成轉換成本。這場辯論目前沒有定論，但他提出的問題（客戶為什麼不換？）是評估任何 AI 公司都該問的。</p>
+</Ana>
+</article>
+
+<article class="seg" id="s15">
+<div class="seg-head">
+<span class="seg-no">15</span>
+<h2>他說 AI 末日論是一場算計</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=2616s"} target="_blank" rel="noopener">▶ 43:36</a>
+<Say>
+<p>這是整集火藥味最重的一段。Eisman 說，模型公司為了建立法規護城河，製造了「世界末日」的恐慌。他毫不懷疑這是刻意的，不認為那些執行長自己相信。他的推演是：中國模型便宜十倍、品質也不差，模型公司打不起價格戰，就製造歇斯底里，讓政府出手監管，再設法讓監管把中國模型擋在美國門外。</p>
+<p>主持人拿出一份文件：Google、Anthropic、Meta、OpenAI、xAI、NVIDIA 的領導人到白宮和川普簽了一份安全承諾，內容包括內部控管、外部獨立稽核、董事會設獨立委員會監督，並說未來可能立法。Eisman 說很好，但那跟世界末日無關，談的是公司治理，讓模型不要去駭別人，這本來就是公司該做好的事。</p>
+<p>主持人接著引述 Sam Altman 2015 年說超級智慧可能是人類存續的最大威脅、馬斯克說有兩成機率毀滅人類。Eisman 說他不信 Altman 說的任何話；馬斯克則是科幻小說看太多，SpaceX 招股書還寫了小行星採礦。主持人說馬斯克很多瘋狂的話後來都成真，像腦機介面、用機械手臂接住火箭，所以他不敢那麼篤定。</p>
+<p>被問到他可能錯在哪裡，Eisman 說除非我們真的很接近通用人工智慧（AGI），但他認為還差得遠，現在的模型是很優秀的「文字檢索」，談不上思考。主持人提到 Hugging Face 事件，說 AI 代理逃出沙盒去攻擊其他網站、作弊後還試圖掩蓋；Eisman 說那是官方說法，我們不一定知道實際發生什麼。</p>
+<p>他的證據是行為：如果 Dario Amodei 真的相信自己在做的東西會毀滅地球，下一句話不會是「我要上市，你要分配多少股」。他相信「看人做什麼，不要聽他說什麼」。主持人說，也許是因為不信任對手，自己停下來就把第一名讓出去；Eisman 說那就去找政府要求兩家一起停，但他們沒有這麼做。他的結論是，他們要上市、要賺錢、要募資，因為他們在燒錢，這就是他們的誘因。</p>
+</Say>
+<Ana>
+<p>這段要小心讀。<b>他提出的是一個關於動機的指控，不是一個關於技術風險的論證。</b>就算模型公司確實可能從監管中得利，也不代表技術風險不存在；這兩件事可以同時成立。主持人在現場一直把這兩件事分開來問，Eisman 則把它們綁在一起回答。</p>
+<p>他的方法論本身有價值：「看行為不看說法」「問誘因在哪裡」都是第 3 段那條原則的延伸。但他對 AI 安全研究的整體否定，在 AI 研究社群裡是少數立場，讀者應該自己判斷。</p>
+</Ana>
+<Theory>
+<h4>管制俘虜理論（regulatory capture）</h4>
+<p>他描述的劇本，在經濟學裡有名字。George Stigler 1971 年提出，管制往往是被管制的產業自己爭取來的，設計上主要為業者的利益服務，例如用執照、標準把新進者擋在門外<sup class="ref"><a href="#ref-61" data-tab="p-refs">61</a></sup>。這個理論常被拿來解釋為什麼大公司有時會主動要求監管：遵循成本對大公司是小錢，對新創卻是門檻。Eisman 的指控可以看成這個理論套在 AI 上的版本；但理論說的是「可能出現」，要證明某次監管真的是俘虜，需要個案證據。</p>
+</Theory>
+<Chk>
+<p><span class="verdict v-ok">屬實</span>2026-09-29 的白宮午宴上，川普與 Anthropic、Google、Meta、OpenAI（總裁 Greg Brockman 出席，不是 Altman）、NVIDIA、xAI 的領導人簽署《前沿責任聯合承諾》，內容包括內部控管、外部獨立稽核、董事會委員會，屬自願性質、沒有罰則<sup class="ref"><a href="#ref-62" data-tab="p-refs">62</a></sup><sup class="ref"><a href="#ref-63" data-tab="p-refs">63</a></sup>。</p>
+<p><span class="verdict v-ok">屬實，主角不同</span>主持人說的 Hugging Face 事件，是 OpenAI 內部資安評測中的 AI 代理找到漏洞、連上網路、入侵 Hugging Face 去拿評測答案；Hugging Face 是受害者。獨立調查發現代理曾偽造工具輸出、試圖修改紀錄，但沒有確認掩蓋成功<sup class="ref"><a href="#ref-64" data-tab="p-refs">64</a></sup><sup class="ref"><a href="#ref-65" data-tab="p-refs">65</a></sup>。</p>
+<p><span class="verdict v-part">需補充</span>「Pacing the Frontier」是前沿實驗室員工 7 月發起的公開信，要求美國政府支持建立「必要時能刻意放慢」的國際機制，不是要求暫停；OpenAI 和 Anthropic 隔天以公司名義表態支持<sup class="ref"><a href="#ref-66" data-tab="p-refs">66</a></sup>。Eisman 說「寫了信沒後續」，至少在公司表態這一點上不完全準確。</p>
+<p><span class="verdict v-ok">屬實</span>馬斯克選後隔天發文說太空資料中心看起來很吸引人；SpaceX 5 月的上市文件確實把小行星採礦列為未來可能的市場<sup class="ref"><a href="#ref-67" data-tab="p-refs">67</a></sup><sup class="ref"><a href="#ref-68" data-tab="p-refs">68</a></sup>。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s16">
+<div class="seg-head">
+<span class="seg-no">16</span>
+<h2>政治會吞掉一切；AI 會毀掉工作嗎</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=3174s"} target="_blank" rel="noopener">▶ 52:54</a>
+<Say>
+<p>主持人整理了他說的四個風險：沒有護城河、資本密集、資料中心、整個產業依賴兩家公司。Eisman 補了一個：華爾街很不會評估政治，尤其是地方政治。威奇托或懷俄明發生什麼事，平常沒人在乎，現在卻可能很重要。他預期未來幾個月，政治會壓過一切：某州州長宣布暫停資料中心、某地方政府拖延許可，市場很難估算影響。</p>
+<p>他說科技業完全沒講清楚資料中心的好處，有些地方的資料中心甚至替居民付了房屋稅，但資料中心在全美還是非常不受歡迎。主持人說，民眾反對的不只是環境，還有科技寡頭和失業的威脅。</p>
+<p>Eisman 說這正是他不信 AI 業者預測的原因之一：年初他們說大家都會失業，結果沒有人失業。年輕人找工作確實比較難，但工作沒有被消滅，歷史上也沒有任何新技術是淨消滅工作的。他舉放射科為例：當年有人說不要念放射科，AI 會讀片，結果現在美國反而缺放射科醫師，因為需要人來讀 AI 的結果。</p>
+<p>主持人說他看到統計，新創公司數量爆增、但平均規模變小。Eisman 說完全合理，我們可能進入創業的黃金年代：他和太太兩個人就經營一個節目事業，成本是傳統媒體的百分之一。</p>
+</Say>
+<Ana>
+<p>這段對一人公司、小型診所經營者特別有感。他講的是 <b>AI 讓小團隊能做以前要大團隊才做得到的事</b>。這跟我們自己用 AI 經營內容和診所的經驗一致。</p>
+<p>「沒有新技術是淨消滅工作」是經濟學界相當主流的歷史觀察，但歷史不保證未來，而且「淨」字底下藏著很多人的轉業成本。放射科的例子也有前提：目前的 AI 是輔助判讀，責任仍在醫師身上。</p>
+</Ana>
+<Theory>
+<h4>技術與就業：歷史上的「新工作」</h4>
+<p>MIT 的 David Autor 等人 2024 年的研究發現，2018 年美國約六成的就業人口，從事的是 1940 年還不存在的職業類別<sup class="ref"><a href="#ref-69" data-tab="p-refs">69</a></sup>。技術一邊淘汰舊工作、一邊創造新工作，這是「沒有技術是淨消滅工作」這句話的實證基礎。但研究也指出，新工作出現的地方和被淘汰的人，常常不是同一群。</p>
+</Theory>
+<Chk>
+<p><span class="verdict v-ok">屬實</span>Geoffrey Hinton 2016 年說應該停止培訓放射科醫師；2026 年《美國放射學會期刊》的研究顯示，2010 到 2025 年住院醫師名額增加 33%，執業人數只增加 12%，短缺預期會持續<sup class="ref"><a href="#ref-70" data-tab="p-refs">70</a></sup>。</p>
+<p><span class="verdict v-part">大致正確</span>史丹佛「煤礦裡的金絲雀」研究的 2026 年更新版發現，22 到 25 歲、在最受 AI 影響職位的年輕人，相對就業減少約 19%，但整體經濟沒有看到大規模取代<sup class="ref"><a href="#ref-71" data-tab="p-refs">71</a></sup><sup class="ref"><a href="#ref-72" data-tab="p-refs">72</a></sup>。他說「年輕人比較難找工作、但工作沒被消滅」與研究一致。</p>
+<p><span class="verdict v-ok">屬實</span>美國 2025 年新創業申請 569.7 萬件創紀錄，2026 年前十個月再成長約 11%；但「預計會雇人」的申請比例一路降到 6.8%，一人公司的比重升高<sup class="ref"><a href="#ref-73" data-tab="p-refs">73</a></sup><sup class="ref"><a href="#ref-74" data-tab="p-refs">74</a></sup>。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s17">
+<div class="seg-head">
+<span class="seg-no">17</span>
+<h2>他自己的部位：對鎖放空與五檔持股</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=3451s"} target="_blank" rel="noopener">▶ 57:31</a>
+<Say>
+<p>他說投資組合裡本來有很多科技股，大約四個月前，他用「對鎖放空」（shorting against the box）降低了大部分科技股的風險。</p>
+<p>以 NVIDIA 為例：假設持有 100 股很久了，現在會緊張，但直接賣掉要繳 30% 到 35% 的稅。做法是暫時放空 50、75 甚至 100 股，曝險就降下來，原本的多頭部位還留著。這招不能一直用，如果今天做，一月底前就得回補，這是稅法的規定。他現在仍持有 NVIDIA，但放空了大約一半。</p>
+<p>{"他在 Substack 公開過完整持股：NVIDIA、微軟、禮來（Eli Lilly）、穆迪（Moody's）、Visa。看好禮來是因為它可能長期主導 GLP-1 減重藥市場。"}</p>
+</Say>
+<figure class="dg">
+<div class="dg-title">圖 7｜對鎖放空：帳上同時有多有空</div>
+<div class="dg-vs">
+<div>
+<h5>原本</h5>
+<ul>
+<li>持有 NVIDIA 100 股，成本很低</li>
+<li>直接賣：實現大額資本利得，要繳稅</li>
+<li>不賣：股價下跌全吃</li>
+</ul>
+</div>
+<div class="is-key">
+<h5>對鎖放空 50 股</h5>
+<ul>
+<li>多 100 股＋空 50 股，淨曝險 50 股</li>
+<li>沒有賣出，暫不實現利得</li>
+<li>年底後 30 天內要回補，之後 60 天不能再避險</li>
+</ul>
+</div>
+</div>
+<figcaption>Eisman 說他對 NVIDIA 放空了大約一半。這是延後、管理稅負的工具，不是長期避險。</figcaption>
+</figure>
+<Ana>
+<p>這段很少見地透露了專業投資人的實務操作：<b>擔心風險，但不想觸發資本利得稅</b>。對鎖放空讓他在帳面上同時多空、淨曝險下降，又不算賣出。</p>
+<p>他說「一月底前要回補」背後是美國稅法的推定出售規則，細節見下方理論框。這個工具在台灣用不到：台灣個人目前停徵證券交易所得稅，賣股票不必為了資本利得繳稅<sup class="ref"><a href="#ref-75" data-tab="p-refs">75</a></sup>。</p>
+</Ana>
+<Theory>
+<h4>對鎖放空與美國稅法的「推定出售」</h4>
+<p>美國在 1997 年的《納稅人減稅法》加入國稅法第 1259 條「推定出售」規則：持有股票的人如果放空同一檔股票，即使沒賣出，也視為已經賣出、要認列利得<sup class="ref"><a href="#ref-76" data-tab="p-refs">76</a></sup>。但有一個例外：如果在年度結束後 30 天內把空單回補，之後 60 天繼續持有股票、不再避險，這筆避險就不算數。這正是 Eisman 說「今天做的話，一月底前要回補」的原因。</p>
+<p>他說的 30% 到 35% 稅率：聯邦長期資本利得最高 20%，加上 3.8% 的淨投資所得稅<sup class="ref"><a href="#ref-77" data-tab="p-refs">77</a></sup>，再加州稅；紐約市居民合計大約 37% 到 39%，加州約 37%，所以他的數字對高稅率地區是偏低的估計。</p>
+</Theory>
+</article>
+
+<article class="seg" id="s18">
+<div class="seg-head">
+<span class="seg-no">18</span>
+<h2>一般人：買指數就好，不必打敗大盤</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=3559s"} target="_blank" rel="noopener">▶ 59:19</a>
+<Say>
+<p>如果只有 1,000 美元，他的建議很簡單：美國長期是全世界最有活力的經濟體，所以要投資它，但不要選股。拿去買標普 500 指數，之後每一兩個月、每三個月，有閒錢就再買一點，然後忘了它。年輕人有四、五十年的時間，最後會有一筆不錯的存款。不要擇時、不要賣了再買回、不要交易、不要碰選擇權。</p>
+<p>後段主持人問他還有什麼投資原則。他說有人問他選擇權、要不要打敗大盤，他反問為什麼要打敗大盤？市場表現好你就沒事，太多人為了找優勢反而虧大錢。如果能忍受波動，可以標普 500 和那斯達克 100 各半。</p>
+<p>主持人追問：那你自己買標普 500 嗎？他說沒有。為什麼？因為他是職業投資人，做了一輩子，每天全職研究。一般人有自己的工作和生活，把工作做好就好，投資這一塊只會傷到自己。</p>
+</Say>
+<Ana>
+<p>一個靠選股出名的人，勸大家不要選股，這段的說服力就在這裡。他的理由在於<b>一般人沒有研究時間這個優勢</b>，主動操作的成本（交易成本、情緒、時間）會吃掉大部分超額報酬。</p>
+<p>對台灣讀者可以直接換算成：定期定額買市值型 ETF、長期持有、不看盤。</p>
+</Ana>
+<Theory>
+<h4>為什麼主動基金很難贏指數</h4>
+<p>標普道瓊指數公司每半年發布 SPIVA 報告，比較主動基金與基準指數。2026 年年中版顯示，美國大型股主動基金中，有 67% 在 2026 上半年落後標普 500，三年期 77%、五年期 89%、二十年期約 93% 落後<sup class="ref"><a href="#ref-78" data-tab="p-refs">78</a></sup>；2025 全年有 79% 落後，是報告 25 年來第四差的一年<sup class="ref"><a href="#ref-79" data-tab="p-refs">79</a></sup>。</p>
+<p>原因不神祕：主動基金要先扣掉管理費和交易成本，才開始跟指數比；而每年贏的那一小群基金，隔幾年又常常換人。這是 Eisman 叫大家「不要找優勢」的實證背景。</p>
+</Theory>
+</article>
+
+<article class="seg" id="s19">
+<div class="seg-head">
+<span class="seg-no">19</span>
+<h2>為什麼永遠不買加密貨幣，也不買黃金</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=3627s"} target="_blank" rel="noopener">▶ 1:00:27</a>
+<Say>
+<p>主持人問要不要放一點加密貨幣，他說永遠不要。疫情期間他聽了很多加密貨幣節目，主持人很多是金融海嘯後離開華爾街的舊識，論點全部一樣：法幣持續貶值、債務和赤字太大、體系有一天可能崩潰，所以要放 3% 在加密貨幣當末日避險。除此之外他只聽過洗錢這個用途，那不算投資理由。</p>
+<p>他最不能接受的是價格表現跟這套論點相反：通膨數據很糟、利率大漲、那斯達克大跌的日子，加密貨幣應該要漲；NVIDIA 大漲、大家心情很好的日子，應該要跌。實際上剛好反過來。所以他的結論是，這套論點站不住，加密貨幣只是對投機的投機。穩定幣比較不同，價值不波動，可能成為支付系統的一部分。</p>
+<p>黃金他也不碰，雖然認識很多靠黃金發財的人。黃金的論點跟加密貨幣一樣，差別是黃金的走勢大致符合避險邏輯。他不買，是因為不認為美國赤字會在近期造成災難。主持人說他剛訂婚、需要黃金，Eisman 說那不是大家持有黃金的原因。</p>
+</Say>
+<Ana>
+<p>他的檢驗方法值得學：<b>一個資產如果宣稱是避險工具，就去看它在壞日子的表現</b>。說法和價格行為對不上，說法就要打折。這是很乾淨的實證思維，適用於任何投資敘事。</p>
+<p>但「永遠不買」是他個人的結論。比特幣和美股的相關性在不同時期差異很大，也有人把它當成另類的風險資產而非避險工具，那就是另一套論點了。</p>
+</Ana>
+<figure class="dg">
+<div class="dg-title">圖 8｜避險資產該有的樣子，和他看到的樣子</div>
+<div class="dg-vs">
+<div>
+<h5>論點說的</h5>
+<ul>
+<li>通膨差、利率升、科技股跌 → 加密貨幣漲</li>
+<li>市場樂觀 → 加密貨幣跌或持平</li>
+</ul>
+</div>
+<div class="is-key">
+<h5>他觀察到的</h5>
+<ul>
+<li>NVIDIA、那斯達克漲 → 加密貨幣也漲</li>
+<li>科技股跌、情緒差 → 加密貨幣也跌</li>
+<li>所以它更像高風險科技股</li>
+</ul>
+</div>
+</div>
+<figcaption>黃金在他眼中「大致符合」左欄，所以他對黃金的保留是因為不擔心赤字，不是因為論點自相矛盾。</figcaption>
+</figure>
+<Chk>
+<p><span class="verdict v-ok">屬實</span>國際貨幣基金（IMF）2022 年的分析指出，比特幣與標普 500 的相關係數在 2017 到 2019 年只有 0.01，2020 到 2021 年升到 0.36，疫情期間比特幣的波動大約能解釋標普 500 波動的六分之一<sup class="ref"><a href="#ref-80" data-tab="p-refs">80</a></sup>。這支持他「漲跌跟著科技股走」的觀察，但相關程度會隨時期改變。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s20">
+<div class="seg-head">
+<span class="seg-no">20</span>
+<h2>美國赤字：先問為什麼四十年來都沒出事</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=3843s"} target="_blank" rel="noopener">▶ 1:04:03</a>
+<Say>
+<p>主持人問他是不是覺得赤字沒問題。他說沒這樣說過。他的意思是，有人抱怨美國赤字已經抱怨了四十年，1990 年代的 Pete Peterson 就講過一模一樣的話。一群人預言了四十年都沒發生，該先問的是為什麼沒發生，而美國這段期間只有變得更大更有錢。</p>
+<p>他的答案是：美國不只是世界的儲備貨幣，美國公債是全球銀行每天在用的東西，是金融體系的血液。例如附買回市場（repo），他說規模 3.5 兆美元，銀行在這裡隔夜拆借，用的就是短期美國公債。挪威主權基金如果要停放一筆錢五年，會買美國五年期公債，不會買中國或法國公債。除了法國的銀行，全世界沒有任何機構「必須」持有法國公債。大機構需要一個安全、又能隨時變現的地方停錢，符合這個描述的市場只有一個。</p>
+</Say>
+<Ana>
+<p>這段的方法比結論更有用：<b>面對一個反覆失準的預言，先解釋它為什麼失準</b>。美國公債的需求很大一部分是制度性的，來自銀行的流動性規範、抵押品需求和全球外匯準備，這些買家不太看赤字新聞做決定。</p>
+<p>但「沒發生過」不等於「不會發生」。2025 年穆迪把美國主權評等從最高等級調降一級，就是市場開始為財政風險定價的跡象。他的論點解釋了為什麼這個問題可以拖很久，沒有證明它可以無限拖下去。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-part">規模低估</span>他說的 3.5 兆美元，接近以美國公債擔保的隔夜附買回市場每日成交量（SOFR 對應的交易，11 月中約 3.1 兆美元）；整個美國附買回市場的每日曝險約 12 兆美元<sup class="ref"><a href="#ref-81" data-tab="p-refs">81</a></sup><sup class="ref"><a href="#ref-82" data-tab="p-refs">82</a></sup>。擔保品也不限短期公債，參與者除了銀行還有貨幣基金與交易商。</p>
+<p><span class="verdict v-ok">屬實</span>挪威主權基金 2025 年底持有約 1,990 億美元美國公債，是其最大宗的債券部位<sup class="ref"><a href="#ref-83" data-tab="p-refs">83</a></sup>。Pete Peterson 在 1992 年參與創立 Concord Coalition，1993 年出版談財政赤字的《Facing Up》<sup class="ref"><a href="#ref-84" data-tab="p-refs">84</a></sup>。</p>
+<p><span class="verdict v-ok">補充</span>2025 年 5 月，穆迪把美國主權評等從 Aaa 降到 Aa1，三大信評至此都不再給美國最高評等<sup class="ref"><a href="#ref-85" data-tab="p-refs">85</a></sup>。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s21">
+<div class="seg-head">
+<span class="seg-no">21</span>
+<h2>現在該買房嗎？他說不要</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=4145s"} target="_blank" rel="noopener">▶ 1:09:05</a>
+<Say>
+<p>他估計，把房貸、產物保險、房屋稅和各種雜費加起來，現在在美國擁有一間房子的成本比五年前高出約五成，而五年前利率是零。疫情期間再融資的屋主手上是 3% 的房貸，新買家要付 7%，賣方不想賣、買方買不起，交易就卡住了。他認為未來幾年美國房價下跌的機率比較高。</p>
+<p>他給年輕人的建議是：真要買，先確定負擔得起全部持有成本；然後心裡要準備好，將來賣掉時最好的結果是拿回本金。</p>
+<p>主持人一條條反駁：租房是把錢丟水裡？他說不是，買比租貴的那部分可以拿去投資股市。房子是一般人累積財富的主要工具？他說以前是，現在不是了，曼哈頓房地產十年沒賺錢。退休前繳清就不用付房租？他說一路租、把差額投進股市，退休時的錢可能更多。強迫儲蓄？這他沒辦法替每個人回答。家庭的安全感？他說他自己就租房，以前有房子後來賣了，很喜歡現在這樣：東西壞了打給大樓管理員，不用自己出錢處理。</p>
+</Say>
+<figure class="dg">
+<div class="dg-title">圖 9｜美國房市為什麼卡住</div>
+<div class="dg-vs">
+<div>
+<h5>現有屋主</h5>
+<ul>
+<li>疫情時鎖住約 3% 的房貸</li>
+<li>一賣一買就得換成 7% 左右</li>
+<li>所以不賣</li>
+</ul>
+</div>
+<div class="is-key">
+<h5>新買家</h5>
+<ul>
+<li>房價沒降、利率翻倍</li>
+<li>保險、稅費也上漲</li>
+<li>所以買不起</li>
+</ul>
+</div>
+</div>
+<figcaption>經濟學上叫「利率鎖定效應」：低利率房貸本身變成一項資產，屋主為了保住它而不搬家。</figcaption>
+</figure>
+<Ana>
+<p>這段講的是美國，但思考框架可以帶回台灣：<b>把「租」和「買」放在同一張現金流表上比較</b>，買房多出來的持有成本，如果拿去投資會變成多少。這個比較在台灣的結果取決於房價租金比、房貸利率、你自己的投資紀律，結論不一定跟他一樣。</p>
+<p>他也承認有兩件事算不進表格：強迫儲蓄對某些人很有用，以及住的安全感。這兩點在台灣的家庭決策裡分量通常更重。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-ok">大致正確</span>亞特蘭大聯準銀行的購屋負擔指標顯示，擁有一間中位數房屋的每月成本占中位數所得的比例，從 2021 年約 28% 到 31%，升到 2026 年 8 月的 43.9%，每月 3,172 美元創紀錄<sup class="ref"><a href="#ref-86" data-tab="p-refs">86</a></sup>。比例上升四到六成，金額漲得更多。30 年房貸利率 11 月中約 7.28%。</p>
+<p><span class="verdict v-part">需修正</span>「大部分屋主是 3%」說得太滿：2026 年第二季，利率低於 4% 的房貸約占 49%，低於 3% 的約 19%<sup class="ref"><a href="#ref-87" data-tab="p-refs">87</a></sup>。聯邦住宅金融局的研究估計，市場利率每比屋主原利率高 1 個百分點，出售機率下降約 18%<sup class="ref"><a href="#ref-88" data-tab="p-refs">88</a></sup>。</p>
+<p><span class="verdict v-ok">屬實</span>曼哈頓公寓中位成交價 2016 年 110 萬美元、2025 年 117.5 萬美元，十年名目只漲 6.8%，每平方英尺均價還下跌，扣掉通膨是虧的<sup class="ref"><a href="#ref-89" data-tab="p-refs">89</a></sup>。</p>
+<p><span class="verdict v-part">學界有爭論</span>Shiller 的長期資料顯示美國實質房價 1890 到 2019 年每年漲不到 0.6%<sup class="ref"><a href="#ref-90" data-tab="p-refs">90</a></sup>；費城聯準銀行較新的研究則認為實質房價在 1890 到 2006 年間漲了將近四倍<sup class="ref"><a href="#ref-91" data-tab="p-refs">91</a></sup>。房子能不能當長期投資，資料本身也還在吵。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s22">
+<div class="seg-head">
+<span class="seg-no">22</span>
+<h2>看管理層、喜歡雙頭壟斷、做空過 FICO</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=4431s"} target="_blank" rel="noopener">▶ 1:13:51</a>
+<Say>
+<p>他的另一條原則是看管理層：只要懷疑經營團隊有任何不誠實，就跑。他舉 CoreWeave 為例，說這家 2025 年春天上市的公司，三位創辦人到現在合計賣了超過 30 億美元的股票，而整家公司市值才 240 億。為了繳稅賣一點可以理解，一人賣 10 億太離譜，他永遠不會投資。主持人問這是否代表創辦人不相信公司，他說這代表不誠實。</p>
+<p>馬斯克的公司他從來沒買過，主要是估值高到他無法接受，而特斯拉多年來承諾的自動駕駛計程車一直沒兌現。主持人說他的特斯拉會自己開，股價圖也一路向上；Eisman 說那是到它不漲為止，特斯拉這幾年其實沒什麼表現。</p>
+<p>如果只能挑一檔，他會選 Visa 或穆迪。他喜歡天然形成的雙頭壟斷：Visa 和 Mastercard 連接幾十億消費者和數以億計的商家，不可能重建，他也不在乎穩定幣；穆迪和標普的信評業務也一樣。他不排斥獨占，但做空過 FICO：FICO 曾經獨占房貸信用評分，因為傲慢而失去了這個地位，股價重挫。</p>
+</Say>
+<Ana>
+<p>三個原則可以一起看：<b>誠信是否決條件、結構比成長重要、獨占也會被自己的傲慢打敗</b>。</p>
+<p>他對雙頭壟斷的偏好有個隱含邏輯：兩家互相制衡，比較不會激怒監管者和客戶；一家獨大則容易定價過頭、引來政策反撲，FICO 就是例子。這跟他對 AI 模型公司的看法前後一致：他看重的是「別人進不來」，規模大小是其次。</p>
+</Ana>
+<Theory>
+<h4>網路效應與天然雙頭壟斷</h4>
+<p>支付網路有很強的「雙邊網路效應」：越多消費者有卡，越多商家願意收；越多商家收，越多人想辦卡。新進者兩邊都得從零開始。2024 年美國 Visa 與 Mastercard 合計約占四大卡組織消費金額的 87%，其中 Visa 約占兩家合計的七成<sup class="ref"><a href="#ref-92" data-tab="p-refs">92</a></sup>；美國司法部 2024 年還以壟斷簽帳金融卡市場起訴 Visa<sup class="ref"><a href="#ref-93" data-tab="p-refs">93</a></sup>。</p>
+<p>信評業也類似。美國證管會的報告顯示，標普與穆迪合計占美國流通評等約八成，加上惠譽約九成三<sup class="ref"><a href="#ref-94" data-tab="p-refs">94</a></sup>。債券發行人需要被市場認得的評等，投資人只認得少數幾家，這種信任很難複製。但 FCIC 也把信評機構列為 2008 年危機的關鍵齒輪之一：穆迪 2006 年給 AAA 的房貸證券，後來有 83% 被降評<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。Eisman 喜歡的是它的生意結構，不代表他認為它的評等可信。</p>
+<p>FICO 的例子則是另一面：2025 年 7 月，聯邦住宅金融局允許房利美、房地美的房貸改用 VantageScore 4.0，FICO 股價重挫<sup class="ref"><a href="#ref-95" data-tab="p-refs">95</a></sup>；2026 年 4 月正式上路<sup class="ref"><a href="#ref-96" data-tab="p-refs">96</a></sup>。Eisman 在 2026 年 4 月就公開說自己放空 FICO，理由是它大幅漲價惹惱了放款機構<sup class="ref"><a href="#ref-97" data-tab="p-refs">97</a></sup>。不過「三家信用報告」的要求至今仍未取消<sup class="ref"><a href="#ref-98" data-tab="p-refs">98</a></sup>，FICO 的獨占是被削弱，還沒有完全消失。</p>
+</Theory>
+<Chk>
+<p><span class="verdict v-ok">屬實</span>CoreWeave 三位創辦人自 2025 年 3 月上市以來合計賣出約 33 億美元股票，每人約 10 億<sup class="ref"><a href="#ref-99" data-tab="p-refs">99</a></sup><sup class="ref"><a href="#ref-100" data-tab="p-refs">100</a></sup>；11 月下旬市值約 250 億到 270 億美元<sup class="ref"><a href="#ref-101" data-tab="p-refs">101</a></sup>。</p>
+<p><span class="verdict v-na">只見於本集</span>他的完整持股（微軟、禮來、穆迪、Visa）與「鏟子」名單中的 Dell、Supermicro、Quanta、Vertiv，在其他公開資料中找不到獨立出處，以本集說法為準。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s23">
+<div class="seg-head">
+<span class="seg-no">23</span>
+<h2>相信 AI，就投資賣鏟子的人</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=4642s"} target="_blank" rel="noopener">▶ 1:17:22</a>
+<Say>
+<p>主持人問 Anthropic 和 OpenAI 上市後值不值得買，他說不值得，還是護城河的問題。</p>
+<p>如果相信 AI 的故事，他會去找「賣鏟子的人」：做網路設備的思科、Arista，做伺服器的 Dell、Supermicro，做發電設備的 GE Vernova，建電力基礎建設的 Quanta，做電氣化設備的 Eaton，做散熱的 Vertiv。資料中心裡熱到不行，沒有冷卻系統根本撐不住。這樣就不用煩惱誰的模型最好。</p>
+<p>他說如果兩週前接受訪問，他會講護城河、債市的控制力、資料中心蓋不蓋得起來、有沒有電；現在多了一個變數，地方政府會讓整件事變慢。主持人問 2028 年民主黨會不會贏，他說完全不知道，這兩年變化太快，三、四個月世界就翻了不止十五次。被問到 AI 對一般人的影響，他說會改變很多行業和人們的工作內容，但怎麼改，現在沒有人知道。</p>
+</Say>
+<figure class="dg">
+<div class="dg-title">圖 10｜他列的「鏟子」在資料中心的哪裡</div>
+<div class="dg-zone">
+<span class="dg-zone-name">一座 AI 資料中心</span>
+<div class="dg-row is-stack">
+<div class="dg-box">
+<b>網路</b>
+<small>Cisco、Arista</small>
+</div>
+<div class="dg-box">
+<b>伺服器</b>
+<small>Dell、Supermicro</small>
+</div>
+<div class="dg-box">
+<b>散熱</b>
+<small>Vertiv</small>
+</div>
+</div>
+<div class="dg-row" style="margin-top:.7em">
+<div class="dg-box">
+<b>電氣化</b>
+<small>Eaton</small>
+</div>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow is-up">供電</div>
+</div>
+<div class="dg-row is-stack">
+<div class="dg-box is-key">
+<b>發電設備</b>
+<small>GE Vernova</small>
+</div>
+<div class="dg-box is-key">
+<b>電網工程</b>
+<small>Quanta Services</small>
+</div>
+</div>
+<figcaption>共同點：不管哪家模型勝出，資料中心都得買這些東西。缺點是第 11 段講的，一旦資本支出放緩，它們是最先被砍單的。</figcaption>
+</figure>
+<Ana>
+<p>「賣鏟子」來自淘金熱的老故事：挖到金子的人不多，賣鏟子、牛仔褲的人穩賺。它的優點是不用押對贏家，缺點常被忽略：<b>鏟子商的營收直接連著資本支出的週期</b>。第 11 段說的放緩一兩成，對雲端巨頭是好事，對這張名單上的公司就是營收下滑。這兩段放在一起看才完整。</p>
+<p>另外，他說三、四個月世界翻轉十五次，這句話也替整集所有預測打了折扣，他自己很清楚。</p>
+</Ana>
+</article>
+
+<article class="seg" id="s24">
+<div class="seg-head">
+<span class="seg-no">24</span>
+<h2>給 18 歲的建議：先找出自己的天賦</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=4811s"} target="_blank" rel="noopener">▶ 1:20:11</a>
+<Say>
+<p>{"他念了法學院、當過企業律師，過得很痛苦，而且做得很爛。後來他去 Johnson O'Connor 做了一整天的性向測驗，結果是：你很會產生想法，但非常不注重細節，你最不該當的就是企業律師。他終於明白自己為什麼痛苦，後來才進了華爾街。"}</p>
+<p>他給年輕人的建議是：找出你天生擅長什麼，不要當方孔裡的圓釘，否則會一直跟自己的天性打架。想進華爾街的人，他會問你是數字型還是故事型？數字型適合債券市場，故事型適合股票市場，他自己是故事型。主持人說很多移民家庭的孩子被要求當醫生律師，其實應該去做他著迷的事，例如做小提琴；Eisman 說對，順著天賦走。</p>
+</Say>
+<Ana>
+<p>這段很像他對投資的態度：<b>先認清自己的結構，再決定策略</b>。股票和債券的分法很有意思，債券分析的核心是「會不會違約」這種數字題，股票的核心是「未來會變成什麼樣子」的敘事題。</p>
+<p>對經營者也適用：診所或公司裡，把人放在跟天賦相符的位置，比要求他補短板有效得多。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-no">與資料不符</span>{"他說 Johnson O'Connor 已經不存在，但這個性向測驗基金會仍在營運，官網列出全美 15 個測驗中心，全套測驗收費 950 美元"}<sup class="ref"><a href="#ref-102" data-tab="p-refs">102</a></sup>。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s25">
+<div class="seg-head">
+<span class="seg-no">25</span>
+<h2>我們活在更好的年代</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=4973s"} target="_blank" rel="noopener">▶ 1:22:53</a>
+<Say>
+<p>主持人說現在的世界好像更分裂。Eisman 說每個人都愛覺得現在是史上最糟的時代，其實不是。他訪問過寫《Capitalism and Its Critics》的 John Cassidy，書的開頭有一張全球人均 GDP 從西元元年到 2022 年的圖，一直平到 1830 年左右，然後幾乎垂直往上。他的解讀是，從耶穌的年代到 1830 年，人類幾乎沒有創造財富，所有財富都是最近一百五十年創造的。他希望大家偶爾承認一下，我們活在一個好時代。</p>
+</Say>
+<figure class="chart" id="ch-gdp">
+<p class="c-title">全球人均 GDP，西元 1 年到 2008 年</p>
+<p class="c-sub">Maddison Database 2010，1990 年國際元（經購買力調整）</p>
+<svg viewbox="0 0 640 280" role="img" aria-label="全球人均 GDP 西元 1 到 2008 年">
+<g class="grid">
+<line x1="52" x2="624" y1="246" y2="246" />
+<line x1="52" x2="624" y1="190.9" y2="190.9" />
+<line x1="52" x2="624" y1="135.8" y2="135.8" />
+<line x1="52" x2="624" y1="80.6" y2="80.6" />
+<line x1="52" x2="624" y1="25.5" y2="25.5" />
+</g>
+<g class="ax">
+<text x="44" y="250" text-anchor="end">0</text>
+<text x="44" y="194.9" text-anchor="end">2,000</text>
+<text x="44" y="139.8" text-anchor="end">4,000</text>
+<text x="44" y="84.6" text-anchor="end">6,000</text>
+<text x="44" y="29.5" text-anchor="end">8,000</text>
+<text x="52.3" y="266" text-anchor="middle">1</text>
+<text x="194.3" y="266" text-anchor="middle">500</text>
+<text x="336.6" y="266" text-anchor="middle">1000</text>
+<text x="478.9" y="266" text-anchor="middle">1500</text>
+<text x="623.4" y="266" text-anchor="middle">2008</text>
+<line x1="52" x2="624" y1="246" y2="246" style="stroke:var(--muted)" />
+</g>
+<path class="line" d="M52.3,233.1 L336.6,233.5 L478.9,230.4 L535.8,229.1 L569.9,227.6 L592.7,211.2 L606.9,187.8 L621.2,79.6 L623.4,36.2" />
+<line class="anno-line" x1="569.9" y1="227.6" x2="554.6" y2="185.6" />
+<text class="anno" x="551.9" y="167.6" text-anchor="end">1820 年前後開始轉折</text>
+<circle class="hit" cx="52.3" cy="233.1" r="12" fill="transparent" data-tip="西元 1 年：467" />
+<circle class="dot" cx="52.3" cy="233.1" r="4.5" data-tip="西元 1 年：467" />
+<circle class="hit" cx="336.6" cy="233.5" r="12" fill="transparent" data-tip="1000 年：453" />
+<circle class="dot" cx="336.6" cy="233.5" r="4.5" data-tip="1000 年：453" />
+<circle class="hit" cx="478.9" cy="230.4" r="12" fill="transparent" data-tip="1500 年：566" />
+<circle class="dot" cx="478.9" cy="230.4" r="4.5" data-tip="1500 年：566" />
+<circle class="hit" cx="535.8" cy="229.1" r="12" fill="transparent" data-tip="1700 年：615" />
+<circle class="dot" cx="535.8" cy="229.1" r="4.5" data-tip="1700 年：615" />
+<circle class="hit" cx="569.9" cy="227.6" r="12" fill="transparent" data-tip="1820 年：666" />
+<circle class="dot" cx="569.9" cy="227.6" r="4.5" data-tip="1820 年：666" />
+<circle class="hit" cx="592.7" cy="211.2" r="12" fill="transparent" data-tip="1900 年：1,261" />
+<circle class="dot" cx="592.7" cy="211.2" r="4.5" data-tip="1900 年：1,261" />
+<circle class="hit" cx="606.9" cy="187.8" r="12" fill="transparent" data-tip="1950 年：2,111" />
+<circle class="dot" cx="606.9" cy="187.8" r="4.5" data-tip="1950 年：2,111" />
+<circle class="hit" cx="621.2" cy="79.6" r="12" fill="transparent" data-tip="2000 年：6,038" />
+<circle class="dot" cx="621.2" cy="79.6" r="4.5" data-tip="2000 年：6,038" />
+<circle class="hit" cx="623.4" cy="36.2" r="12" fill="transparent" data-tip="2008 年：7,614" />
+<circle class="dot" cx="623.4" cy="36.2" r="4.5" data-tip="2008 年：7,614" />
+</svg>
+<figcaption>單位：1990 年國際元（Geary-Khamis）。資料為 Maddison Database 2010<sup class="ref"><a href="#ref-103" data-tab="p-refs">103</a></sup>；新版 Maddison Project 2023 以 2011 年國際元計，1820 年約 1,128、2022 年約 16,677，同樣是十幾倍的成長<sup class="ref"><a href="#ref-104" data-tab="p-refs">104</a></sup>。Eisman 說的是 Cassidy 書中的圖<sup class="ref"><a href="#ref-105" data-tab="p-refs">105</a></sup>。</figcaption>
+</figure>
+<Ana>
+<p>這張「曲棍球桿」是經濟史最常被引用的圖之一，經濟學家稱轉折點之後的現象為「大分流」與現代經濟成長。對一個整集都在講泡沫和衰退的人來說，用這張圖收尾很有意思：<b>短期的崩盤是真的，長期的成長也是真的</b>，兩者並不矛盾。這也是他勸一般人長期持有指數的底層理由。</p>
+</Ana>
+<Chk>
+<p><span class="verdict v-ok">屬實</span>Maddison 的長期資料顯示全球人均 GDP 從西元元年到 1820 年只增加約四成，1820 年後到 2008 年增加約 11 倍<sup class="ref"><a href="#ref-103" data-tab="p-refs">103</a></sup>。Cassidy 的《Capitalism and Its Critics》於 2025 年 5 月出版<sup class="ref"><a href="#ref-105" data-tab="p-refs">105</a></sup>。</p>
+<p><span class="verdict v-part">年份要放寬</span>轉折大約從 1820 年前後開始，他說的「1830 年」「最近 150 年」都是概數。</p>
+</Chk>
+</article>
+
+<article class="seg" id="s26">
+<div class="seg-head">
+<span class="seg-no">26</span>
+<h2>Max、悲傷，以及現在的快樂</h2>
+</div>
+<a class="ts" href={"https://www.youtube.com/watch?v=4Unch--PmW0&t=5063s"} target="_blank" rel="noopener">▶ 1:24:23</a>
+<Say>
+<p>主持人提到他 35 歲那年失去兒子 Max。Eisman 說這件事改變了他的一生。Max 生於 1996 年 10 月，非常健康，出生 24 天後，嬰兒保母身體不適卻沒告訴他們，把 Max 帶上床一起睡，睡著後壓到了他。他說他相信那是意外，保母也沒有被起訴。</p>
+<p>在那之前，他覺得自己的人生一帆風順：好學校、家境不錯、娶了住在隔壁的完美女孩。之後他再也不覺得世界是安全的，變得非常憤怒。他說這也是他在金融危機裡那麼高調的原因之一，他在找可以恨的人，然後在華爾街找到了；電影裡 Steve Carell 演的那股怒氣，他當時真的就是那樣。</p>
+<p>他和太太都做了很長時間的心理治療，有幫助，但他還是憤怒了很久，現在已經不會了，他說靠的就是時間。他引用一句忘了出處的話：悲傷最深的時候，那是你每天早上醒來想到的第一件事；開始好轉的那一天，你發現它變成了第二件。第一年他無法聽古典音樂，一聽就哭。很多人說這種事會讓婚姻破裂，他們靠治療穩住了關係，後來太太很快決定再試一次，懷了一對雙胞胎女兒，讓他們有新的事情可以專注。</p>
+<p>節目最後，主持人拿出太太 Valerie 寫給他的一封短信，他當場讀到哽咽。被問到現在快樂嗎，他說好幾年沒這麼快樂了：和太太一起做全新的事業，一起寫作、教學，每週做三集節目。</p>
+</Say>
+<Ana>
+<p>這段讓整集的前面全部有了另一層意思。他對華爾街的憤怒、對執行長說法的不信任、對「看行為不看說法」的堅持，都有一部分來自一個失去兒子的父親，不再相信世界是安全的。</p>
+<p>他也示範了一種很健康的說法：<b>悲傷會隨著時間換位置</b>，從每天醒來的第一件事，慢慢變成第二件。最後那句「好幾年沒這麼快樂」，對照整集的悲觀預測，是一個很完整的收尾。</p>
+</Ana>
+</article>
+<section class="seg" id="sum">
+<div class="seg-head">
+<span class="seg-no">＊</span>
+<h2>整集總結：他的框架、他的盲點、我們能帶走什麼</h2>
+</div>
+<figure class="dg">
+<div class="dg-title">圖 11｜Eisman 的 AI 風險清單（選前四個＋選後一個）</div>
+<div class="dg-row is-stack">
+<div class="dg-box">
+<b>集中風險</b>
+<small>整條鏈靠兩家模型公司</small>
+</div>
+<div class="dg-box">
+<b>資本密集</b>
+<small>雲端巨頭現金流轉負，看債市臉色</small>
+</div>
+<div class="dg-box">
+<b>沒有護城河</b>
+<small>模型可互換、中國模型便宜</small>
+</div>
+<div class="dg-box">
+<b>蓋不蓋得起來</b>
+<small>工程、電力、設備都吃緊</small>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow">2026-11-03 期中選舉之後</div>
+</div>
+<div class="dg-row">
+<div class="dg-box is-key is-narrow">
+<b>地方政治</b>
+<small>州長、鎮公所的許可決定建設速度</small>
+</div>
+</div>
+<figcaption>第五個變數讓他從「大概是泡沫」退到「不確定」：建設放緩可能讓泡沫破，也可能讓產業變健康，看放緩多少。</figcaption>
+</figure>
+<div class="summary-grid">
+<div><h4>他說對的地方</h4>集中風險是真的，資本支出的確開始靠舉債支撐，瓶頸正從資金移到電力和地方許可。用「誘因」和「行為」檢驗說法，是一套能長期使用的工具。</div>
+<div><h4>要打折的地方</h4>65%、Google 增資、季增率這些數字，有的是他的寬口徑算法，有的需要對照原始文件。他對 AI 安全的否定是動機推論，不是技術論證。</div>
+<div><h4>他自己也說了</h4>不知道 2028 年誰贏、不知道 AI 會怎麼改變工作、世界三四個月就翻轉十幾次。這集的預測都有保存期限。</div>
+<div><h4>一般人帶得走的</h4>定期買指數、不追加密貨幣敘事、買房前算全部持有成本、看到漂亮營收先問品質、看到熱門題材先問誰按量拿錢。</div>
+</div>
+<Ana>
+<p>如果只記一件事：Eisman 從 2007 年那頓晚餐學到的方法，比他對 AI 的任何預測都耐用。<b>找出系統裡誰按量拿錢、誰延後承擔損失、誰的現金流要靠別人</b>，這三個問題問完，大多數的泡沫都看得出輪廓。</p>
+</Ana>
+</section>
+<p class="foot">本頁依 The Diary Of A CEO 2026-11-23 公開影片與公開逐字稿整理，摘譯為濃縮改寫，並非逐字翻譯；完整原文請見影片。文中「分析」為整理者觀點，不構成投資建議。數字查證以 2026-11-24 能取得的公開資料為準，出處見「參考文獻」分頁。影片<sup class="ref"><a href="#ref-106" data-tab="p-refs">106</a></sup>；逐字稿<sup class="ref"><a href="#ref-107" data-tab="p-refs">107</a></sup>。</p>
+</Page>
+
+<Page id="ev-history" title="事件｜1843–1929">
+<header class="hero">
+<div class="kicker">Event · 1837–1933</div>
+<h1>1843 到 1929：<br />沒有中央銀行的美國，每隔十幾年崩一次</h1>
+<p class="lede">Eisman 在第 2 段說，大蕭條以前的美國幾乎沒有監管，差不多每 20 年就有一次繁榮與崩盤。這一頁把那段歷史攤開來看：哪幾次、多嚴重、最後怎麼收場。</p>
+<p class="meta"><span>對應主文：第 2 段</span><span>關鍵詞：銀行恐慌、長蕭條、存款保險</span></p>
+</header>
+<h2>一張時間軸看完</h2>
+<figure class="dg">
+<div class="dg-title">圖 A1｜美國的銀行恐慌與衰退（NBER 認定的衰退長度）</div>
+<ol class="dg-tl is-wide">
+<li><span class="dg-when">1837</span><span class="dg-what"><b>1837 年恐慌</b><small>第二合眾國銀行執照到期後的信用崩潰，早於 NBER 的正式紀錄</small></span></li>
+<li><span class="dg-when">1857</span><span class="dg-what"><b>1857 年恐慌</b><small>衰退 18 個月（1857/6–1858/12）</small></span></li>
+<li><span class="dg-when">1873</span><span class="dg-what"><b>1873 年恐慌</b><small>鐵路金融商 Jay Cooke 倒閉，紐約證交所首度休市；衰退 65 個月，美國史上最長</small></span></li>
+<li><span class="dg-when">1893</span><span class="dg-what"><b>1893 年恐慌</b><small>衰退 17 個月，聯準會的歷史文章稱之為美國最嚴重的金融危機之一</small></span></li>
+<li><span class="dg-when">1907</span><span class="dg-what"><b>1907 年恐慌</b><small>衰退 13 個月；J.P. Morgan 私人出面救市，直接催生 1913 年的聯準會</small></span></li>
+<li><span class="dg-when">1929</span><span class="dg-what"><b>大蕭條</b><small>衰退 43 個月（1929/8–1933/3），深度空前</small></span></li>
+<li><span class="dg-when">1933–34</span><span class="dg-what"><b>制度重建</b><small>銀行法（含存款保險）、證券法、證券交易法與 SEC</small></span></li>
+</ol>
+<figcaption>主要恐慌之間隔 16、20、14、22 年，平均約 18 年。Eisman 說的「每 20 年」是粗略但不離譜的說法<sup class="ref"><a href="#ref-3" data-tab="p-refs">3</a></sup><sup class="ref"><a href="#ref-4" data-tab="p-refs">4</a></sup>。</figcaption>
+</figure>
+<h2>那個年代為什麼這麼容易崩</h2>
+<p>美國在 1836 年到 1913 年之間沒有中央銀行。銀行各自發行票據、各自保管準備金，一家出事，存款人就會衝去別家擠兌，因為沒有人能當最後貸款人。1863–64 年的《國民銀行法》建立了全國性的銀行體系，但沒有解決流動性危機時誰來救的問題<sup class="ref"><a href="#ref-4" data-tab="p-refs">4</a></sup>。</p>
+<p>所以「幾乎沒有監管」要稍微修正：那時候有銀行法規，缺的是<b>危機時的安全網</b>。這個缺口要等到 1913 年聯準會成立、1933 年存款保險上路才補起來。</p>
+<h2>1873：Eisman 說的那場「十年蕭條」</h2>
+<Say>
+<p>Eisman 說時間軸上漏了 1870 年那一次，那場蕭條拖了十年，非常可怕。</p>
+</Say>
+<Ana>
+<p>{"他指的是 1873 年恐慌。起因是鐵路投資過熱：南北戰爭後鐵路公司大量發債，鐵路金融商 Jay Cooke & Company 承銷的北太平洋鐵路債券賣不動，1873 年 9 月倒閉，引發連鎖擠兌，紐約證交所史上第一次休市十天"}<sup class="ref"><a href="#ref-4" data-tab="p-refs">4</a></sup>。</p>
+<p>NBER 記錄的衰退期是 1873 年 10 月到 1879 年 3 月，共 65 個月，至今仍是美國有紀錄以來最長的一次，比大蕭條的 43 個月還長<sup class="ref"><a href="#ref-3" data-tab="p-refs">3</a></sup>。歐洲史學界另有一個更長的「長蕭條」（1873–1896）說法，主要描述英國與歐陸的長期通縮<sup class="ref"><a href="#ref-5" data-tab="p-refs">5</a></sup>。「十年」兩種口徑都對不太上，比較像他記憶中的整數。</p>
+<p>這次事件跟今天的 AI 最像的地方是：<b>一項改變世界的基礎建設（鐵路），在融資狂熱中被過度建設</b>。鐵路後來確實串起了整個美國，但當年借錢蓋鐵路的公司和買債的人，很多都血本無歸。</p>
+</Ana>
+<h2>1933 年之後改了什麼</h2>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+<th>制度</th>
+<th>時間</th>
+<th>做了什麼</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>聯邦準備制度</td>
+<td>1913</td>
+<td>中央銀行，危機時可以當最後貸款人。1907 年恐慌的直接產物</td>
+</tr>
+<tr>
+<td>1933 年銀行法（Glass-Steagall）</td>
+<td>1933-06-16</td>
+<td>分離商業銀行與投資銀行、成立 FDIC、限制存款利率（Q 條例）</td>
+</tr>
+<tr>
+<td>存款保險</td>
+<td>1934-01-01 生效</td>
+<td>每位存款人保障 2,500 美元，同年調到 5,000；2010 年後永久 25 萬美元</td>
+</tr>
+<tr>
+<td>1933 年證券法</td>
+<td>1933</td>
+<td>新發行證券要註冊、揭露</td>
+</tr>
+<tr>
+<td>1934 年證券交易法</td>
+<td>1934-06-06</td>
+<td>成立 SEC，監理交易所與次級市場</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="muted">資料來源：聯準會歷史<sup class="ref"><a href="#ref-108" data-tab="p-refs">108</a></sup>、FDIC<sup class="ref"><a href="#ref-6" data-tab="p-refs">6</a></sup>、SEC<sup class="ref"><a href="#ref-109" data-tab="p-refs">109</a></sup>。分離商業與投資銀行的條款在 1999 年被《金融服務業現代化法》廢除，這也是後來討論 2008 年危機時常被提起的背景。</p>
+<Ana>
+<p>Eisman 的觀察大致成立：1934 年到 2000 年之間，美國有衰退、有 1970 年代的停滯性通膨、有 1980 年代的儲貸危機，但沒有出現 1929 年那種全面崩潰。<b>安全網把「銀行倒閉→存款消失→全面衰退」這條鏈切斷了</b>。</p>
+<p>這也解釋了他為什麼說 AI 泡沫破了會是衰退，到不了金融危機的程度（主文第 10 段）：只要虧損不卡在銀行體系裡，安全網就還撐得住。</p>
+</Ana>
+<a class="back" href="#s02" data-tab="p-main">← 回到主文第 2 段</a>
+</Page>
+
+<Page id="ev-2008" title="事件｜2008 次貸">
+<header class="hero">
+<div class="kicker">Event · 2002–2008</div>
+<h1>2008 次貸危機與大賣空：<br />一條按量計酬的流水線</h1>
+<p class="lede">Eisman 在主文第 3 到 5 段講的晚餐、次貸、CDS，是 2008 年金融危機的縮影。這一頁把那條流水線畫出來：錢從哪裡來、誰拿了手續費、風險最後落在誰身上，以及他怎麼押注它崩潰。</p>
+<p class="meta"><span>對應主文：第 3–5 段</span><span>關鍵詞：次級房貸、證券化、CDO、CDS、FrontPoint</span></p>
+</header>
+<h2>次貸是怎麼長大的</h2>
+<p>次級房貸指的是借給信用紀錄較差的人的房貸。這種貸款以前就有，但規模不大。2000 年代初期利率低、房價一路漲，華爾街對可以包裝成債券的房貸需求很大，放款機構就一路放寬標準：不看收入證明、頭期款趨近於零、前兩年超低利率之後再跳升。</p>
+<figure class="chart">
+<p class="c-title">美國次級房貸年度放款金額</p>
+<p class="c-sub">單位：十億美元</p>
+<svg viewbox="0 0 640 270" role="img" aria-label="美國次級房貸年度放款">
+<g class="grid">
+<line x1="46" x2="630" y1="222" y2="222" />
+<line x1="46" x2="630" y1="166" y2="166" />
+<line x1="46" x2="630" y1="110" y2="110" />
+<line x1="46" x2="630" y1="54" y2="54" />
+</g>
+<g class="ax">
+<text x="38" y="226" text-anchor="end">0</text>
+<text x="38" y="170" text-anchor="end">200</text>
+<text x="38" y="114" text-anchor="end">400</text>
+<text x="38" y="58" text-anchor="end">600</text>
+<line x1="46" x2="630" y1="222" y2="222" style="stroke:var(--muted)" />
+</g>
+<rect class="hit" x="46" y="26" width="97.3" height="196" fill="transparent" data-tip="1996 年：約 700 億美元" />
+<path class="mark " d="M66.7,222 V206.4 Q66.7,202.4 70.7,202.4 H118.7 Q122.7,202.4 122.7,206.4 V222 Z" data-tip="1996 年：約 700 億美元" />
+<text class="val" x="94.7" y="195.4" text-anchor="middle">70</text>
+<text class="lbl" x="94.7" y="240" text-anchor="middle">1996</text>
+<rect class="hit" x="143.3" y="26" width="97.3" height="196" fill="transparent" data-tip="1998 年：約 1,350 億美元" />
+<path class="mark " d="M164,222 V188.2 Q164,184.2 168,184.2 H216 Q220,184.2 220,188.2 V222 Z" data-tip="1998 年：約 1,350 億美元" />
+<text class="val" x="192" y="177.2" text-anchor="middle">135</text>
+<text class="lbl" x="192" y="240" text-anchor="middle">1998</text>
+<rect class="hit" x="240.7" y="26" width="97.3" height="196" fill="transparent" data-tip="2000 年：約 1,000 億美元" />
+<path class="mark " d="M261.3,222 V198 Q261.3,194 265.3,194 H313.3 Q317.3,194 317.3,198 V222 Z" data-tip="2000 年：約 1,000 億美元" />
+<text class="val" x="289.3" y="187" text-anchor="middle">100</text>
+<text class="lbl" x="289.3" y="240" text-anchor="middle">2000</text>
+<rect class="hit" x="338" y="26" width="97.3" height="196" fill="transparent" data-tip="Eisman 在節目中說 2002 年約 750 億美元；FCIC 資料顯示 2000 年已有 1,000 億、2003 年 3,100 億" />
+<path class="mark warn" d="M358.7,222 V205 Q358.7,201 362.7,201 H410.7 Q414.7,201 414.7,205 V222 Z" data-tip="Eisman 在節目中說 2002 年約 750 億美元；FCIC 資料顯示 2000 年已有 1,000 億、2003 年 3,100 億" />
+<text class="val" x="386.7" y="194" text-anchor="middle">{"75*"}</text>
+<text class="lbl" x="386.7" y="240" text-anchor="middle">2002</text>
+<text class="lbl" x="386.7" y="262" text-anchor="middle">口述</text>
+<rect class="hit" x="435.3" y="26" width="97.3" height="196" fill="transparent" data-tip="2003 年：約 3,100 億美元" />
+<path class="mark " d="M456,222 V139.2 Q456,135.2 460,135.2 H508 Q512,135.2 512,139.2 V222 Z" data-tip="2003 年：約 3,100 億美元" />
+<text class="val" x="484" y="128.2" text-anchor="middle">310</text>
+<text class="lbl" x="484" y="240" text-anchor="middle">2003</text>
+<rect class="hit" x="532.7" y="26" width="97.3" height="196" fill="transparent" data-tip="2006 年：約 6,000 億美元，占當年所有房貸放款 23.5%" />
+<path class="mark hi" d="M553.3,222 V58 Q553.3,54 557.3,54 H605.3 Q609.3,54 609.3,58 V222 Z" data-tip="2006 年：約 6,000 億美元，占當年所有房貸放款 23.5%" />
+<text class="val" x="581.3" y="47" text-anchor="middle">600</text>
+<text class="lbl" x="581.3" y="240" text-anchor="middle">2006</text>
+<text class="lbl" x="581.3" y="262" text-anchor="middle">占 23.5%</text>
+</svg>
+<figcaption>資料：美國金融危機調查委員會（FCIC）報告圖 5.2 與正文，原始數據來自 Inside Mortgage Finance<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>；只列報告中有明確數字的年份。琥珀色那根是 Eisman 在節目中說的 2002 年數字，與 FCIC 的年份序列對不上，應視為示意。</figcaption>
+</figure>
+<p>到 2006 年，次貸一年放出約 6,000 億美元，占所有房貸的近四分之一，其中大部分被證券化賣掉<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。FICO 分數是這個市場的共同語言：一般以 620 或 660 分作為次級的分界<sup class="ref"><a href="#ref-9" data-tab="p-refs">9</a></sup><sup class="ref"><a href="#ref-10" data-tab="p-refs">10</a></sup>。</p>
+<h2>流水線：每一站都按量收費</h2>
+<figure class="dg">
+<div class="dg-title">圖 B1｜次貸證券化的流水線</div>
+<div class="dg-row">
+<div class="dg-box is-dim is-narrow">
+<b>借款人</b>
+<small>信用分數偏低、收入證明不足</small>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow">申請房貸</div>
+</div>
+<div class="dg-row">
+<div class="dg-box">
+<b>放款機構</b>
+<small>按件收手續費，放完就賣掉<br />例：New Century、Countrywide</small>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow">打包賣給華爾街</div>
+</div>
+<div class="dg-row">
+<div class="dg-box is-key">
+<b>投資銀行的證券化部門</b>
+<small>把幾千筆房貸包成房貸抵押證券（MBS），切成高低風險不同的分層<br />按發行量收費</small>
+</div>
+</div>
+<div class="dg-row is-stack">
+<div class="dg-arrow">信評機構給分層打分數<br />（發行人付錢）</div>
+<div class="dg-arrow">賣不掉的中低層<br />再包成 CDO</div>
+</div>
+<div class="dg-row">
+<div class="dg-box">
+<b>CDO 管理人</b>
+<small>收管理費，例如書中的 Wing<br />本身幾乎不持有</small>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow">標成 AAA 賣出</div>
+</div>
+<div class="dg-row">
+<div class="dg-box is-no is-narrow">
+<b>全球投資人</b>
+<small>退休基金、保險公司、銀行<br />最後扛下違約損失</small>
+</div>
+</div>
+<figcaption>前面每一站都在成交時拿錢，損失要等兩三年後借款人違約才出現。這是 Eisman 那句「誘因每次都贏過道德」的完整版本。</figcaption>
+</figure>
+<p>美國金融危機調查委員會（FCIC）2011 年的結論報告，把這條流水線上的幾個環節都列為危機成因：放款標準崩壞、證券化把風險轉手、信評機構失靈、金融機構過度槓桿，以及監理機關沒有出手<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。報告特別指出，放款端在「發起後即出售」的模式下，對貸款日後是否違約幾乎沒有利害關係。</p>
+<h2>那頓晚餐：Wing 與美林</h2>
+<Say>
+<p>Eisman 在拉斯維加斯晚餐上遇到的 Wing，是《大賣空》書中的人物。他管理 CDO、收管理費，自己卻沒持有。Eisman 後來的理解是：美林發行了大量次貸證券化商品，自己直接賣不好看，就透過他來買、再推薦給客戶。</p>
+</Say>
+<p>這段故事的主角在書中叫 Wing Chau。2007 年 1 月底，美國證券化論壇在拉斯維加斯的威尼斯人飯店開年會，德意志銀行的交易員 Greg Lippmann 安排 Eisman 坐在 Chau 旁邊。據書中描述，晚餐後 Eisman 要求放空 Chau 在買的所有東西，團隊的次貸空單也隨之加碼。</p>
+<p>FCIC 報告證實了故事的骨架：Chau 先後主持 Maxim Group 與 Harding Advisory，管理的 CDO 大多由美林承銷；他管理的 13 檔美林 CDO 中，88% 的中間層被賣進其他 CDO<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。美林從 2002 年的第 15 名竄升到 CDO 承銷的前兩名<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。2013 年 SEC 起訴 Harding 與 Chau，2019 年的和解命令認定 Harding 曾應美林要求買進特定債券，Chau 被禁止從業<sup class="ref"><a href="#ref-11" data-tab="p-refs">11</a></sup>。Chau 曾控告 Lewis 與 Eisman 誹謗，2014 年敗訴<sup class="ref"><a href="#ref-110" data-tab="p-refs">110</a></sup>。</p>
+<Ana>
+<p>Eisman 在節目裡先替 Chau 說話：他做的事跟同業沒兩樣。這句話比指責更重。<b>問題不在某個壞人，在於整個行業的計酬方式</b>。美林需要有人買它的 CDO，CDO 管理人需要管理費，信評機構需要發行人的委託，每個人都在自己的位置上做出理性的選擇，合起來卻是一場災難。</p>
+</Ana>
+<h2>Eisman 怎麼押注</h2>
+<figure class="dg">
+<div class="dg-title">圖 B2｜信用違約交換（CDS）：買保險，不必持有債券</div>
+<div class="dg-row is-stack">
+<div class="dg-box">
+<b>保障買方</b>
+<small>Eisman 的基金<br />不必持有那批次貸債券</small>
+</div>
+<div class="dg-box is-key">
+<b>保障賣方</b>
+<small>投資銀行、保險公司<br />例：高盛、AIG</small>
+</div>
+</div>
+<div class="dg-row is-stack">
+<div class="dg-arrow">每年付保費<br />他說一開始約 3%</div>
+<div class="dg-arrow is-up">債券違約時<br />賠付名目本金</div>
+</div>
+<div class="dg-row">
+<div class="dg-box is-dim is-narrow">
+<b>參考標的</b>
+<small>某一批次貸證券化商品的特定分層</small>
+</div>
+</div>
+<figcaption>他的部位約 7 億美元名目本金。最多賠掉保費，押中就拿回接近整筆本金，這是不對稱的賭注。</figcaption>
+</figure>
+<p>Eisman 當時在 FrontPoint Partners 管理基金，FrontPoint 在 2006 年被摩根士丹利收購<sup class="ref"><a href="#ref-15" data-tab="p-refs">15</a></sup>。依 FCIC 報告，他從 2005 年起就開始買次貸分層的 CDS<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。他在節目中說，部位最多約 7 億美元名目本金，一開始一年保費約 3%；最後基金賺了約 10 億美元，團隊依績效費拿兩成，母公司再分走一半。</p>
+<p>這筆交易能成立，靠的是「裸 CDS」：他不必擁有那些債券，就能買保險。2000 年紐約州保險局認定這種合約不是保險，所以賣方（例如 AIG）不需要像保險公司那樣提列準備金。全球 CDS 名目本金在 2004 到 2007 年間從 6.4 兆膨脹到 58.2 兆美元<sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。賣保險的一方收了多年保費，等到違約真的發生才發現賠不起，AIG 就是這樣需要政府紓困。</p>
+<h2>崩潰的順序</h2>
+<figure class="dg">
+<div class="dg-title">圖 B3｜從放款機構倒閉到雷曼</div>
+<ol class="dg-tl is-wide">
+<li><span class="dg-when">2007-04</span><span class="dg-what"><b>New Century 申請破產</b><small>當時美國第二大次貸放款機構</small></span></li>
+<li><span class="dg-when">2007-08</span><span class="dg-what"><b>法國巴黎銀行凍結三檔基金</b><small>次貸資產無法估價，全球資金市場開始緊縮</small></span></li>
+<li><span class="dg-when">2008-03</span><span class="dg-what"><b>貝爾斯登被摩根大通收購</b><small>聯準會提供融資協助</small></span></li>
+<li><span class="dg-when">2008-09-07</span><span class="dg-what"><b>房利美、房地美被政府接管</b></span></li>
+<li><span class="dg-when">2008-09-15</span><span class="dg-what"><b>雷曼兄弟破產；美林賣給美國銀行</b><small>同一個週末。發行最多 CDO 的美林沒有撐過去</small></span></li>
+<li><span class="dg-when">2008-09-16</span><span class="dg-what"><b>聯準會紓困 AIG</b><small>AIG 賣出大量 CDS，賠不起</small></span></li>
+<li><span class="dg-when">2008-10-03</span><span class="dg-what"><b>國會通過 7,000 億美元問題資產紓困計畫（TARP）</b></span></li>
+</ol>
+<figcaption>時間依聯準會歷史資料與 FCIC 報告<sup class="ref"><a href="#ref-111" data-tab="p-refs">111</a></sup><sup class="ref"><a href="#ref-8" data-tab="p-refs">8</a></sup>。第一批倒下的是業務最單一、槓桿最高的專業次貸放款機構，跟主文第 13 段說的新雲端業者是同一種位置。</figcaption>
+</figure>
+<Ana>
+<p>Eisman 說今天的 AI 更像網路泡沫，不像 2008 年，理由是銀行的槓桿和監管都和當年不同（主文第 10 段）。但 2008 年留給 AI 的教訓不只是銀行：<b>當一個產業的參與者都在成交當下拿錢，而損失要好幾年後才顯現</b>，這個結構本身就會推著所有人放寬標準。</p>
+<p>拿來對照今天，值得問的是：AI 資料中心的融資、算力長約、按用量計價的營收，有哪些環節是「先收錢、後算帳」的？誰是這一輪的 Wing？</p>
+</Ana>
+<a class="back" href="#s03" data-tab="p-main">← 回到主文第 3 段</a>
+</Page>
+
+<Page id="ev-dotcom" title="事件｜網路泡沫">
+<header class="hero">
+<div class="kicker">Event · 1995–2015</div>
+<h1>2000 年網路泡沫：<br />技術是真的，股價要等十五年</h1>
+<p class="lede">Eisman 認為要理解今天的 AI，網路泡沫比 2008 年更有參考價值。這一頁整理那場泡沫的經過、Henry Blodget 的故事，以及泡沫留下了什麼。</p>
+<p class="meta"><span>對應主文：第 6 段</span><span>關鍵詞：那斯達克、分析師利益衝突、暗光纖</span></p>
+</header>
+<h2>經過</h2>
+<figure class="dg">
+<div class="dg-title">圖 C1｜網路泡沫的興衰</div>
+<ol class="dg-tl is-wide">
+<li><span class="dg-when">1995-08</span><span class="dg-what"><b>Netscape 上市</b><small>網路股熱潮的起點</small></span></li>
+<li><span class="dg-when">1998-12</span><span class="dg-what"><b>Blodget 喊亞馬遜 400 美元</b><small>當天股價漲約 19%，三週內真的到了</small></span></li>
+<li><span class="dg-when">2000-03-10</span><span class="dg-what"><b>那斯達克收盤 5,048.62</b><small>泡沫頂點</small></span></li>
+<li><span class="dg-when">2001-03～11</span><span class="dg-what"><b>美國衰退 8 個月</b><small>消費支出全年仍在成長</small></span></li>
+<li><span class="dg-when">2002-10-09</span><span class="dg-what"><b>那斯達克收盤 1,114.11</b><small>從高點跌掉約 78%</small></span></li>
+<li><span class="dg-when">2003-04</span><span class="dg-what"><b>研究報告全球和解</b><small>十家投行合計約 14 億美元，Blodget 終身禁業</small></span></li>
+<li><span class="dg-when">2004-08</span><span class="dg-what"><b>Google 上市</b><small>第二代網路公司</small></span></li>
+<li><span class="dg-when">2015-04-23</span><span class="dg-what"><b>那斯達克收盤 5,056.06</b><small>名目上終於收復 2000 年高點，隔了 15 年</small></span></li>
+</ol>
+<figcaption>Eisman 說科技股之後「五、六年沒漲」；以指數名目點位算，回到高點其實花了 15 年，計入通膨更久<sup class="ref"><a href="#ref-20" data-tab="p-refs">20</a></sup>。</figcaption>
+</figure>
+<h2>對一般人影響有限，是真的</h2>
+<p>舊金山聯準會的分析指出，2001 年是過去三十年來唯一一次消費支出沒有下滑的衰退，失業率最高約 6%，銀行倒閉很少<sup class="ref"><a href="#ref-22" data-tab="p-refs">22</a></sup>。NBER 認定的衰退只有 8 個月<sup class="ref"><a href="#ref-21" data-tab="p-refs">21</a></sup>。Eisman 當年是金融股分析師，等著看消費信用惡化，結果沒有等到，這段回憶和數據對得上。</p>
+<p>原因跟 2008 年剛好相反：網路泡沫的錢主要來自股市，虧損落在股東身上；2008 年的錢來自房貸和銀行的槓桿，虧損卡在金融體系裡。</p>
+<h2>Henry Blodget：坐在 Eisman 對面的那個人</h2>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+<th>時間</th>
+<th>事件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1998-12-16</td>
+<td>任職 CIBC Oppenheimer 時，把亞馬遜目標價從 150 調到 400 美元（分割前價格），一戰成名</td>
+</tr>
+<tr>
+<td>1999-02</td>
+<td>轉任美林網路研究主管</td>
+</tr>
+<tr>
+<td>2001-12</td>
+<td>離開美林</td>
+</tr>
+<tr>
+<td>2003-04-28</td>
+<td>與 SEC 和解：罰款與返還利得共 400 萬美元，終身不得從事證券業；SEC 指他對 GoTo.com 等公司的報告與私下看法不符<sup class="ref"><a href="#ref-24" data-tab="p-refs">24</a></sup></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>同一天，SEC 與紐約州檢察長等單位宣布「研究報告全球和解」：十家投資銀行合計約 13.9 億美元，其中 4.3 億美元用來購買獨立研究，問題核心是分析師為了替投行部門爭取承銷生意而發布偏多報告<sup class="ref"><a href="#ref-112" data-tab="p-refs">112</a></sup>。</p>
+<Ana>
+<p>這又回到 Eisman 那條原則：分析師的獎金和投行承銷業務綁在一起，報告就會偏多。Eisman 說 Blodget 人很正派，這兩件事不衝突，<b>正派的人放在錯誤的誘因結構裡，也會寫出錯誤的報告</b>。Blodget 後來創辦了 Business Insider，成為財經媒體人。</p>
+</Ana>
+<h2>泡沫留下的東西：沒人用的光纖</h2>
+<p>泡沫期間電信業者瘋狂鋪光纖。2001 年《紐約時報》報導，兩年內全球鋪了約一億英里光纖，但只有約 5% 實際在用；其他機構的估計從 7% 到 22% 不等，比較穩妥的說法是「個位數到兩成」<sup class="ref"><a href="#ref-17" data-tab="p-refs">17</a></sup>。這些業者大量破產，光纖被低價拍賣。</p>
+<p>Google 在 2005 年前後被報導大量收購這種沒在用的「暗光纖」，用來連接自己的資料中心<sup class="ref"><a href="#ref-18" data-tab="p-refs">18</a></sup>。這就是 Eisman 說的：第二代公司用的是第一代花錢蓋好的基礎設施。</p>
+<Theory>
+<h4>Perez 的技術革命週期</h4>
+<p>Carlota Perez 把每一次技術革命分成安裝期與展開期，中間隔著一次金融泡沫的破裂。安裝期由金融資本主導，狂熱、過度投資；破裂後進入展開期，技術才真正普及到全經濟<sup class="ref"><a href="#ref-16" data-tab="p-refs">16</a></sup>。她後來在 2009 年的論文裡，把 1990 年代的網路泡沫和 2000 年代的信貸泡沫合看成一次「雙泡沫」轉折點，類比 1929 年<sup class="ref"><a href="#ref-113" data-tab="p-refs">113</a></sup>。科技評論者也常用這個框架解釋為什麼網路泡沫的光纖造就了後來的廉價網路<sup class="ref"><a href="#ref-114" data-tab="p-refs">114</a></sup>。</p>
+<p>如果把 AI 放進這個框架，2023 年以來的資料中心建設潮就是安裝期。問題只在於：轉折點什麼時候來、會有多痛。</p>
+</Theory>
+<figure class="dg">
+<div class="dg-title">圖 C2｜網路泡沫與今天的 AI，哪裡像、哪裡不像</div>
+<div class="dg-vs">
+<div>
+<h5>像的地方</h5>
+<ul>
+<li>對技術的描述幾乎一樣樂觀</li>
+<li>基礎建設大量超前建設</li>
+<li>估值建立在未來的營收</li>
+<li>分析師、投行、創投都按交易量拿錢</li>
+</ul>
+</div>
+<div class="is-key">
+<h5>不像的地方</h5>
+<ul>
+<li>領頭的雲端巨頭本業非常賺錢</li>
+<li>模型公司有真實、快速成長的營收</li>
+<li>建設資金更多來自債務，不只股市</li>
+<li>瓶頸在電力與土地，不只在資金</li>
+</ul>
+</div>
+</div>
+<figcaption>Eisman 的判斷是「像的地方比較多」；右欄是看多者最常提出的反駁。</figcaption>
+</figure>
+<a class="back" href="#s06" data-tab="p-main">← 回到主文第 6 段</a>
+</Page>
+
+<Page id="ev-ai2026" title="事件｜2026 AI 資本支出">
+<header class="hero">
+<div class="kicker">Event · 2025-11 → 2026-11</div>
+<h1>2026 年的 AI 資本支出潮：<br />從 token maxing 到期中選舉</h1>
+<p class="lede">Eisman 在主文第 7 到 16 段講的，幾乎都是過去一年剛發生的事。這一頁把那些事件按時間排好、把數字對回公開資料，讓不熟美國科技業的讀者也能跟上。</p>
+<p class="meta"><span>對應主文：第 7–16 段</span><span>資料截至 2026-11-24</span></p>
+</header>
+<h2>一年內發生了什麼</h2>
+<figure class="dg">
+<div class="dg-title">圖 D1｜時間軸</div>
+<ol class="dg-tl is-wide">
+<li><span class="dg-when">2025-11</span><span class="dg-what"><b>Altman：OpenAI 約有 1.4 兆美元資料中心承諾</b><small>分 8 年<sup class="ref"><a href="#ref-115" data-tab="p-refs">115</a></sup></small></span></li>
+<li><span class="dg-when">2026-02</span><span class="dg-what"><b>OpenAI 下修：到 2030 年算力支出約 6,000 億</b><small><sup class="ref"><a href="#ref-116" data-tab="p-refs">116</a></sup></small></span></li>
+<li><span class="dg-when">2026-03-25</span><span class="dg-what"><b>Sanders 與 AOC 提出《AI 資料中心暫停法案》</b><small>全國暫停新建與擴建<sup class="ref"><a href="#ref-55" data-tab="p-refs">55</a></sup></small></span></li>
+<li><span class="dg-when">2026-04～06</span><span class="dg-what"><b>token maxing 高峰與反噬</b><small>Uber 約四個月用完全年 AI 程式預算；某企業一個月花掉約 5 億美元<sup class="ref"><a href="#ref-27" data-tab="p-refs">27</a></sup><sup class="ref"><a href="#ref-28" data-tab="p-refs">28</a></sup></small></span></li>
+<li><span class="dg-when">2026-06-03</span><span class="dg-what"><b>Alphabet 增資 847.5 億美元</b><small>含波克夏 100 億私募<sup class="ref"><a href="#ref-53" data-tab="p-refs">53</a></sup></small></span></li>
+<li><span class="dg-when">2026-07</span><span class="dg-what"><b>紐約州長下令資料中心暫停一年；token maxing 退燒</b><small><sup class="ref"><a href="#ref-117" data-tab="p-refs">117</a></sup><sup class="ref"><a href="#ref-29" data-tab="p-refs">29</a></sup></small></span></li>
+<li><span class="dg-when">2026-10-14</span><span class="dg-what"><b>CoreWeave 債券殖利率衝到約 15%</b><small>11 月初超過 16%<sup class="ref"><a href="#ref-58" data-tab="p-refs">58</a></sup></small></span></li>
+<li><span class="dg-when">2026-10-26</span><span class="dg-what"><b>Anthropic 公開 S-1</b><small>11-02 修正版加入第三季數字<sup class="ref"><a href="#ref-25" data-tab="p-refs">25</a></sup></small></span></li>
+<li><span class="dg-when">2026-10-29</span><span class="dg-what"><b>微軟發行 250 億美元公司債</b><small>2017 年後首次發美元債<sup class="ref"><a href="#ref-118" data-tab="p-refs">118</a></sup></small></span></li>
+<li><span class="dg-when">2026-11-03</span><span class="dg-what"><b>期中選舉：民主黨拿下參眾兩院</b><small><sup class="ref"><a href="#ref-119" data-tab="p-refs">119</a></sup></small></span></li>
+<li><span class="dg-when">2026-11-19</span><span class="dg-what"><b>Anthropic 上市</b><small>每股 83 美元，募資約 813 億<sup class="ref"><a href="#ref-31" data-tab="p-refs">31</a></sup></small></span></li>
+<li><span class="dg-when">2026-11-23</span><span class="dg-what"><b>本集訪談上架</b><small>從他提到「Anthropic 現在必須上市」看，錄製時間應在上市前</small></span></li>
+</ol>
+<figcaption>主文裡的「期中選舉之後」，指的是 11 月 3 日之後的這三週。</figcaption>
+</figure>
+<h2>token maxing：一場被老闆下令的用量競賽</h2>
+<p>「token maxing」是 2026 年上半年美國企業流行的做法：鼓勵、甚至排名員工的 AI 用量。Meta、特斯拉都出現過內部用量排行榜；NVIDIA 執行長黃仁勳公開說，一位年薪 50 萬美元的工程師應該用掉 25 萬美元的 token<sup class="ref"><a href="#ref-120" data-tab="p-refs">120</a></sup>。</p>
+<p>代價很快出現。Uber 技術長在 4 月透露，公司大約四個月就用完 2026 年全年的 AI 程式開發預算，之後設下每人每個工具每月 1,500 美元的上限；營運長 5 月對《財星》說，花費和產出之間的關聯還沒建立起來<sup class="ref"><a href="#ref-27" data-tab="p-refs">27</a></sup><sup class="ref"><a href="#ref-121" data-tab="p-refs">121</a></sup>。另有一位 AI 顧問向 Axios 透露，某個沒設用量上限的客戶，一個月就在 Claude 上花了約 5 億美元<sup class="ref"><a href="#ref-28" data-tab="p-refs">28</a></sup>。</p>
+<p>到了 7 月，美聯社報導這股風潮退燒，企業改把工作導到更便宜的模型<sup class="ref"><a href="#ref-29" data-tab="p-refs">29</a></sup>。同一時間，中國的開放權重模型在美國企業的 token 用量占比快速上升：CNBC 引用 OpenRouter 數據指出，自 2 月起每週都超過三成，最高到 46%<sup class="ref"><a href="#ref-30" data-tab="p-refs">30</a></sup>。</p>
+<Chk>
+<p><span class="verdict v-part">細節有出入</span>Uber 是「約四個月」，不是 Eisman 說的三個月。5 億美元那家公司是單一來源、未具名，應視為傳聞等級。</p>
+</Chk>
+<h2>Anthropic 的 S-1 說了什麼</h2>
+<figure class="chart" id="ch-anthropic-rev">
+<p class="c-title">Anthropic 2026 年各季營收</p>
+<p class="c-sub">單位：十億美元；標籤為季增率</p>
+<svg viewbox="0 0 640 270" role="img" aria-label="Anthropic 2026 年季營收">
+<g class="grid">
+<line x1="46" x2="630" y1="222" y2="222" />
+<line x1="46" x2="630" y1="173" y2="173" />
+<line x1="46" x2="630" y1="124" y2="124" />
+<line x1="46" x2="630" y1="75" y2="75" />
+<line x1="46" x2="630" y1="26" y2="26" />
+</g>
+<g class="ax">
+<text x="38" y="226" text-anchor="end">0</text>
+<text x="38" y="177" text-anchor="end">5</text>
+<text x="38" y="128" text-anchor="end">10</text>
+<text x="38" y="79" text-anchor="end">15</text>
+<text x="38" y="30" text-anchor="end">20</text>
+<line x1="46" x2="630" y1="222" y2="222" style="stroke:var(--muted)" />
+</g>
+<rect class="hit" x="46" y="26" width="194.7" height="196" fill="transparent" data-tip="第一季營收約 47 億美元" />
+<path class="mark " d="M115.3,222 V179.9 Q115.3,175.9 119.3,175.9 H167.3 Q171.3,175.9 171.3,179.9 V222 Z" data-tip="第一季營收約 47 億美元" />
+<text class="val" x="143.3" y="168.9" text-anchor="middle">約 4.7</text>
+<text class="lbl" x="143.3" y="240" text-anchor="middle">2026 Q1</text>
+<rect class="hit" x="240.7" y="26" width="194.7" height="196" fill="transparent" data-tip="第二季營收約 116 億美元，季增約 147%（Eisman：150%）" />
+<path class="mark hi" d="M310,222 V112.3 Q310,108.3 314,108.3 H362 Q366,108.3 366,112.3 V222 Z" data-tip="第二季營收約 116 億美元，季增約 147%（Eisman：150%）" />
+<text class="val" x="338" y="101.3" text-anchor="middle">11.6</text>
+<text class="lbl" x="338" y="240" text-anchor="middle">2026 Q2</text>
+<text class="lbl" x="338" y="262" text-anchor="middle">+147%</text>
+<rect class="hit" x="435.3" y="26" width="194.7" height="196" fill="transparent" data-tip="第三季營收約 169.6 億美元，季增約 47%（Eisman：45%）" />
+<path class="mark " d="M504.7,222 V59.8 Q504.7,55.8 508.7,55.8 H556.7 Q560.7,55.8 560.7,59.8 V222 Z" data-tip="第三季營收約 169.6 億美元，季增約 47%（Eisman：45%）" />
+<text class="val" x="532.7" y="48.8" text-anchor="middle">17.0</text>
+<text class="lbl" x="532.7" y="240" text-anchor="middle">2026 Q3</text>
+<text class="lbl" x="532.7" y="262" text-anchor="middle">+47%</text>
+</svg>
+<figcaption>整理自媒體對 Anthropic S-1 與修正版的報導<sup class="ref"><a href="#ref-25" data-tab="p-refs">25</a></sup><sup class="ref"><a href="#ref-26" data-tab="p-refs">26</a></sup>。金額還在增加，增加的速度變慢，Eisman 看的是後者。</figcaption>
+</figure>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>數字</th>
+<th>備註</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一季營收</td>
+<td>約 47 億美元</td>
+<td />
+</tr>
+<tr>
+<td>第二季營收</td>
+<td>約 116 億美元</td>
+<td>季增約 147%（Eisman：150%）；營業利益約 9.7 億，申報期間內首次轉正</td>
+</tr>
+<tr>
+<td>第三季營收</td>
+<td>約 169.6 億美元</td>
+<td>季增約 47%（Eisman：45%）；因短期算力支出約 50 億，轉為營業虧損約 5.7 億</td>
+</tr>
+<tr>
+<td>淨損</td>
+<td>上半年約 −807 億；第三季約 −233 億</td>
+<td>主要是可轉債的非現金評價損失，不是營運燒掉的現金</td>
+</tr>
+<tr>
+<td>採購承諾與租賃</td>
+<td>約 8,954 億美元（11-02 版）</td>
+<td>11-17 版約 9,009 億；點名的最低承諾含 Amazon、Google、微軟、Broadcom</td>
+</tr>
+<tr>
+<td>上市</td>
+<td>2026-11-19，每股 83 美元</td>
+<td>高於 70–78 美元的區間，募資約 813 億美元</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="muted">數字整理自媒體對 S-1 及其修正版的報導<sup class="ref"><a href="#ref-25" data-tab="p-refs">25</a></sup><sup class="ref"><a href="#ref-26" data-tab="p-refs">26</a></sup><sup class="ref"><a href="#ref-40" data-tab="p-refs">40</a></sup><sup class="ref"><a href="#ref-31" data-tab="p-refs">31</a></sup>；原始文件見 SEC EDGAR<sup class="ref"><a href="#ref-122" data-tab="p-refs">122</a></sup>。</p>
+<Ana>
+<p>Eisman 引用的兩個季增率，四捨五入後都對得上。他說「第二季有獲利」指的是營業利益；若看淨利，因為可轉債的會計處理，帳面上是巨額虧損，這一點他沒提。第三季又回到營業虧損，原因是臨時加買算力，這跟主文第 8 段的「承諾鏈」是同一件事：<b>營收成長得越快，對上游的算力採購就越大</b>。</p>
+<p>反方的數字也該擺著：第三季年化營收接近 680 億美元，對一家幾年前才成立的公司是前所未見的規模。Eisman 看的是成長在減速，看多的人看的是規模已經很大。</p>
+</Ana>
+<h2>雲端巨頭：從「現金多到不知道怎麼用」到對外籌錢</h2>
+<div class="tbl-wrap">
+<table>
+<thead>
+<tr>
+<th>公司</th>
+<th>2026 年資本支出指引</th>
+<th>最新自由現金流</th>
+<th>對外籌資</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alphabet</td>
+<td>1,950–2,050 億</td>
+<td>第三季約 −91 億</td>
+<td>6 月增資 847.5 億；8 月發債 250 億</td>
+</tr>
+<tr>
+<td>Amazon</td>
+<td>約 2,200 億</td>
+<td>近 12 個月約 −424 億（一年前 +148 億）</td>
+<td>發債</td>
+</tr>
+<tr>
+<td>微軟</td>
+<td>約 1,750 億</td>
+<td>最新一季約 +186 億，年減 27%</td>
+<td>10 月發債 250 億</td>
+</tr>
+<tr>
+<td>Meta</td>
+<td>1,350–1,450 億</td>
+<td>第三季約 −21 億，2012 年以來首次為負</td>
+<td>發債</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="muted">單位：美元。整理自 FactSet、各公司公告與財經媒體<sup class="ref"><a href="#ref-50" data-tab="p-refs">50</a></sup><sup class="ref"><a href="#ref-53" data-tab="p-refs">53</a></sup><sup class="ref"><a href="#ref-123" data-tab="p-refs">123</a></sup><sup class="ref"><a href="#ref-51" data-tab="p-refs">51</a></sup><sup class="ref"><a href="#ref-124" data-tab="p-refs">124</a></sup>。五大雲端與 Oracle 今年在美國發行的優先債合計約 1,820 億美元，是 2025 年的兩倍<sup class="ref"><a href="#ref-50" data-tab="p-refs">50</a></sup>。</p>
+<Chk>
+<p><span class="verdict v-part">部分正確</span>Google、亞馬遜現金流轉負屬實，微軟則仍是明顯的正數，說它「接近臨界點」言過其實。</p>
+<p><span class="verdict v-part">需修正</span>每年 1 兆美元是 2027 年的預估（高盛約 1.2 兆），2026 年四大巨頭合計約 7,300 億，加上 Oracle 與租賃約 8,000 億<sup class="ref"><a href="#ref-52" data-tab="p-refs">52</a></sup>。</p>
+<p><span class="verdict v-ok">屬實，時間有誤</span>Alphabet 增資 847.5 億美元屬實；上一次發新股是 2005 年的增資，上市是在 2004 年<sup class="ref"><a href="#ref-54" data-tab="p-refs">54</a></sup>。</p>
+<p><span class="verdict v-part">找不到出處</span>沒有找到明確預測「2027 年年中見頂」的報告；富國銀行認為 2027 年可能是高峰年，高盛與市場共識則是 2027 年起成長率明顯下降、金額仍在增加<sup class="ref"><a href="#ref-59" data-tab="p-refs">59</a></sup>。</p>
+</Chk>
+<h2>新雲端業者：CoreWeave</h2>
+<p>CoreWeave 2032 年到期、票面利率 9.625% 的債券，10 月中殖利率升到約 15%，11 月初超過 16%，信用違約交換的報價一度超過 1,289 個基點<sup class="ref"><a href="#ref-58" data-tab="p-refs">58</a></sup>。所以 Eisman 說的「從 9% 到 15%」，指的是債券在市場上的殖利率，不是公司現有債務的平均成本。管理層 11 月表示不會在這種利率下發行無擔保債。</p>
+<p>三位創辦人自 2025 年 3 月上市以來合計賣出約 33 億美元股票，每人約 10 億<sup class="ref"><a href="#ref-99" data-tab="p-refs">99</a></sup><sup class="ref"><a href="#ref-100" data-tab="p-refs">100</a></sup>；公司市值 11 月下旬約 250 億到 270 億美元<sup class="ref"><a href="#ref-101" data-tab="p-refs">101</a></sup>。同類公司 Nebius 第三季營收年增 571%，但因機房延誤、產能延到 2027 年，財報當天股價跌了約 17%<sup class="ref"><a href="#ref-125" data-tab="p-refs">125</a></sup>。</p>
+<h2>期中選舉與地方政治</h2>
+<figure class="dg">
+<div class="dg-title">圖 D2｜資料中心為什麼卡在地方</div>
+<div class="dg-row is-stack">
+<div class="dg-box is-dim">
+<b>聯邦</b>
+<small>Sanders 法案要全國暫停<br />民主黨選後掌控國會</small>
+</div>
+<div class="dg-box is-key">
+<b>州</b>
+<small>州長可用行政命令暫停<br />例：紐約、德州</small>
+</div>
+<div class="dg-box is-key">
+<b>地方</b>
+<small>許可、用水、電力、房屋稅減免<br />選後 46 個地方公投通過</small>
+</div>
+</div>
+<div class="dg-row">
+<div class="dg-arrow">每一關都可以拖延</div>
+</div>
+<div class="dg-row">
+<div class="dg-box is-no is-narrow">
+<b>資料中心延後上線</b>
+<small>前期許可可能白辦</small>
+</div>
+</div>
+<figcaption>Eisman 說華爾街最不會算的就是這種「一個鎮一個鎮」的政治風險。</figcaption>
+</figure>
+<p>民主黨在 11 月 3 日拿下參眾兩院<sup class="ref"><a href="#ref-119" data-tab="p-refs">119</a></sup>。彭博統計，美國規劃中的資料中心產能約四成位在新任州長承諾要暫停或停止建設的州，包括俄亥俄、喬治亞、密西根、新墨西哥與德州；選後有 46 項地方公投通過，至少 17 項是直接禁止<sup class="ref"><a href="#ref-126" data-tab="p-refs">126</a></sup>。德州州長當選人 Gina Hinojosa 承諾上任後立即暫停，直到州議會立法<sup class="ref"><a href="#ref-127" data-tab="p-refs">127</a></sup>。紐約州長則早在 7 月就下令暫停一年<sup class="ref"><a href="#ref-117" data-tab="p-refs">117</a></sup>。</p>
+<p>民意方面，蓋洛普 3 月調查有 71% 的人反對在自己社區蓋資料中心<sup class="ref"><a href="#ref-128" data-tab="p-refs">128</a></sup>。反彈的理由除了耗電耗水，還包括資料中心拿到的大量稅賦減免；俄亥俄、伊利諾已暫停相關減稅，內華達州長要求資料中心全額繳納學區稅<sup class="ref"><a href="#ref-128" data-tab="p-refs">128</a></sup>。</p>
+<Chk>
+<p><span class="verdict v-ok">屬實</span>Sanders 確實提出全國暫停法案。<span class="verdict v-na">尚未發生</span>選後還沒有新的州政府暫停令正式簽署，目前是當選人的承諾，要等明年 1 月上任。</p>
+</Chk>
+<Ana>
+<p>把這一頁的事件串起來，可以看到 Eisman 擔心的四件事是同一條鏈：<b>企業用量的泡沫（token maxing）推高模型公司營收 → 模型公司向雲端下大單 → 雲端巨頭借錢蓋機房 → 機房卡在地方政治和電力</b>。鏈的每一節都在 2026 年出現了裂縫，但沒有一節斷掉。</p>
+<p>接下來值得觀察的指標：模型公司的季增率是否繼續下滑、雲端巨頭的發債節奏、CoreWeave 這類公司的債券殖利率、明年 1 月新州長上任後的第一批行政命令。</p>
+</Ana>
+<a class="back" href="#s07" data-tab="p-main">← 回到主文第 7 段</a>
+</Page>
+
+<Page id="p-refs" title="參考文獻">
+<header class="hero">
+<div class="kicker">References</div>
+<h1>參考文獻與查證說明</h1>
+<p class="lede">本頁列出主文與事件頁引用的全部資料，編號依第一次出現的順序。點文中的上標數字會跳到這裡。</p>
+</header>
+<h2>查證方法</h2>
+<p>逐字稿來源為公開影片與第三方整理的逐字稿 <a href="#ref-107">107</a>。Eisman 提到的每一個數字、事件與理論，都盡量對回一手資料（政府統計、公司公告、監理機關文件、學術著作）；找不到一手資料時使用主要財經媒體，並在文中標示。2026 年的事件以 2026-11-24 能查到的報導為準，之後可能有更新。</p>
+<p>查證標籤：<span class="verdict v-ok">屬實／大致正確</span><span class="verdict v-part">部分正確或需修正</span><span class="verdict v-no">與資料不符</span><span class="verdict v-na">無法查證／尚未發生</span></p>
+<h2>文獻</h2>
+<ol class="refs">
+<li id="ref-1">Wikipedia, “Steve Eisman”。<a href="https://en.wikipedia.org/wiki/Steve_Eisman" target="_blank" rel="noopener">{"https://en.wikipedia.org/wiki/Steve_Eisman"}</a></li>
+<li id="ref-2">Steve Eisman, The Real Eisman Playbook（Substack）。<a href="https://realeismanplaybook.substack.com/archive" target="_blank" rel="noopener">{"https://realeismanplaybook.substack.com/archive"}</a></li>
+<li id="ref-3">NBER, “US Business Cycle Expansions and Contractions”。<a href="https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions" target="_blank" rel="noopener">{"https://www.nber.org/research/data/us-business-cycle-expansions-and-contractions"}</a></li>
+<li id="ref-4">Federal Reserve History, “Banking Panics of the Gilded Age”。<a href="https://www.federalreservehistory.org/essays/banking-panics-of-the-gilded-age" target="_blank" rel="noopener">{"https://www.federalreservehistory.org/essays/banking-panics-of-the-gilded-age"}</a></li>
+<li id="ref-5">Wikipedia, “Long Depression”（次級資料，用於 1873–1896 的歐洲口徑）。<a href="https://en.wikipedia.org/wiki/Long_Depression" target="_blank" rel="noopener">{"https://en.wikipedia.org/wiki/Long_Depression"}</a></li>
+<li id="ref-6">FDIC, “A Brief History of Deposit Insurance in the United States”。<a href="https://www.fdic.gov/resources/publications/brief-history-of-deposit-insurance/book/brief-history-deposit-insurance.pdf" target="_blank" rel="noopener">{"https://www.fdic.gov/resources/publications/brief-history-of-deposit-insurance/book/brief-history-deposit-insurance.pdf"}</a></li>
+<li id="ref-7">{"Michael C. Jensen & William H. Meckling, “Theory of the Firm: Managerial Behavior, Agency Costs and Ownership Structure”, "}<i>Journal of Financial Economics</i> 3(4): 305–360，1976。<a href="https://doi.org/10.1016/0304-405X(76)90026-X" target="_blank" rel="noopener">{"https://doi.org/10.1016/0304-405X(76)90026-X"}</a></li>
+<li id="ref-8">Financial Crisis Inquiry Commission, <i>The Financial Crisis Inquiry Report</i>（美國金融危機調查委員會報告），2011-01。<a href="https://www.govinfo.gov/content/pkg/GPO-FCIC/pdf/GPO-FCIC.pdf" target="_blank" rel="noopener">{"https://www.govinfo.gov/content/pkg/GPO-FCIC/pdf/GPO-FCIC.pdf"}</a></li>
+<li id="ref-9">Federal Reserve et al., Expanded Guidance for Subprime Lending Programs（SR 01-4 附件），2001-01。<a href="https://www.federalreserve.gov/supervisionreg/srletters/SR0104a1.pdf" target="_blank" rel="noopener">{"https://www.federalreserve.gov/supervisionreg/srletters/SR0104a1.pdf"}</a></li>
+<li id="ref-10">CFPB, Consumer Credit Trends: borrower risk profiles（信用分數分級）。<a href="https://www.consumerfinance.gov/data-research/consumer-credit-trends/student-loans/borrower-risk-profiles/" target="_blank" rel="noopener">{"https://www.consumerfinance.gov/data-research/consumer-credit-trends/student-loans/borrower-risk-profiles/"}</a></li>
+<li id="ref-11">SEC, Order in the Matter of Harding Advisory LLC and Wing F. Chau, Release No. 33-10705，2019-09-27。<a href="https://www.sec.gov/files/litigation/admin/2019/33-10705.pdf" target="_blank" rel="noopener">{"https://www.sec.gov/files/litigation/admin/2019/33-10705.pdf"}</a></li>
+<li id="ref-12">Ryan Chittum, “Where Credit Is Due”（評 Gillian Tett《Fool’s Gold》）, Columbia Journalism Review，2009-06-17。<a href="https://www.cjr.org/critical_eye/where_credit_is_due.php" target="_blank" rel="noopener">{"https://www.cjr.org/critical_eye/where_credit_is_due.php"}</a></li>
+<li id="ref-13">PBS FRONTLINE, “Pioneer Behind Credit Derivatives Is Leaving JPMorgan”，2014-04-03。<a href="https://www.pbs.org/wgbh/frontline/article/pioneer-behind-credit-derivatives-is-leaving-jpmorgan" target="_blank" rel="noopener">{"https://www.pbs.org/wgbh/frontline/article/pioneer-behind-credit-derivatives-is-leaving-jpmorgan"}</a></li>
+<li id="ref-14">CFTC, Press Release 6429-12: clearing requirement for interest rate swaps and index CDS，2012-11-28。<a href="https://www.cftc.gov/PressRoom/PressReleases/pr6429-12" target="_blank" rel="noopener">{"https://www.cftc.gov/PressRoom/PressReleases/pr6429-12"}</a></li>
+<li id="ref-15">Fox Business, “FrontPoint completes split from Morgan Stanley”，2011-03。<a href="https://www.foxbusiness.com/markets/frontpoint-completes-split-from-morgan-stanley" target="_blank" rel="noopener">{"https://www.foxbusiness.com/markets/frontpoint-completes-split-from-morgan-stanley"}</a></li>
+<li id="ref-16">Carlota Perez, <i>Technological Revolutions and Financial Capital: The Dynamics of Bubbles and Golden Ages</i>, Edward Elgar，2002。<a href="https://e-elgar.com/shop/technological-revolutions-and-financial-capital" target="_blank" rel="noopener">{"https://e-elgar.com/shop/technological-revolutions-and-financial-capital"}</a></li>
+<li id="ref-17">Simon Romero, “Economy’s slump idles 95% of fiber-optic lines”（New York Times News Service 轉載），2001-06-18。<a href="https://www.deseret.com/2001/6/18/19591977/economy-s-slump-idles-95-of-fiber-optic-lines/" target="_blank" rel="noopener">{"https://www.deseret.com/2001/6/18/19591977/economy-s-slump-idles-95-of-fiber-optic-lines/"}</a></li>
+<li id="ref-18">eWeek, “Google and Its Continuing Dark Fiber Mystery”。<a href="https://www.eweek.com/networking/google-and-its-continuing-dark-fiber-mystery/" target="_blank" rel="noopener">{"https://www.eweek.com/networking/google-and-its-continuing-dark-fiber-mystery/"}</a></li>
+<li id="ref-19">FRED（聖路易聯準銀行）, NASDAQ Composite Index (NASDAQCOM)。<a href="https://fred.stlouisfed.org/series/NASDAQCOM" target="_blank" rel="noopener">{"https://fred.stlouisfed.org/series/NASDAQCOM"}</a></li>
+<li id="ref-20">CBS News, “Nasdaq finally notches a new closing high”，2015-04-23。<a href="https://www.cbsnews.com/news/nasdaq-finally-notches-a-new-closing-high" target="_blank" rel="noopener">{"https://www.cbsnews.com/news/nasdaq-finally-notches-a-new-closing-high"}</a></li>
+<li id="ref-21">NBER, “The Business-Cycle Peak of March 2001”，2001-11-26。<a href="https://www.nber.org/cycles/november2001" target="_blank" rel="noopener">{"https://www.nber.org/cycles/november2001"}</a></li>
+<li id="ref-22">Federal Reserve Bank of San Francisco, Dr. Econ: 2001 recession vs. the Great Depression，2002-12。<a href="https://www.frbsf.org/research-and-insights/publications/doctor-econ/2002/12/2001-recession-great-depression-business-cycles/" target="_blank" rel="noopener">{"https://www.frbsf.org/research-and-insights/publications/doctor-econ/2002/12/2001-recession-great-depression-business-cycles/"}</a></li>
+<li id="ref-23">CNN Money, “Amazon soars on $400 target”，1998-12-16。<a href="https://money.cnn.com/1998/12/16/technology/amazon/" target="_blank" rel="noopener">{"https://money.cnn.com/1998/12/16/technology/amazon/"}</a></li>
+<li id="ref-24">SEC Press Release 2003-56, Henry Blodget settlement，2003-04-28。<a href="https://www.sec.gov/news/press/2003-56.htm" target="_blank" rel="noopener">{"https://www.sec.gov/news/press/2003-56.htm"}</a></li>
+<li id="ref-25">StockAnalysis, “Anthropic’s amended IPO filing shows Q3 revenue of $17.0B”，2026-11-02。<a href="https://stockanalysis.com/news/anthropic-third-quarter-revenue-17-billion-ipo-filing/" target="_blank" rel="noopener">{"https://stockanalysis.com/news/anthropic-third-quarter-revenue-17-billion-ipo-filing/"}</a></li>
+<li id="ref-26">The Motley Fool, “5 Key Numbers From Anthropic’s S-1 Filing”，2026-10-26。<a href="https://www.fool.com/investing/2026/10/26/5-key-numbers-from-anthropic-s-s-1-filing/" target="_blank" rel="noopener">{"https://www.fool.com/investing/2026/10/26/5-key-numbers-from-anthropic-s-s-1-filing/"}</a></li>
+<li id="ref-27">Fortune, “Uber burned through its entire 2026 AI budget in four months…”，2026-05-26。<a href="https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/" target="_blank" rel="noopener">{"https://fortune.com/2026/05/26/uber-coo-ai-spending-tokens-claude-code/"}</a></li>
+<li id="ref-28">The Decoder, “One company reportedly spent $500 million on Claude in one month after failing to cap AI usage”（原始來源為 Axios）。<a href="https://the-decoder.com/one-company-reportedly-spent-500-million-on-claude-in-one-month-after-failing-to-cap-ai-usage/" target="_blank" rel="noopener">{"https://the-decoder.com/one-company-reportedly-spent-500-million-on-claude-in-one-month-after-failing-to-cap-ai-usage/"}</a></li>
+<li id="ref-29">AP（WTOP 轉載）, “A flex in corporate America, AI ‘tokenmaxxing’ fades as workplaces look to cut tech spending”，2026-07-27。<a href="https://wtop.com/news/2026/07/a-flex-in-corporate-america-ai-tokenmaxxing-fades-as-workplaces-look-to-cut-tech-spending/" target="_blank" rel="noopener">{"https://wtop.com/news/2026/07/a-flex-in-corporate-america-ai-tokenmaxxing-fades-as-workplaces-look-to-cut-tech-spending/"}</a></li>
+<li id="ref-30">Forkast（引述 CNBC）, “Chinese AI models now capture up to 46% of US enterprise token usage”，2026-07。<a href="https://forkast.news/chinese-ai-models-now-capture-up-to-46-of-us-enterprise-token-usage/" target="_blank" rel="noopener">{"https://forkast.news/chinese-ai-models-now-capture-up-to-46-of-us-enterprise-token-usage/"}</a></li>
+<li id="ref-31">Al Jazeera, “Anthropic starts trading in the US after blockbuster IPO”，2026-11-19。<a href="https://www.aljazeera.com/economy/2026/11/19/anthropic-starts-trading-in-the-us-after-blockbuster-ipo" target="_blank" rel="noopener">{"https://www.aljazeera.com/economy/2026/11/19/anthropic-starts-trading-in-the-us-after-blockbuster-ipo"}</a></li>
+<li id="ref-32">The Motley Fool, “‘Big Short’ Investor Steve Eisman Warns: OpenAI Bankruptcy Could Cause a Recession”，2026-10-28。<a href="https://www.fool.com/investing/2026/10/28/big-short-investor-steve-eisman-warns-openai-bankr/" target="_blank" rel="noopener">{"https://www.fool.com/investing/2026/10/28/big-short-investor-steve-eisman-warns-openai-bankr/"}</a></li>
+<li id="ref-33">NVIDIA, “NVIDIA Announces Financial Results for Third Quarter Fiscal 2027”，2026-11-17。<a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx" target="_blank" rel="noopener">{"https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/default.aspx"}</a></li>
+<li id="ref-34">NVIDIA, Form 10-Q for the quarter ended 2026-07-26（Note 7 客戶集中度），2026-08-26。<a href="https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000075/nvda-20260726.htm" target="_blank" rel="noopener">{"https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000075/nvda-20260726.htm"}</a></li>
+<li id="ref-35">Crypto Briefing（引述 UBS）, Google Cloud revenue concentration: OpenAI and Anthropic，2026-08-10。<a href="https://cryptobriefing.com/google-cloud-revenue-openai-anthropic-concentration-risk/" target="_blank" rel="noopener">{"https://cryptobriefing.com/google-cloud-revenue-openai-anthropic-concentration-risk/"}</a></li>
+<li id="ref-36">The Register, Microsoft earnings FY26 Q2，2026-01-29。<a href="https://www.theregister.com/2026/01/29/microsoft_earnings_q2_2026/" target="_blank" rel="noopener">{"https://www.theregister.com/2026/01/29/microsoft_earnings_q2_2026/"}</a></li>
+<li id="ref-37">Oracle, “Oracle Announces Fiscal Year 2026 First Quarter Financial Results”，2025-09-09。<a href="https://investor.oracle.com/investor-news/news-details/2025/Oracle-Announces-Fiscal-Year-2026-First-Quarter-Financial-Results/default.aspx" target="_blank" rel="noopener">{"https://investor.oracle.com/investor-news/news-details/2025/Oracle-Announces-Fiscal-Year-2026-First-Quarter-Financial-Results/default.aspx"}</a></li>
+<li id="ref-38">TechCrunch（引述 WSJ）, “OpenAI and Oracle reportedly ink historic cloud computing deal”，2025-09-10。<a href="https://techcrunch.com/2025/09/10/openai-and-oracle-reportedly-ink-historic-cloud-computing-deal/" target="_blank" rel="noopener">{"https://techcrunch.com/2025/09/10/openai-and-oracle-reportedly-ink-historic-cloud-computing-deal/"}</a></li>
+<li id="ref-39">Oracle, Q1 FY27 earnings release，2026-09-10。<a href="https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/" target="_blank" rel="noopener">{"https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/"}</a></li>
+<li id="ref-40">Bloomberg Tax, “Anthropic IPO Filing Reveals Nearly $900 Billion in Future Debt”。<a href="https://news.bloombergtax.com/financial-accounting/anthropic-ipo-filing-reveals-nearly-900-billion-in-hidden-debt" target="_blank" rel="noopener">{"https://news.bloombergtax.com/financial-accounting/anthropic-ipo-filing-reveals-nearly-900-billion-in-hidden-debt"}</a></li>
+<li id="ref-41">Quote Investigator, “When the Facts Change, I Change My Mind. What Do You Do, Sir?”，2011-07-22。<a href="https://quoteinvestigator.com/2011/07/22/keynes-change-mind/" target="_blank" rel="noopener">{"https://quoteinvestigator.com/2011/07/22/keynes-change-mind/"}</a></li>
+<li id="ref-42">Quote Investigator, “People Are Entitled To Their Own Opinions But Not To Their Own Facts”，2020-03-17。<a href="https://quoteinvestigator.com/2020/03/17/own-facts/" target="_blank" rel="noopener">{"https://quoteinvestigator.com/2020/03/17/own-facts/"}</a></li>
+<li id="ref-43">Reuters（Kitco 轉載）, “US tech stocks’ market dominance reaches new heights”，2026-06-03。<a href="https://www.kitco.com/news/off-the-wire/2026-06-03/us-tech-stocks-market-dominance-reaches-new-heights-and-presents-new" target="_blank" rel="noopener">{"https://www.kitco.com/news/off-the-wire/2026-06-03/us-tech-stocks-market-dominance-reaches-new-heights-and-presents-new"}</a></li>
+<li id="ref-44">Reuters（Kitco 轉載）, “Tech set to still sway US stock market’s course despite AI-driven swoon”，2026-11-09。<a href="https://www.kitco.com/news/off-the-wire/2026-11-09/tech-set-still-sway-us-stock-markets-course-despite-ai-driven-swoon" target="_blank" rel="noopener">{"https://www.kitco.com/news/off-the-wire/2026-11-09/tech-set-still-sway-us-stock-markets-course-despite-ai-driven-swoon"}</a></li>
+<li id="ref-45">{"Institutional Investor（CME Group 贊助內容）, “What past sector concentrations tell us about today’s tech-heavy S&P 500”，2026-08-10。"}<a href="https://www.institutionalinvestor.com/article/sponsored-content/what-past-sector-concentrations-tell-us-about-todays-tech-heavy-sp-500" target="_blank" rel="noopener">{"https://www.institutionalinvestor.com/article/sponsored-content/what-past-sector-concentrations-tell-us-about-todays-tech-heavy-sp-500"}</a></li>
+<li id="ref-46">Reuters（Yahoo Finance 轉載）, Facebook, Alphabet shifted in sector classification，2018-01。<a href="https://finance.yahoo.com/news/facebook-alphabet-shifted-sector-classification-001915067.html" target="_blank" rel="noopener">{"https://finance.yahoo.com/news/facebook-alphabet-shifted-sector-classification-001915067.html"}</a></li>
+<li id="ref-47">Fortune, Jason Furman: data centers and US GDP growth in H1 2025，2025-10-07。<a href="https://fortune.com/2025/10/07/data-centers-gdp-growth-zero-first-half-2025-jason-furman-harvard-economist/" target="_blank" rel="noopener">{"https://fortune.com/2025/10/07/data-centers-gdp-growth-zero-first-half-2025-jason-furman-harvard-economist/"}</a></li>
+<li id="ref-48">ING Think, “How much is AI contributing to US economic growth?”，2026-08。<a href="https://think.ing.com/opinions/how-much-is-ai-contributing-to-us-economic-growth/" target="_blank" rel="noopener">{"https://think.ing.com/opinions/how-much-is-ai-contributing-to-us-economic-growth/"}</a></li>
+<li id="ref-49">BEA, GDP, Third Quarter 2026 (Advance Estimate)，2026-10-29。<a href="https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026/" target="_blank" rel="noopener">{"https://www.bea.gov/news/2026/gdp-advance-estimate-3rd-quarter-2026/"}</a></li>
+<li id="ref-50">FactSet Insight, “Hyperscalers Tap External Financing as AI Capex Outruns Cash Flow”，2026-07-23。<a href="https://insight.factset.com/hyperscalers-tap-external-financing-as-ai-capex-outruns-cash-flow" target="_blank" rel="noopener">{"https://insight.factset.com/hyperscalers-tap-external-financing-as-ai-capex-outruns-cash-flow"}</a></li>
+<li id="ref-51">FourWeekMBA, “Microsoft Azure grows 48% as free cash flow falls to $18.6B”。<a href="https://fourweekmba.com/ai-microsoft-azure-grows-48-as-free-cash-flow-falls-to-18-6b/" target="_blank" rel="noopener">{"https://fourweekmba.com/ai-microsoft-azure-grows-48-as-free-cash-flow-falls-to-18-6b/"}</a></li>
+<li id="ref-52">PYMNTS, “Goldman Sachs projects Big Tech AI infrastructure spending to hit $1.2 trillion in 2027”。<a href="https://www.pymnts.com/big-tech/2026/goldman-sachs-projects-big-tech-ai-infrastructure-spending-to-hit-1-2-trillion-in-2027/" target="_blank" rel="noopener">{"https://www.pymnts.com/big-tech/2026/goldman-sachs-projects-big-tech-ai-infrastructure-spending-to-hit-1-2-trillion-in-2027/"}</a></li>
+<li id="ref-53">Alphabet, “Alphabet Announces Upsize and Pricing of $84.75 Billion Equity Capital Raise”，2026-06。<a href="https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Upsize-and-Pricing-of-84-75-Billion-Equity-Capital-Raise-to-Expand-AI-Infrastructure--and-Compute-2026-QzN3D9yMAj/default.aspx" target="_blank" rel="noopener">{"https://abc.xyz/investor/news/news-details/2026/Alphabet-Announces-Upsize-and-Pricing-of-84-75-Billion-Equity-Capital-Raise-to-Expand-AI-Infrastructure--and-Compute-2026-QzN3D9yMAj/default.aspx"}</a></li>
+<li id="ref-54">IFR, “Alphabet storms markets with historic equity raise”，2026-06。<a href="https://www.ifre.com/equities/2437856/alphabet-storms-markets-with-historic-us90bn-equity-raise" target="_blank" rel="noopener">{"https://www.ifre.com/equities/2437856/alphabet-storms-markets-with-historic-us90bn-equity-raise"}</a></li>
+<li id="ref-55">Sen. Bernie Sanders, “Sanders, Ocasio-Cortez Announce AI Data Center Moratorium Act”，2026-03-25。<a href="https://www.sanders.senate.gov/press-releases/news-sanders-ocasio-cortez-announce-ai-data-center-moratorium-act" target="_blank" rel="noopener">{"https://www.sanders.senate.gov/press-releases/news-sanders-ocasio-cortez-announce-ai-data-center-moratorium-act"}</a></li>
+<li id="ref-56">Marketing Dive, “Google’s AI overhaul of search hits snags as ad revenue growth cools”，2026-10-29。<a href="https://www.marketingdive.com/news/googles-ai-overhaul-of-search-hits-snags-as-ad-revenue-growth-cools/" target="_blank" rel="noopener">{"https://www.marketingdive.com/news/googles-ai-overhaul-of-search-hits-snags-as-ad-revenue-growth-cools/"}</a></li>
+<li id="ref-57">Google, Alphabet Q1 2026 earnings: CEO remarks，2026-04-29。<a href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2026/" target="_blank" rel="noopener">{"https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q1-2026/"}</a></li>
+<li id="ref-58">24/7 Wall St, “CoreWeave’s Bonds Now Yield More Than 16%…”，2026-11-07。<a href="https://247wallst.com/investing/2026/11/07/coreweaves-bonds-now-yield-more-than-16-days-before-earnings/" target="_blank" rel="noopener">{"https://247wallst.com/investing/2026/11/07/coreweaves-bonds-now-yield-more-than-16-days-before-earnings/"}</a></li>
+<li id="ref-59">Fortune, “AI is heading toward a cash-flow negative inflection point, and spending will slow in 2027, Wall Street thinks”，2026-10-07。<a href="https://fortune.com/2026/10/07/ai-cash-flow-negative-inflection-point-capex-slow/" target="_blank" rel="noopener">{"https://fortune.com/2026/10/07/ai-cash-flow-negative-inflection-point-capex-slow/"}</a></li>
+<li id="ref-60">Warren Buffett, Berkshire Hathaway 2007 年致股東信（談「持久的護城河」），2008-02。<a href="https://www.berkshirehathaway.com/letters/2007ltr.pdf" target="_blank" rel="noopener">{"https://www.berkshirehathaway.com/letters/2007ltr.pdf"}</a></li>
+<li id="ref-61">George J. Stigler, “The Theory of Economic Regulation”, <i>Bell Journal of Economics and Management Science</i> 2(1): 3–21，1971。<a href="https://doi.org/10.2307/3003160" target="_blank" rel="noopener">{"https://doi.org/10.2307/3003160"}</a></li>
+<li id="ref-62">AP（Boston.com 轉載）, “Trump says top tech firms have signed accord to self-police AI development”，2026-09-29。<a href="https://www.boston.com/news/politics/2026/09/29/trump-says-top-tech-firms-have-signed-accord-to-self-police-ai-development/" target="_blank" rel="noopener">{"https://www.boston.com/news/politics/2026/09/29/trump-says-top-tech-firms-have-signed-accord-to-self-police-ai-development/"}</a></li>
+<li id="ref-63">IAPP, “White House, major AI developers reach ‘morally binding’ safety commitments”，2026-09-30。<a href="https://iapp.org/news/a/white-house-major-ai-developers-reach-morally-binding-safety-commitments" target="_blank" rel="noopener">{"https://iapp.org/news/a/white-house-major-ai-developers-reach-morally-binding-safety-commitments"}</a></li>
+<li id="ref-64">Hugging Face, Security incident disclosure (July 2026)，2026-07-16。<a href="https://huggingface.co/blog/security-incident-july-2026" target="_blank" rel="noopener">{"https://huggingface.co/blog/security-incident-july-2026"}</a></li>
+<li id="ref-65">METR, OpenAI–Hugging Face incident investigation，2026-08-26。<a href="https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/" target="_blank" rel="noopener">{"https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"}</a></li>
+<li id="ref-66">The Next Web, “Pacing the Frontier”: AI employees’ letter to the US government，2026-07。<a href="https://thenextweb.com/news/pacing-the-frontier-ai-employees-letter-us-government" target="_blank" rel="noopener">{"https://thenextweb.com/news/pacing-the-frontier-ai-employees-letter-us-government"}</a></li>
+<li id="ref-67">IBTimes UK, Elon Musk on space data centers after the midterms，2026-11-05。<a href="https://www.ibtimes.co.uk/elon-musk-space-data-centers-political-opposition-1830323" target="_blank" rel="noopener">{"https://www.ibtimes.co.uk/elon-musk-space-data-centers-political-opposition-1830323"}</a></li>
+<li id="ref-68">Fortune, SpaceX IPO filing S-1 total addressable market，2026-05-20。<a href="https://fortune.com/2026/05/20/spacex-ipo-filing-s1-total-addressable-market-make-life-multiplanetary/" target="_blank" rel="noopener">{"https://fortune.com/2026/05/20/spacex-ipo-filing-s1-total-addressable-market-make-life-multiplanetary/"}</a></li>
+<li id="ref-69">{"David Autor, Caroline Chin, Anna Salomons & Bryan Seegmiller, “New Frontiers: The Origins and Content of New Work, 1940–2018”, "}<i>Quarterly Journal of Economics</i> 139(3)；MIT News 摘要，2024。<a href="https://news.mit.edu/2024/does-technology-help-or-hurt-employment-0401" target="_blank" rel="noopener">{"https://news.mit.edu/2024/does-technology-help-or-hurt-employment-0401"}</a></li>
+<li id="ref-70">AuntMinnie, “Radiologist pipeline trails increase in training positions”（JACR 研究），2026。<a href="https://www.auntminnie.com/practice-management/article/15834030/radiologist-pipeline-trails-increase-in-training-positions" target="_blank" rel="noopener">{"https://www.auntminnie.com/practice-management/article/15834030/radiologist-pipeline-trails-increase-in-training-positions"}</a></li>
+<li id="ref-71">{"Stanford Digital Economy Lab, Brynjolfsson, Chandar & Chen, “Canaries in the Coal Mine” (Aug 2026 update)，2026-08-12。"}<a href="https://digitaleconomy.stanford.edu/news/canariesaug26/" target="_blank" rel="noopener">{"https://digitaleconomy.stanford.edu/news/canariesaug26/"}</a></li>
+<li id="ref-72">Yale Budget Lab, “Evaluating the Impact of AI on the Labor Market”，2025-10。<a href="https://budgetlab.yale.edu/research/evaluating-impact-ai-labor-market-current-state-affairs" target="_blank" rel="noopener">{"https://budgetlab.yale.edu/research/evaluating-impact-ai-labor-market-current-state-affairs"}</a></li>
+<li id="ref-73">U.S. Census Bureau, Business Formation Statistics，2026-11-12。<a href="https://www.census.gov/econ/bfs/pdf/bfs_current.pdf" target="_blank" rel="noopener">{"https://www.census.gov/econ/bfs/pdf/bfs_current.pdf"}</a></li>
+<li id="ref-74">IBTimes, AI tools drive surge in solo business formation，2026-06-09。<a href="https://www.ibtimes.com/ai-tools-drive-surge-solo-business-formation-one-person-startups-rise-across-us-3803863" target="_blank" rel="noopener">{"https://www.ibtimes.com/ai-tools-drive-surge-solo-business-formation-one-person-startups-rise-across-us-3803863"}</a></li>
+<li id="ref-75">財政部，所得稅法第 4 條之 1（證券交易所得停止課徵所得稅）。<a href={"https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=G0340003&flno=4-1"} target="_blank" rel="noopener">{"https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=G0340003&flno=4-1"}</a></li>
+<li id="ref-76">26 U.S. Code § 1259 – Constructive sales treatment for appreciated financial positions（Cornell LII）。<a href="https://www.law.cornell.edu/uscode/text/26/1259" target="_blank" rel="noopener">{"https://www.law.cornell.edu/uscode/text/26/1259"}</a></li>
+<li id="ref-77">IRS, Topic No. 409, Capital gains and losses。<a href="https://www.irs.gov/taxtopics/tc409" target="_blank" rel="noopener">{"https://www.irs.gov/taxtopics/tc409"}</a></li>
+<li id="ref-78">Sam Ro, TKer, SPIVA mid-year 2026: active managers vs. benchmarks，2026-09-17。<a href="https://www.tker.co/p/spiva-1h-2026-active-manager-vs-benchmark" target="_blank" rel="noopener">{"https://www.tker.co/p/spiva-1h-2026-active-manager-vs-benchmark"}</a></li>
+<li id="ref-79">InvestmentNews, “Active managers stumble again in 2025 as large caps dominate”，2026-03-04。<a href="https://investmentnews.com/equities/active-managers-stumble-again-in-2025-as-large-caps-dominate/265541" target="_blank" rel="noopener">{"https://investmentnews.com/equities/active-managers-stumble-again-in-2025-as-large-caps-dominate/265541"}</a></li>
+<li id="ref-80">{"Tobias Adrian, Tara Iyer & Mahvash S. Qureshi, “Crypto Prices Move More in Sync With Stocks, Posing New Risks”, IMF Blog，2022-01-11。"}<a href="https://www.imf.org/en/Blogs/Articles/2022/01/11/crypto-prices-move-more-in-sync-with-stocks-posing-new-risks" target="_blank" rel="noopener">{"https://www.imf.org/en/Blogs/Articles/2022/01/11/crypto-prices-move-more-in-sync-with-stocks-posing-new-risks"}</a></li>
+<li id="ref-81">Office of Financial Research, “Sizing the U.S. Repo Market”，2025-12-04。<a href="https://www.financialresearch.gov/the-ofr-blog/2025/12/04/sizing-us-repo-market/" target="_blank" rel="noopener">{"https://www.financialresearch.gov/the-ofr-blog/2025/12/04/sizing-us-repo-market/"}</a></li>
+<li id="ref-82">Federal Reserve FEDS Notes, “The $12 Trillion U.S. Repo Market”，2025-07-11。<a href="https://www.federalreserve.gov/econres/notes/feds-notes/the-12-trillion-u-s-repo-market-evidence-from-a-novel-panel-of-intermediaries-20250711.html" target="_blank" rel="noopener">{"https://www.federalreserve.gov/econres/notes/feds-notes/the-12-trillion-u-s-repo-market-evidence-from-a-novel-panel-of-intermediaries-20250711.html"}</a></li>
+<li id="ref-83">Reuters（Yahoo Finance 轉載）, Norway wealth fund’s US Treasuries holdings，2026-01-28。<a href="https://finance.yahoo.com/news/norway-wealth-funds-us-treasuries-212350589.html" target="_blank" rel="noopener">{"https://finance.yahoo.com/news/norway-wealth-funds-us-treasuries-212350589.html"}</a></li>
+<li id="ref-84">Peter G. Peterson Foundation, Our Founder: Writings。<a href="https://www.pgpf.org/our-founder/writings" target="_blank" rel="noopener">{"https://www.pgpf.org/our-founder/writings"}</a></li>
+<li id="ref-85">PBS NewsHour（AP）, “Moody’s strips U.S. government of top credit rating over failure to rein in debt”，2025-05-16。<a href="https://www.pbs.org/newshour/economy/moodys-strips-u-s-government-of-top-credit-rating-over-failure-to-rein-in-debt" target="_blank" rel="noopener">{"https://www.pbs.org/newshour/economy/moodys-strips-u-s-government-of-top-credit-rating-over-failure-to-rein-in-debt"}</a></li>
+<li id="ref-86">Federal Reserve Bank of Atlanta, Home Ownership Affordability Monitor。<a href="https://www.atlantafed.org/research-and-data/data/home-ownership-affordability-monitor" target="_blank" rel="noopener">{"https://www.atlantafed.org/research-and-data/data/home-ownership-affordability-monitor"}</a></li>
+<li id="ref-87">Mortgage Professional America（引述 Realtor.com 分析 FHFA 資料）, rate lock-in holds firm，2026-10。<a href="https://www.mpamag.com/us/mortgage-industry/market-updates/rate-lock-in-holds-firm-as-pandemic-era-mortgages-set-record/594583" target="_blank" rel="noopener">{"https://www.mpamag.com/us/mortgage-industry/market-updates/rate-lock-in-holds-firm-as-pandemic-era-mortgages-set-record/594583"}</a></li>
+<li id="ref-88">{"Ross M. Batzer, Jonah R. Coste, William M. Doerner & Michael J. Seiler, “The Lock-In Effect of Rising Mortgage Rates”, FHFA Working Paper 24-03，2024。"}<a href="https://www.fhfa.gov/sites/default/files/2024-08/wp2403.pdf" target="_blank" rel="noopener">{"https://www.fhfa.gov/sites/default/files/2024-08/wp2403.pdf"}</a></li>
+<li id="ref-89">Douglas Elliman / Miller Samuel, Manhattan 10-Year Sales Report 2016–2025，2026-02。<a href="https://millersamuel.com/wp-content/uploads/2026/02/Manhattan_10YR-2025.pdf" target="_blank" rel="noopener">{"https://millersamuel.com/wp-content/uploads/2026/02/Manhattan_10YR-2025.pdf"}</a></li>
+<li id="ref-90">NPR Planet Money, “Is Buying A House Overrated?”（Shiller 長期房價資料），2019-04-30。<a href="https://www.npr.org/sections/money/2019/04/30/718348115/is-buying-a-house-overrated" target="_blank" rel="noopener">{"https://www.npr.org/sections/money/2019/04/30/718348115/is-buying-a-house-overrated"}</a></li>
+<li id="ref-91">Federal Reserve Bank of Philadelphia, Working Paper 24-12, historical housing prices，2024。<a href="https://www.philadelphiafed.org/-/media/FRBP/Assets/working-papers/2024/wp24-12.pdf" target="_blank" rel="noopener">{"https://www.philadelphiafed.org/-/media/FRBP/Assets/working-papers/2024/wp24-12.pdf"}</a></li>
+<li id="ref-92">The Nilson Report, Global network card brands in the U.S. 2024。<a href="https://nilsonreport.com/articles/global-network-card-brands-us-2024/" target="_blank" rel="noopener">{"https://nilsonreport.com/articles/global-network-card-brands-us-2024/"}</a></li>
+<li id="ref-93">U.S. Department of Justice, “Justice Department Sues Visa for Monopolizing Debit Markets”，2024-09-24。<a href="https://www.justice.gov/opa/pr/justice-department-sues-visa-monopolizing-debit-markets" target="_blank" rel="noopener">{"https://www.justice.gov/opa/pr/justice-department-sues-visa-monopolizing-debit-markets"}</a></li>
+<li id="ref-94">SEC Office of Credit Ratings, Staff Report on Nationally Recognized Statistical Rating Organizations，2025-01。<a href="https://www.sec.gov/files/jan-2025-ocr-staff-report.pdf" target="_blank" rel="noopener">{"https://www.sec.gov/files/jan-2025-ocr-staff-report.pdf"}</a></li>
+<li id="ref-95">Bloomberg Law, “Fair Isaac drops as Pulte lets Fannie, Freddie use VantageScore”，2025-07-08。<a href="https://news.bloomberglaw.com/banking-law/fair-isaac-drops-as-pulte-lets-fannie-freddie-use-vantagescore" target="_blank" rel="noopener">{"https://news.bloomberglaw.com/banking-law/fair-isaac-drops-as-pulte-lets-fannie-freddie-use-vantagescore"}</a></li>
+<li id="ref-96">FHFA, “Homebuying advances into new era of credit score competition”，2026-04-22。<a href="https://fhfa.gov/news/news-release/homebuying-advances-into-new-era-of-credit-score-competition" target="_blank" rel="noopener">{"https://fhfa.gov/news/news-release/homebuying-advances-into-new-era-of-credit-score-competition"}</a></li>
+<li id="ref-97">CNBC, “Steve Eisman likes the market here but is short this software stock”，2026-04-30。<a href="https://www.cnbc.com/2026/04/30/steve-eisman-likes-the-market-here-but-is-short-this-software-stock.html" target="_blank" rel="noopener">{"https://www.cnbc.com/2026/04/30/steve-eisman-likes-the-market-here-but-is-short-this-software-stock.html"}</a></li>
+<li id="ref-98">ABA Banking Journal, FHFA exploring ending tri-merge credit report requirement，2026-10-19。<a href="https://bankingjournal.aba.com/2026/10/fhfa-exploring-ending-tri-merge-credit-report-requirement-for-fannie-mae-freddie-mac/" target="_blank" rel="noopener">{"https://bankingjournal.aba.com/2026/10/fhfa-exploring-ending-tri-merge-credit-report-requirement-for-fannie-mae-freddie-mac/"}</a></li>
+<li id="ref-99">24/7 Wall St, “CoreWeave’s Founders Have Sold $3.3 Billion of Stock Since Its IPO”，2026-10-17。<a href="https://247wallst.com/investing/2026/10/17/coreweaves-founders-have-sold-3-3-billion-of-stock-since-its-ipo/" target="_blank" rel="noopener">{"https://247wallst.com/investing/2026/10/17/coreweaves-founders-have-sold-3-3-billion-of-stock-since-its-ipo/"}</a></li>
+<li id="ref-100">Reuters（The Star 轉載）, “CoreWeave’s CEO sold nearly $1 billion of stock since IPO, filings show”，2026-10-17。<a href="https://www.thestar.com.my/tech/tech-news/2026/10/17/coreweave039s-ceo-sold-nearly-1-billion-of-stock-since-ipo-filings-show" target="_blank" rel="noopener">{"https://www.thestar.com.my/tech/tech-news/2026/10/17/coreweave039s-ceo-sold-nearly-1-billion-of-stock-since-ipo-filings-show"}</a></li>
+<li id="ref-101">StockAnalysis, CoreWeave (CRWV) market cap。<a href="https://stockanalysis.com/stocks/crwv/market-cap/" target="_blank" rel="noopener">{"https://stockanalysis.com/stocks/crwv/market-cap/"}</a></li>
+<li id="ref-102">Johnson O’Connor Research Foundation, 官網與常見問題，2026。<a href="https://www.jocrf.org/faq/" target="_blank" rel="noopener">{"https://www.jocrf.org/faq/"}</a></li>
+<li id="ref-103">Angus Maddison, Historical Statistics of the World Economy: 1–2008 AD（Maddison Database 2010）, GGDC Groningen。<a href="https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-database-2010" target="_blank" rel="noopener">{"https://www.rug.nl/ggdc/historicaldevelopment/maddison/releases/maddison-database-2010"}</a></li>
+<li id="ref-104">Our World in Data, GDP per capita (Maddison Project Database 2023)。<a href="https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database?country=OWID_WRL" target="_blank" rel="noopener">{"https://ourworldindata.org/grapher/gdp-per-capita-maddison-project-database?country=OWID_WRL"}</a></li>
+<li id="ref-105">John Cassidy, <i>Capitalism and Its Critics: A History</i>, Farrar, Straus and Giroux，2025-05-13。<a href="https://us.macmillan.com/books/9780374601089/capitalismanditscritics" target="_blank" rel="noopener">{"https://us.macmillan.com/books/9780374601089/capitalismanditscritics"}</a></li>
+<li id="ref-106">{"The Diary Of A CEO, “The Man Who Predicted The Last Crash WARNS A Recession Starts If These 2 Fail! | Steve Eisman”，YouTube，2026-11-23。"}<a href="https://www.youtube.com/watch?v=4Unch--PmW0" target="_blank" rel="noopener">{"https://www.youtube.com/watch?v=4Unch--PmW0"}</a></li>
+<li id="ref-107">The Singju Post, “Transcript: Diary Of A CEO Interview with Steve Eisman on Economic Recession”，2026-11-23。<a href="https://singjupost.com/transcript-diary-of-a-ceo-interview-with-steve-eisman-on-economic-recession/" target="_blank" rel="noopener">{"https://singjupost.com/transcript-diary-of-a-ceo-interview-with-steve-eisman-on-economic-recession/"}</a></li>
+<li id="ref-108">Julia Maues, “Banking Act of 1933 (Glass-Steagall)”, Federal Reserve History，2013。<a href="https://www.federalreservehistory.org/essays/glass-steagall-act" target="_blank" rel="noopener">{"https://www.federalreservehistory.org/essays/glass-steagall-act"}</a></li>
+<li id="ref-109">SEC, Commissioner Mark Uyeda, Remarks on the SEC’s 90th Anniversary，2024-06-06。<a href="https://www.sec.gov/newsroom/speeches-statements/uyeda-remarks-90thsec-060624" target="_blank" rel="noopener">{"https://www.sec.gov/newsroom/speeches-statements/uyeda-remarks-90thsec-060624"}</a></li>
+<li id="ref-110">U.S. Court of Appeals for the Second Circuit, <i>Chau v. Lewis</i>, 771 F.3d 118，2014-11-14。<a href="https://ww3.ca2.uscourts.gov/decisions/OPN/13-1217_complete_opn.pdf" target="_blank" rel="noopener">{"https://ww3.ca2.uscourts.gov/decisions/OPN/13-1217_complete_opn.pdf"}</a></li>
+<li id="ref-111">Federal Reserve History, “Subprime Mortgage Crisis, 2007–2010”。<a href="https://www.federalreservehistory.org/essays/subprime-mortgage-crisis" target="_blank" rel="noopener">{"https://www.federalreservehistory.org/essays/subprime-mortgage-crisis"}</a></li>
+<li id="ref-112">SEC, Global Research Analyst Settlement。<a href="https://www.sec.gov/spotlight/globalsettlement.htm" target="_blank" rel="noopener">{"https://www.sec.gov/spotlight/globalsettlement.htm"}</a></li>
+<li id="ref-113">Carlota Perez, “The double bubble at the turn of the century”, <i>Cambridge Journal of Economics</i> 33(4): 779–805，2009。<a href="https://ideas.repec.org/a/oup/cambje/v33y2009i4p779-805.html" target="_blank" rel="noopener">{"https://ideas.repec.org/a/oup/cambje/v33y2009i4p779-805.html"}</a></li>
+<li id="ref-114">Ben Thompson, “The Death and Birth of Technological Revolutions”, Stratechery，2021。<a href="https://stratechery.com/2021/the-death-and-birth-of-technological-revolutions/" target="_blank" rel="noopener">{"https://stratechery.com/2021/the-death-and-birth-of-technological-revolutions/"}</a></li>
+<li id="ref-115">TechCrunch, “Sam Altman says OpenAI has $20B ARR and about $1.4 trillion in data center commitments”，2025-11-06。<a href="https://techcrunch.com/2025/11/06/sam-altman-says-openai-has-20b-arr-and-about-1-4-trillion-in-data-center-commitments/" target="_blank" rel="noopener">{"https://techcrunch.com/2025/11/06/sam-altman-says-openai-has-20b-arr-and-about-1-4-trillion-in-data-center-commitments/"}</a></li>
+<li id="ref-116">Reuters（Yahoo Finance 轉載）, “OpenAI expects compute spend of around $600 billion through 2030”，2026-02-20。<a href="https://finance.yahoo.com/news/openai-sees-compute-spend-around-223950561.html" target="_blank" rel="noopener">{"https://finance.yahoo.com/news/openai-sees-compute-spend-around-223950561.html"}</a></li>
+<li id="ref-117">Axios, NY Gov. Kathy Hochul data center moratorium executive order，2026-07-14。<a href="https://axios.com/2026/07/14/ny-gov-kathy-hochul-data-center-moratorium-executive-order" target="_blank" rel="noopener">{"https://axios.com/2026/07/14/ny-gov-kathy-hochul-data-center-moratorium-executive-order"}</a></li>
+<li id="ref-118">Business Standard, “Microsoft’s $25 billion blowout bond puts it in AI winners’ circle”，2026-10-30。<a href="https://www.business-standard.com/world-news/microsoft-s-25-billion-blowout-bond-puts-it-in-ai-winners-circle-126103000215_1.html" target="_blank" rel="noopener">{"https://www.business-standard.com/world-news/microsoft-s-25-billion-blowout-bond-puts-it-in-ai-winners-circle-126103000215_1.html"}</a></li>
+<li id="ref-119">OPB/NPR, “Democrats win full control of Congress”，2026-11-04。<a href="https://www.opb.org/article/2026/11/04/2026-midterms-democrats-win-the-senate/" target="_blank" rel="noopener">{"https://www.opb.org/article/2026/11/04/2026-midterms-democrats-win-the-senate/"}</a></li>
+<li id="ref-120">Fast Company, “Tokenmaxxing is out, valuemaxxing is in”。<a href="https://www.fastcompany.com/91590942/tokenmaxxing-is-out-valuemaxxing-is-in" target="_blank" rel="noopener">{"https://www.fastcompany.com/91590942/tokenmaxxing-is-out-valuemaxxing-is-in"}</a></li>
+<li id="ref-121">Simon Willison（引述 Bloomberg）, Uber caps usage，2026-06-03。<a href="https://simonwillison.net/2026/jun/3/uber-caps-usage" target="_blank" rel="noopener">{"https://simonwillison.net/2026/jun/3/uber-caps-usage"}</a></li>
+<li id="ref-122">SEC EDGAR, Anthropic filings index (CIK 0002130357)。<a href={"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0002130357"} target="_blank" rel="noopener">{"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0002130357"}</a></li>
+<li id="ref-123">Neoteo, “Amazon Q3 2026 earnings: AWS grew, 12-month free cash flow turned negative”。<a href="https://www.neoteo.com/en/amazon-q3-2026-earnings-aws-grew-39-12-month-free-cash-flow-turned-negative" target="_blank" rel="noopener">{"https://www.neoteo.com/en/amazon-q3-2026-earnings-aws-grew-39-12-month-free-cash-flow-turned-negative"}</a></li>
+<li id="ref-124">The Motley Fool, Meta Platforms negative free cash flow，2026-10-28。<a href="https://fool.com/investing/2026/10/28/mark-zuckerberg-meta-platforms-negative-fcf" target="_blank" rel="noopener">{"https://fool.com/investing/2026/10/28/mark-zuckerberg-meta-platforms-negative-fcf"}</a></li>
+<li id="ref-125">StockAnalysis, Nebius Q3 2026 earnings，2026-11-12。<a href="https://stockanalysis.com/news/nebius-q3-2026-earnings/" target="_blank" rel="noopener">{"https://stockanalysis.com/news/nebius-q3-2026-earnings/"}</a></li>
+<li id="ref-126">Bloomberg（Insurance Journal 轉載）, “Some 40% of Planned Data Center Capacity Is in States Wanting to Hit Pause”，2026-11-06。<a href="https://www.insurancejournal.com/news/southcentral/2026/11/06/891870.htm" target="_blank" rel="noopener">{"https://www.insurancejournal.com/news/southcentral/2026/11/06/891870.htm"}</a></li>
+<li id="ref-127">DatacenterDynamics, “Texas governor-elect Gina Hinojosa promises continued data center moratorium”，2026-11。<a href="https://datacenterdynamics.com/en/news/texas-governor-elect-gina-hinojosa-promises-continued-data-center-moratorium-further-legislation" target="_blank" rel="noopener">{"https://datacenterdynamics.com/en/news/texas-governor-elect-gina-hinojosa-promises-continued-data-center-moratorium-further-legislation"}</a></li>
+<li id="ref-128">Kiplinger, “Many People Hate Data Centers: Billions in Tax Breaks Are One Reason Why”。<a href="https://www.kiplinger.com/taxes/many-people-hate-data-centers-billions-in-tax-breaks" target="_blank" rel="noopener">{"https://www.kiplinger.com/taxes/many-people-hate-data-centers-billions-in-tax-breaks"}</a></li>
+</ol>
+<a class="back" href="#p-main" data-tab="p-main">← 回到主文</a>
+</Page>
+
+</Interview>

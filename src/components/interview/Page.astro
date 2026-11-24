@@ -1,0 +1,10 @@
+---
+// 一個分頁（主文、事件頁、參考文獻）。on＝預設顯示的那一頁（腳本還沒跑之前就看得到，不會閃白）。
+interface Props {
+	id: string;
+	title: string;
+	on?: boolean;
+}
+const { id, title, on = false } = Astro.props;
+---
+<section class:list={['page', { 'is-on': on }]} id={id} data-title={title}><div class="wrap"><slot /></div></section>
