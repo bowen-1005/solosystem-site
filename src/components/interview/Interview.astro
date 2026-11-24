@@ -1,0 +1,84 @@
+---
+// 訪談解讀版型的外框：分頁列＋分頁切換＋圖表數值提示。
+// 用法（.mdx）：<Interview tabs={[['p-main', '主文'], ['ev-x', '事件｜…'], ['p-refs', '參考文獻']]}> <Page id="p-main" title="主文" on>…</Page> … </Interview>
+// - 分頁靠網址的 #：#p-main、#ev-x 切到那一頁；#s05、#ref-12 這種頁內錨點會先切到所在的分頁再捲過去。
+// - 沒有 JavaScript 時所有分頁依序全部顯示（.no-js）。
+// - 圖表：figure.chart 裡帶 data-tip 的元素，滑過或點一下顯示數值。
+import './interview.css';
+
+interface Props {
+	tabs: [string, string][];
+}
+const { tabs } = Astro.props;
+---
+<div class="iv no-js">
+	<script is:inline>document.currentScript.parentElement.classList.remove('no-js');</script>
+	<nav class="tabs" aria-label="分頁" data-pagefind-ignore>
+		<div class="wrap">{tabs.map(([id, label]) => <a class="tab" href={`#${id}`} data-tab={id}>{label}</a>)}</div>
+	</nav>
+	<slot />
+	<script is:inline>
+		(function () {
+			var root = document.currentScript.parentElement;
+			var pages = [].slice.call(root.querySelectorAll('.page'));
+			var tabs = [].slice.call(root.querySelectorAll('.tab'));
+			var bar = root.querySelector('.tabs');
+			function pageOf(id) {
+				var el = id && document.getElementById(id);
+				if (!el || !root.contains(el)) return null;
+				return el.classList.contains('page') ? el : el.closest('.page');
+			}
+			function show(id, initial) {
+				var pg = pageOf(id) || pages[0];
+				pages.forEach(function (p) {
+					p.classList.toggle('is-on', p === pg);
+				});
+				tabs.forEach(function (t) {
+					if (t.dataset.tab === pg.id) t.setAttribute('aria-current', 'page');
+					else t.removeAttribute('aria-current');
+				});
+				var act = root.querySelector('.tab[aria-current]');
+				if (act && act.parentNode.scrollTo) act.parentNode.scrollTo({ left: act.offsetLeft - 16, behavior: 'instant' });
+				if (initial && !id) return;
+				var tgt = document.getElementById(id);
+				var top = root.getBoundingClientRect().top + window.scrollY;
+				var y;
+				if (tgt && tgt !== pg) {
+					// 頁內錨點：捲到目標，留出黏在上方的分頁列高度
+					y = tgt.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0) - 12;
+				} else {
+					// 換頁：回到分頁列的位置（還在文章標題那一帶就不動）
+					y = Math.min(window.scrollY, top);
+				}
+				window.scrollTo({ top: y, behavior: 'instant' });
+			}
+			window.addEventListener('hashchange', function () {
+				show(location.hash.slice(1) || pages[0].id);
+			});
+			show(decodeURIComponent(location.hash.slice(1)), true);
+			// 圖表：滑過或點一下顯示數值
+			root.querySelectorAll('figure.chart').forEach(function (fig) {
+				var tip = document.createElement('div');
+				tip.className = 'tip';
+				fig.appendChild(tip);
+				function on(e) {
+					var t = e.target.closest('[data-tip]');
+					if (!t || !t.dataset.tip) return;
+					tip.textContent = t.dataset.tip;
+					tip.classList.add('on');
+					var fr = fig.getBoundingClientRect(),
+						r = t.getBoundingClientRect();
+					var x = r.left + r.width / 2 - fr.left,
+						y = r.top - fr.top - 8;
+					tip.style.left = Math.max(8, Math.min(fr.width - tip.offsetWidth - 8, x - tip.offsetWidth / 2)) + 'px';
+					tip.style.top = Math.max(4, y - tip.offsetHeight) + 'px';
+				}
+				fig.addEventListener('mouseover', on);
+				fig.addEventListener('click', on);
+				fig.addEventListener('mouseleave', function () {
+					tip.classList.remove('on');
+				});
+			});
+		})();
+	</script>
+</div>

@@ -24,6 +24,10 @@ const mdxToMarkdown = (src) =>
 		.replace(/<Tool\s+name="([^"]*)"(?:\s+en="([^"]*)")?\s*>/g, (_, n, en) => `**${n}${en ? `（${en}）` : ''}**`)
 		.replace(/<Step\s+n="([^"]*)"\s+title="([^"]*)"\s*>/g, (_, n, t) => `**${n}. ${t}**`)
 		.replace(/<(?:Panel|Meta|Callout)\s+title="([^"]*)"\s*>/g, (_, t) => `**${t}**`)
+		// 訪談解讀版型（<Interview>）：MDX 裡寫成 {"…"} 的文字還原成純文字；SVG 圖表在 RSS 裡看不到，整塊拿掉
+		.replace(/=\{("(?:[^"\\]|\\.)*")\}/g, (_, s) => `="${JSON.parse(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;')}"`)
+		.replace(/\{("(?:[^"\\]|\\.)*")\}/g, (_, s) => JSON.parse(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'))
+		.replace(/<svg[\s\S]*?<\/svg>/g, '')
 		.replace(/<Do>/g, '**有效做法**')
 		.replace(/<Dont>/g, '**要避免**')
 		.replace(/<\/?[A-Z][A-Za-z]*(\s[^>]*)?\/?>/g, '');
