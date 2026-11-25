@@ -1,0 +1,20 @@
+---
+// 〈全台社會住宅〉報告的一節。
+// 內文（sections.json）、樣式（report.css）、互動（report.js）由報告的產生器輸出，這裡只負責放進文章版型；
+// 要改內容請從產生器重出這三個檔，不要直接改。樣式的選擇器全部掛在 .shr 底下，不影響其他文章。
+// 用法（.mdx）：<Sec id="lead" />、<Sec id="s0" /> … <Sec id="s10" />、<Sec id="tail" />（tail 帶圖表提示與篩選的腳本，放最後）
+import './report.css';
+import sections from './sections.json';
+import js from './report.js?raw';
+
+interface Props {
+	id: string;
+}
+const { id } = Astro.props;
+const html = (sections as Record<string, string>)[id];
+if (!html) throw new Error(`tw-social-housing：沒有「${id}」這一節`);
+const isTail = id === 'tail';
+---
+
+<div class="shr" set:html={html} />
+{isTail && <script is:inline set:html={js} />}

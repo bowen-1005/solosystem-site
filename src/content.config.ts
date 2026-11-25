@@ -24,6 +24,8 @@ const blog = defineCollection({
 			series: z.array(z.string()).optional(),
 			tags: z.array(z.string()).optional(),
 			heroImage: z.optional(image()),
+			// 閱讀時間（分鐘，選填）：內文主要來自元件、照字數估不準的文章（資料報告）手動指定
+			readingMinutes: z.number().optional(),
 			// 版型（選填）：'manual'＝手冊版型（襯線標題、灰綠底、深青主色、卡片元件，樣式在 styles/manual.css）
 			// 不填＝手冊版型（2026-11-10 起全站預設）；保留欄位給日後其他版型
 			look: z.enum(['manual']).optional(),

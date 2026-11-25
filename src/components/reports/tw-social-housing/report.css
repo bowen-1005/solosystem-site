@@ -1,0 +1,131 @@
+/* 全台社會住宅報告的圖表與表格樣式。由私有資料夾的 build.py 產生，選擇器全部掛在 .shr 底下，不影響其他文章。 */
+#look-manual .prose .shr{--card:var(--m-surface,#fff);--ink:var(--m-ink,#1b2326);--ink2:#4a5652;--ink3:#6b7672;--line:var(--m-line,#d3dbd8);--local:#2a78d6;--central:#eb6834;--old:#0a5c3f;--new:#1baf7a;--setup:#86d6b8;--award:#c9ecdd;font-size:16px;line-height:1.75;letter-spacing:0}
+#look-manual .prose .shr,#look-manual .prose .shr *{box-sizing:border-box}
+#look-manual .prose .shr .kicker{color:var(--ink3);font-size:13px;margin:0 0 8px;letter-spacing:.02em}
+#look-manual .prose .shr .lede{font-size:18px;color:var(--ink2);margin:0 0 20px;max-width:46em}
+#look-manual .prose .shr h3 small{display:block;font-weight:400;font-size:12.5px;color:var(--ink3);margin-top:2px}
+#look-manual .prose .shr code{font-size:.88em;background:#f0efec;padding:1px 5px;border-radius:4px}
+#look-manual .prose .shr .muted{color:var(--ink3)}
+#look-manual .prose .shr .small,#look-manual .prose .shr small{font-size:12.5px;color:var(--ink2)}
+#look-manual .prose .shr .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:6px 0 18px}
+#look-manual .prose .shr .tile{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 14px 10px}
+#look-manual .prose .shr .tn{font-size:30px;font-weight:700;letter-spacing:-.01em;line-height:1.1}
+#look-manual .prose .shr .tu{font-size:13px;color:var(--ink2);margin-left:3px}
+#look-manual .prose .shr .tile p{font-size:12.5px;color:var(--ink2);margin:6px 0 0;line-height:1.5}
+#look-manual .prose .shr .findings{padding-left:1.3em;margin:0 0 16px}
+#look-manual .prose .shr .findings li{margin-bottom:9px}
+#look-manual .prose .shr .callout{background:var(--card);border-left:4px solid var(--ink);border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0;font-size:15px}
+#look-manual .prose .shr .callout ul{margin:6px 0 0;padding-left:1.2em}
+#look-manual .prose .shr .callout li{margin-bottom:6px}
+#look-manual .prose .shr figure{margin:18px 0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 10px}
+#look-manual .prose .shr figcaption{font-weight:700;font-size:15px;margin-bottom:10px}
+#look-manual .prose .shr .fignote{font-size:12.5px;color:var(--ink3);line-height:1.6;margin:8px 0 4px}
+#look-manual .prose .shr .track{display:flex;align-items:center;gap:2px;min-width:0;height:22px}
+#look-manual .prose .shr .seg{display:block;height:13px;border-radius:2px;width:calc(var(--w) * .76%);min-width:2px;flex:none}
+#look-manual .prose .shr .track.full .seg{width:calc(var(--w) * 1% - 2px)}
+#look-manual .prose .shr .val{font-size:12.5px;color:var(--ink2);margin-left:5px;white-space:nowrap;font-variant-numeric:tabular-nums}
+#look-manual .prose .shr .b-local{background:var(--local)}
+#look-manual .prose .shr .b-central{background:var(--central)}
+#look-manual .prose .shr .st-old{background:var(--old)}
+#look-manual .prose .shr .st-new{background:var(--new)}
+#look-manual .prose .shr .st-setup{background:var(--setup)}
+#look-manual .prose .shr .st-award{background:var(--award);box-shadow:inset 0 0 0 1px #8fcfb5}
+#look-manual .prose .shr .st-plan{background:repeating-linear-gradient(135deg,#d9d7d0 0 2px,#f4f3ef 2px 5px);box-shadow:inset 0 0 0 1px #c5c3bb}
+#look-manual .prose .shr .k-own{background:#3b3a37}
+#look-manual .prose .shr .k-inh{background:repeating-linear-gradient(135deg,#6f6d67 0 2px,#e6e4de 2px 5px);box-shadow:inset 0 0 0 1px #8b8982}
+#look-manual .prose .shr .seg:hover{filter:brightness(.88)}
+#look-manual .prose .shr .legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12.5px;color:var(--ink2);margin:0 0 10px}
+#look-manual .prose .shr .lg{display:inline-flex;align-items:center;gap:6px}
+#look-manual .prose .shr .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
+#look-manual .prose .shr .funnel .track{height:30px}
+#look-manual .prose .shr .funnel .seg{height:24px;border-radius:3px}
+#look-manual .prose .shr .ticks{position:relative;height:34px;border-top:1px solid var(--line);margin-top:2px}
+#look-manual .prose .shr .tick{position:absolute;top:0;transform:translateX(-50%);font-size:11.5px;color:var(--ink3);white-space:nowrap;padding-top:8px}
+#look-manual .prose .shr .tick i{position:absolute;left:50%;top:0;height:6px;border-left:1px solid var(--ink3)}
+#look-manual .prose .shr .tick:first-child{transform:none}
+#look-manual .prose .shr .tick:first-child i{left:0}
+#look-manual .prose .shr .tick:last-child{transform:translateX(-100%)}
+#look-manual .prose .shr .tick:last-child i{left:100%}
+#look-manual .prose .shr .ygrid{display:grid;grid-template-columns:5.6em 1fr 1fr;gap:0 16px;align-items:center;border-bottom:1px solid #f0efec}
+#look-manual .prose .shr .yhead,#look-manual .prose .shr .thead{font-size:12px;color:var(--ink3);border-bottom:1px solid var(--line);padding-bottom:3px;margin-bottom:2px}
+#look-manual .prose .shr .lab{font-size:13.5px;white-space:nowrap}
+#look-manual .prose .shr .gov{font-size:11px;color:var(--ink3);margin-left:6px}
+#look-manual .prose .shr .cgrid{display:grid;grid-template-columns:5.2em 1fr;gap:0 10px;align-items:center}
+#look-manual .prose .shr .cchart .seg{width:calc(var(--w) * .58%)}
+#look-manual .prose .shr .cchart .track.full .seg{width:calc(var(--w) * .66%)}
+#look-manual .prose .shr .maps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin:14px 0 4px}
+#look-manual .prose .shr .mapfig{margin:0;padding:14px 12px 8px}
+#look-manual .prose .shr svg.map{width:100%;height:auto;display:block;max-width:420px;margin:0 auto}
+#look-manual .prose .shr .cty{stroke:#fff;stroke-width:.8;stroke-linejoin:round}
+#look-manual .prose .shr .cty:hover{stroke:#1c1b19;stroke-width:1.4}
+#look-manual .prose .shr .inset{fill:none;stroke:#d9d7d0;stroke-width:.8}
+#look-manual .prose .shr .lead{stroke:#55534e;stroke-width:.6}
+#look-manual .prose .shr .ml{font-size:9.4px;text-anchor:middle;fill:#1c1b19;paint-order:stroke;stroke:#fff;stroke-width:2.4px;stroke-linejoin:round;pointer-events:none}
+#look-manual .prose .shr .mv{font-weight:700;font-size:10.4px}
+#look-manual .prose .shr .maplg{justify-content:center;margin-top:6px;gap:4px 10px;font-size:11.5px}
+#look-manual .prose .shr .citycard{border-top:1px solid var(--line);padding:14px 0 6px}
+#look-manual .prose .shr .citycard:first-of-type{border-top:0}
+#look-manual .prose .shr .citycard h3{margin:0 0 8px;font-size:18px}
+#look-manual .prose .shr .tgrid{display:grid;grid-template-columns:12.5em 1fr 1fr;gap:0 16px;align-items:center}
+#look-manual .prose .shr .pty{font-size:11px;border:1px solid #bdbbb4;border-radius:4px;padding:0 4px;margin-left:6px;color:var(--ink2)}
+#look-manual .prose .shr .yr{font-size:11.5px;color:var(--ink3);margin-left:6px}
+#look-manual .prose .shr .citynote{font-size:14px;color:var(--ink2);margin:10px 0 4px;line-height:1.75}
+#look-manual .prose .shr .tablewrap{overflow-x:auto;margin:10px 0;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+#look-manual .prose .shr .tablewrap.tall{max-height:560px;overflow-y:auto}
+#look-manual .prose .shr table.data{border-collapse:collapse;width:100%;font-size:13.5px;line-height:1.55}
+#look-manual .prose .shr table.data th,#look-manual .prose .shr table.data td{padding:7px 10px;border-bottom:1px solid #eeede8;text-align:left;vertical-align:top}
+#look-manual .prose .shr table.data th{background:#f5f4f0;font-weight:600;font-size:12.5px;position:sticky;top:0;z-index:1;white-space:nowrap}
+#look-manual .prose .shr table.data td.num,#look-manual .prose .shr table.data th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+#look-manual .prose .shr table.data tr:last-child td{border-bottom:0}
+#look-manual .prose .shr table.data td:first-child{white-space:nowrap}
+#look-manual .prose .shr .srccol{min-width:210px}
+#look-manual .prose .shr .srccol .track{height:16px}
+#look-manual .prose .shr .srccol .seg{width:calc(var(--w) * 1%)}
+#look-manual .prose .shr figure .tablewrap{border:0}
+#look-manual .prose .shr .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:10px 0}
+#look-manual .prose .shr .cards.three{grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+#look-manual .prose .shr .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:13px 15px}
+#look-manual .prose .shr .card h4{margin:0 0 3px;font-size:15.5px}
+#look-manual .prose .shr .card h4 small{font-weight:400;margin-left:8px}
+#look-manual .prose .shr .card p{font-size:13.5px;line-height:1.7;margin:0;color:var(--ink2)}
+#look-manual .prose .shr .card .role{font-size:12px;color:var(--ink3);margin-bottom:6px}
+#look-manual .prose .shr .timeline{position:relative;margin:8px 0 8px;padding-left:4px}
+#look-manual .prose .shr .tl{display:grid;grid-template-columns:7.2em 1fr auto;gap:0 14px;padding:9px 0;border-bottom:1px solid #eeede8;align-items:start}
+#look-manual .prose .shr .tl time{font-size:13px;color:var(--ink2);font-variant-numeric:tabular-nums;padding-top:2px}
+#look-manual .prose .shr .tl b{font-size:15px}
+#look-manual .prose .shr .tl p{font-size:13.5px;color:var(--ink2);margin:2px 0 0;line-height:1.7}
+#look-manual .prose .shr .tl.era{display:block;border:0;padding:20px 0 4px}
+#look-manual .prose .shr .tl.era span{font-size:13px;font-weight:700;background:var(--ink);color:#fff;border-radius:4px;padding:3px 10px}
+#look-manual .prose .shr .tag{font-size:11.5px;border-radius:4px;padding:1px 7px;border:1px solid;white-space:nowrap;margin-top:3px}
+#look-manual .prose .shr .tag.civ{color:#8a5d00;border-color:#e0c27a;background:#fdf6e3}
+#look-manual .prose .shr .tag.gov{color:#1c5cab;border-color:#b7d3f6;background:#f1f6fd}
+#look-manual .prose .shr .tag.law{color:#4a3aa7;border-color:#c3bbf3;background:#f4f2fd}
+#look-manual .prose .shr ol.src{font-size:13px;color:var(--ink2);padding-left:1.4em}
+#look-manual .prose .shr ol.src li{margin-bottom:5px}
+#look-manual .prose .shr details summary{cursor:pointer;font-size:14.5px;padding:8px 0;color:#1c5cab}
+#look-manual .prose .shr .filter{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:10px 0}
+#look-manual .prose .shr .filter select,#look-manual .prose .shr .filter input{font:inherit;font-size:14px;padding:5px 8px;border:1px solid #cfcdc6;border-radius:6px;background:#fff;color:var(--ink)}
+#look-manual .prose .shr #tip{position:fixed;z-index:9;pointer-events:none;background:#1c1b19;color:#fff;font-size:12.5px;line-height:1.5;padding:6px 10px;border-radius:6px;max-width:280px;opacity:0;transition:opacity .08s;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+@media (max-width:680px){#look-manual .prose .shr .tgrid{grid-template-columns:1fr 1fr;gap:0 10px;padding:5px 0;border-bottom:1px solid #f0efec}#look-manual .prose .shr .tgrid .lab{grid-column:1/-1}#look-manual .prose .shr .tgrid.thead div:first-child{display:none}#look-manual .prose .shr .ygrid{grid-template-columns:4.6em 1fr 1fr;gap:0 8px}#look-manual .prose .shr .gov{display:block;margin:0;line-height:1}#look-manual .prose .shr .ygrid .lab{line-height:1.2;padding:3px 0}#look-manual .prose .shr .cgrid{grid-template-columns:1fr;padding:4px 0}#look-manual .prose .shr .cchart .seg{width:calc(var(--w) * 1% - 2px)}#look-manual .prose .shr .cchart .track{flex-wrap:wrap;height:auto;row-gap:0}#look-manual .prose .shr .cchart .val{flex-basis:100%;margin:0 0 2px}#look-manual .prose .shr .seg{width:calc(var(--w) * .68%)}#look-manual .prose .shr .tl{grid-template-columns:1fr auto}#look-manual .prose .shr .tl time{grid-column:1/-1}#look-manual .prose .shr figure{padding:12px 11px 8px}#look-manual .prose .shr .tick{font-size:10px}#look-manual .prose .shr .tick:nth-child(2),#look-manual .prose .shr .tick:nth-child(4){display:none}}
+#look-manual .prose .shr .lede{font-size:18px;line-height:1.8;margin:0 0 6px}
+#look-manual .prose .shr .kicker{margin:0 0 1.6em}
+#look-manual .prose .shr p{margin:0 0 12px}
+#look-manual .prose .shr ul{margin:0 0 12px} #look-manual .prose .shr li{margin:0 0 5px}
+#look-manual .prose .shr table.data{margin:0}
+#look-manual .prose .shr table.data th,#look-manual .prose .shr table.data td{border:0;border-bottom:1px solid #e6ebe9}
+#look-manual .prose .shr table.data tbody tr:nth-child(even){background:transparent}
+#look-manual .prose .shr table.data th{background:#eef2f0;color:var(--ink)}
+#look-manual .prose .shr figure{margin:18px 0}
+#look-manual .prose .shr h3{font-size:1.15em;margin:1.7em 0 .6em}
+#look-manual .prose .shr .citycard h3{margin:0 0 8px;font-size:18px}
+#look-manual .prose .shr h4{font-family:var(--f-body)}
+#look-manual .prose .shr code{background:#e8edeb}
+#look-manual .prose .shr .foot{color:var(--ink3);font-size:12.5px;margin:2.4em 0 0}
+#look-manual .prose .shr details summary{color:var(--m-accent,#1d5c57)}
+#look-manual .prose .shr .maps .mapfig:last-child:nth-child(odd){grid-column:1/-1}
+#look-manual .prose .shr figure .tablewrap{margin-left:-16px;margin-right:-16px}
+#look-manual .prose .shr figure table.data{font-size:12.5px}
+#look-manual .prose .shr figure table.data th,#look-manual .prose .shr figure table.data td{padding:6px 7px}
+#look-manual .prose .shr .srccol{min-width:140px}
+@media (max-width:680px){#look-manual .prose .shr figure .tablewrap{margin-left:-11px;margin-right:-11px}}
+#look-manual .prose .shr .maps .mapfig:last-child:nth-child(odd) svg.map{max-width:340px}

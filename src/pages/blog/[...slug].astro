@@ -33,7 +33,7 @@ const prose = post.filePath?.endsWith('.mdx')
 			.replace(/\{"|"\}/g, '')
 	: body;
 const plain = prose.replace(/[#>*`_~\-\[\]()!|]/g, '');
-const readingTime = Math.max(1, Math.round(plain.length / 400));
+const readingTime = post.data.readingMinutes ?? Math.max(1, Math.round(plain.length / 400));
 ---
 
 <BlogPost {...post.data} prev={prev} next={next} headings={headings} readingTime={readingTime}>
